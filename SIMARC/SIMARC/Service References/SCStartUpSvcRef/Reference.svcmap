@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2961f5f0-2014-4936-97cd-26803de80d8b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:42007/SCStartUpSvc.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SCStartUpSvc.xsd" MetadataType="Schema" ID="e2cb6af9-7194-4b0f-b882-7a0e3f87cf41" SourceId="1" SourceUrl="http://localhost:42007/SCStartUpSvc.svc?xsd=xsd2" />
+    <MetadataFile FileName="SCStartUpSvc1.xsd" MetadataType="Schema" ID="6da1fd2c-7b5e-4bf0-b973-aa0e4ad0052e" SourceId="1" SourceUrl="http://localhost:42007/SCStartUpSvc.svc?xsd=xsd1" />
+    <MetadataFile FileName="SCStartUpSvc2.xsd" MetadataType="Schema" ID="224e6308-a8d3-4f51-8b08-baee6cad8452" SourceId="1" SourceUrl="http://localhost:42007/SCStartUpSvc.svc?xsd=xsd3" />
+    <MetadataFile FileName="SCStartUpSvc3.xsd" MetadataType="Schema" ID="ddba4eb9-8907-4887-a810-b5db0cb19ea8" SourceId="1" SourceUrl="http://localhost:42007/SCStartUpSvc.svc?xsd=xsd0" />
+    <MetadataFile FileName="SCStartUpSvc.disco" MetadataType="Disco" ID="73ce9b47-0280-4ddd-9ae2-d2e8188c98fc" SourceId="1" SourceUrl="http://localhost:42007/SCStartUpSvc.svc?disco" />
+    <MetadataFile FileName="SCStartUpSvc.wsdl" MetadataType="Wsdl" ID="c6ec0bf0-8caf-4beb-a76e-277a1d59995b" SourceId="1" SourceUrl="http://localhost:42007/SCStartUpSvc.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="390e67b6-5025-44b2-9004-aef2a143802b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:42007/SCMenuSvc.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SCMenuSvc.wsdl" MetadataType="Wsdl" ID="dcc5f078-e0b9-4622-969e-6a77fcc7ec27" SourceId="1" SourceUrl="http://localhost:42007/SCMenuSvc.svc?wsdl" />
+    <MetadataFile FileName="SCMenuSvc.xsd" MetadataType="Schema" ID="af9a7bb0-b80d-42a1-b95c-6a4f0ad39cb5" SourceId="1" SourceUrl="http://localhost:42007/SCMenuSvc.svc?xsd=xsd2" />
+    <MetadataFile FileName="SCMenuSvc1.xsd" MetadataType="Schema" ID="efd5b8b7-fdb6-43d5-a312-27905627756e" SourceId="1" SourceUrl="http://localhost:42007/SCMenuSvc.svc?xsd=xsd1" />
+    <MetadataFile FileName="SCMenuSvc2.xsd" MetadataType="Schema" ID="28bc8e07-1c89-4b7e-881c-b0a60936b977" SourceId="1" SourceUrl="http://localhost:42007/SCMenuSvc.svc?xsd=xsd0" />
+    <MetadataFile FileName="SCMenuSvc3.xsd" MetadataType="Schema" ID="4d8c5766-8415-48b2-9ff7-a6bee7e36243" SourceId="1" SourceUrl="http://localhost:42007/SCMenuSvc.svc?xsd=xsd3" />
+    <MetadataFile FileName="SCMenuSvc.disco" MetadataType="Disco" ID="e54f570e-74df-4c71-abe0-87b4684dbdc7" SourceId="1" SourceUrl="http://localhost:42007/SCMenuSvc.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
