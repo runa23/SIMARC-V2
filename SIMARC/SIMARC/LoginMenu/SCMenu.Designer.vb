@@ -80,7 +80,7 @@ Partial Class SCMenu
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.TabControl1)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(845, 356)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(984, 442)
         Me.SplitContainerControl1.SplitterPosition = 196
         Me.SplitContainerControl1.TabIndex = 0
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
@@ -130,7 +130,7 @@ Partial Class SCMenu
         Me.TreeList1.OptionsView.ShowIndentAsRowStyle = True
         Me.TreeList1.OptionsView.ShowIndicator = False
         Me.TreeList1.OptionsView.ShowVertLines = False
-        Me.TreeList1.Size = New System.Drawing.Size(196, 356)
+        Me.TreeList1.Size = New System.Drawing.Size(196, 442)
         Me.TreeList1.TabIndex = 2
         '
         'colAppId
@@ -151,22 +151,22 @@ Partial Class SCMenu
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.Size = New System.Drawing.Size(637, 356)
+        Me.TabControl1.Size = New System.Drawing.Size(776, 442)
         Me.TabControl1.TabIndex = 1
         '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.VersionLabel})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 431)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 517)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(845, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(984, 22)
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'ToolStripStatusLabel1
         '
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(751, 17)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(920, 17)
         Me.ToolStripStatusLabel1.Spring = True
         Me.ToolStripStatusLabel1.Text = "Powered By SIMARC Dev Team"
         Me.ToolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -174,7 +174,7 @@ Partial Class SCMenu
         'VersionLabel
         '
         Me.VersionLabel.Name = "VersionLabel"
-        Me.VersionLabel.Size = New System.Drawing.Size(48, 17)
+        Me.VersionLabel.Size = New System.Drawing.Size(49, 17)
         Me.VersionLabel.Text = "Version "
         '
         'ChangePasswordLinkLabel
@@ -182,7 +182,7 @@ Partial Class SCMenu
         Me.ChangePasswordLinkLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ChangePasswordLinkLabel.AutoSize = True
         Me.ChangePasswordLinkLabel.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChangePasswordLinkLabel.Location = New System.Drawing.Point(727, 9)
+        Me.ChangePasswordLinkLabel.Location = New System.Drawing.Point(866, 9)
         Me.ChangePasswordLinkLabel.Name = "ChangePasswordLinkLabel"
         Me.ChangePasswordLinkLabel.Size = New System.Drawing.Size(106, 13)
         Me.ChangePasswordLinkLabel.TabIndex = 19
@@ -194,7 +194,7 @@ Partial Class SCMenu
         Me.UserLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UserLabel.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UserLabel.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.UserLabel.Location = New System.Drawing.Point(283, 7)
+        Me.UserLabel.Location = New System.Drawing.Point(422, 7)
         Me.UserLabel.Name = "UserLabel"
         Me.UserLabel.Size = New System.Drawing.Size(438, 16)
         Me.UserLabel.TabIndex = 18
@@ -237,7 +237,7 @@ Partial Class SCMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(845, 453)
+        Me.ClientSize = New System.Drawing.Size(984, 539)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureEdit1)
         Me.Controls.Add(Me.ChangePasswordLinkLabel)

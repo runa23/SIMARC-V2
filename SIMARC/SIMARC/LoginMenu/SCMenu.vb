@@ -3,6 +3,7 @@ Imports SIMARC.SCMenuSvcRef
 Imports DevExpress.XtraTreeList.Nodes
 Imports SC_Common
 Imports SC_Win_FrontEnd
+Imports SC_BackEnd
 Imports System.ServiceModel
 Imports System
 Imports System.Windows.Forms
@@ -49,7 +50,7 @@ Public Class SCMenu
         Next
     End Sub
 
-    Private Sub SCMenu_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+    Private Sub SCMenu_Activated(sender As Object, e As EventArgs) Handles Me.Load
         loadApp()
     End Sub
 
@@ -95,7 +96,7 @@ Public Class SCMenu
         End Try
 
         If loException.Haserror Then
-            CT_DisplayException(loException)
+            SC_DisplayException(loException)
         End If
     End Sub
 
@@ -230,7 +231,7 @@ Public Class SCMenu
         End Try
 
         If loException.Haserror Then
-            CT_DisplayException(loException)
+            SC_DisplayException(loException)
         End If
     End Sub
 
@@ -257,7 +258,7 @@ Public Class SCMenu
 
     End Sub
 
-    Sub CT_DisplayException(ByVal loException As SC_Exception)
+    Sub SC_DisplayException(ByVal loException As SC_Exception)
         MessageBox.Show(loException.ErrorList(0).ErrDescp)
     End Sub
 
@@ -281,9 +282,9 @@ Public Class SCMenu
         DownloadProcess.Close()
     End Sub
 
-    Private Sub VersionLabel_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles VersionLabel.ItemClick
-        loadApp()
-    End Sub
+    'Private Sub VersionLabel_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles VersionLabel.ItemClick
+    '    loadApp()
+    'End Sub
 
 
     Private Sub TreeList1_FilterNode(ByVal sender As Object, ByVal e As DevExpress.XtraTreeList.FilterNodeEventArgs) Handles TreeList1.FilterNode
@@ -330,15 +331,9 @@ Public Class SCMenu
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
 
-        RunningMode.Visible = Not RunningMode.Visible
-
     End Sub
 
     Private Sub ChangePasswordLinkLabel_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles ChangePasswordLinkLabel.LinkClicked
-        CTChangePassword.ShowDialog(Me)
-    End Sub
-
-    Private Sub RibbonControl_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RibbonControl.Click
-
+        ChangePassword.ShowDialog(Me)
     End Sub
 End Class
