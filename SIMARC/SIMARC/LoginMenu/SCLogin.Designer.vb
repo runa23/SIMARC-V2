@@ -38,7 +38,7 @@ Partial Class SCLogin
         Me.UserIDSC_TextBox.Name = "UserIDSC_TextBox"
         Me.UserIDSC_TextBox.SC_ConductorSource = Nothing
         Me.UserIDSC_TextBox.Size = New System.Drawing.Size(226, 20)
-        Me.UserIDSC_TextBox.TabIndex = 0
+        Me.UserIDSC_TextBox.TabIndex = 1
         '
         'UserIDLabel
         '
@@ -69,9 +69,10 @@ Partial Class SCLogin
         Me.PasswordSC_TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.PasswordSC_TextBox.Location = New System.Drawing.Point(12, 133)
         Me.PasswordSC_TextBox.Name = "PasswordSC_TextBox"
+        Me.PasswordSC_TextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.PasswordSC_TextBox.SC_ConductorSource = Nothing
         Me.PasswordSC_TextBox.Size = New System.Drawing.Size(226, 20)
-        Me.PasswordSC_TextBox.TabIndex = 0
+        Me.PasswordSC_TextBox.TabIndex = 2
         '
         'LoginBtn
         '
@@ -79,7 +80,7 @@ Partial Class SCLogin
         Me.LoginBtn.Name = "LoginBtn"
         Me.LoginBtn.SC_ConductorSource = Nothing
         Me.LoginBtn.Size = New System.Drawing.Size(75, 23)
-        Me.LoginBtn.TabIndex = 2
+        Me.LoginBtn.TabIndex = 3
         Me.LoginBtn.Text = "Login"
         Me.LoginBtn.UseVisualStyleBackColor = True
         '
@@ -90,7 +91,7 @@ Partial Class SCLogin
         Me.CancelBtn.Name = "CancelBtn"
         Me.CancelBtn.SC_ConductorSource = Nothing
         Me.CancelBtn.Size = New System.Drawing.Size(75, 23)
-        Me.CancelBtn.TabIndex = 2
+        Me.CancelBtn.TabIndex = 4
         Me.CancelBtn.Text = "Cancel"
         Me.CancelBtn.UseVisualStyleBackColor = True
         '
