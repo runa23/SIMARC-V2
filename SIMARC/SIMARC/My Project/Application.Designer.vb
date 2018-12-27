@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.SIMARC.SCLogin
+            Me.MainForm = Global.SIMARC.SCMenu
         End Sub
     End Class
 End Namespace

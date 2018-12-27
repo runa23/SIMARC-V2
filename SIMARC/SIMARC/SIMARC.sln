@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SIMARC", "SIMARC.vbproj", "{0A00A379-47E8-4E17-9217-E370FE3B1F3E}"
-	ProjectSection(ProjectDependencies) = postProject
-		{715F4DEC-824A-47F2-91A1-3AFE194BB531} = {715F4DEC-824A-47F2-91A1-3AFE194BB531}
-	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SIMARCBack", "http://localhost:42007", "{715F4DEC-824A-47F2-91A1-3AFE194BB531}"
 	ProjectSection(WebsiteProperties) = preProject

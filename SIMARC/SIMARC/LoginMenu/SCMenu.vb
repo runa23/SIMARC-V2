@@ -69,7 +69,7 @@ Public Class SCMenu
 
 
             loUserConfig = GetUserConfig()
-            lcCTAMSServiceUrl = loUserConfig.AppSettings.Settings.Item("CTAMSServiceUrl").Value.ToString.Trim
+            lcCTAMSServiceUrl = loUserConfig.AppSettings.Settings.Item("SIMARCServiceUrl").Value.ToString.Trim
 
             loService = New SCMenuSvcClient
 
