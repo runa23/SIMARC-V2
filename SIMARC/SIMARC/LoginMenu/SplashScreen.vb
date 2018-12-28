@@ -204,7 +204,7 @@ Public Class SplashScreen
 
     Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
         If lbUpdated Then
-            MessageBox.Show("Update CTAMS selesai. CTAMS akan ditutup, dan silahkan buka kembali untuk melanjutkan pekerjaan", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Update SIMARC selesai. SIMARC akan ditutup, dan silahkan buka kembali untuk melanjutkan pekerjaan", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.DialogResult = System.Windows.Forms.DialogResult.Abort
         Else
             Me.DialogResult = System.Windows.Forms.DialogResult.Yes
