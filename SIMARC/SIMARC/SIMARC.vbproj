@@ -184,17 +184,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="Service References\SCMenuSvcRef\SCMenuSvc.wsdl" />
-    <None Include="Service References\SCMenuSvcRef\SCMenuSvc.xsd">
+    <None Include="Service References\SCMenuSvcRef\SCMenuSvc1.wsdl" />
+    <None Include="Service References\SCMenuSvcRef\SCMenuSvc4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SCMenuSvcRef\SCMenuSvc1.xsd">
+    <None Include="Service References\SCMenuSvcRef\SCMenuSvc41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SCMenuSvcRef\SCMenuSvc2.xsd">
+    <None Include="Service References\SCMenuSvcRef\SCMenuSvc42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SCMenuSvcRef\SCMenuSvc3.xsd">
+    <None Include="Service References\SCMenuSvcRef\SCMenuSvc43.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SCMenuSvcRef\SIMARC.SCMenuSvcRef.loginDTO.datasource">
@@ -206,17 +206,17 @@
     <None Include="Service References\SCMenuSvcRef\SIMARC.SCMenuSvcRef.sys_appDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc.wsdl" />
-    <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc.xsd">
+    <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc1.wsdl" />
+    <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc1.xsd">
+    <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc2.xsd">
+    <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc3.xsd">
+    <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc43.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SCStartUpSvcRef\SIMARC.SCStartUpSvcRef.FIleSupportDTO.datasource">
@@ -234,9 +234,6 @@
     <WCFMetadataStorage Include="Service References\SCStartUpSvcRef\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SCMenuSvcRef\SCMenuSvc.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\SCMenuSvcRef\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -247,9 +244,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\SCStartUpSvcRef\configuration91.svcinfo" />
@@ -265,6 +259,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Wall%27s_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SCMenuSvcRef\SCMenuSvc1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

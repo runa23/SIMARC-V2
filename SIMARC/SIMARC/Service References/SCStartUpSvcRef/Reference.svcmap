@@ -21,15 +21,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:42007/SCStartUpSvc.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:42007/SIMARCBack/SCStartUpSvc.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SCStartUpSvc.xsd" MetadataType="Schema" ID="e2cb6af9-7194-4b0f-b882-7a0e3f87cf41" SourceId="1" SourceUrl="http://localhost:42007/SCStartUpSvc.svc?xsd=xsd2" />
-    <MetadataFile FileName="SCStartUpSvc1.xsd" MetadataType="Schema" ID="6da1fd2c-7b5e-4bf0-b973-aa0e4ad0052e" SourceId="1" SourceUrl="http://localhost:42007/SCStartUpSvc.svc?xsd=xsd1" />
-    <MetadataFile FileName="SCStartUpSvc2.xsd" MetadataType="Schema" ID="224e6308-a8d3-4f51-8b08-baee6cad8452" SourceId="1" SourceUrl="http://localhost:42007/SCStartUpSvc.svc?xsd=xsd3" />
-    <MetadataFile FileName="SCStartUpSvc3.xsd" MetadataType="Schema" ID="ddba4eb9-8907-4887-a810-b5db0cb19ea8" SourceId="1" SourceUrl="http://localhost:42007/SCStartUpSvc.svc?xsd=xsd0" />
-    <MetadataFile FileName="SCStartUpSvc.disco" MetadataType="Disco" ID="73ce9b47-0280-4ddd-9ae2-d2e8188c98fc" SourceId="1" SourceUrl="http://localhost:42007/SCStartUpSvc.svc?disco" />
-    <MetadataFile FileName="SCStartUpSvc.wsdl" MetadataType="Wsdl" ID="c6ec0bf0-8caf-4beb-a76e-277a1d59995b" SourceId="1" SourceUrl="http://localhost:42007/SCStartUpSvc.svc?wsdl" />
+    <MetadataFile FileName="SCStartUpSvc4.xsd" MetadataType="Schema" ID="a5bd948e-588a-4752-9ac9-99c7b1f3c7e5" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCStartUpSvc.svc?xsd=xsd2" />
+    <MetadataFile FileName="SCStartUpSvc1.wsdl" MetadataType="Wsdl" ID="51130773-602b-4b2d-9258-3698df6f1636" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCStartUpSvc.svc?wsdl" />
+    <MetadataFile FileName="SCStartUpSvc41.xsd" MetadataType="Schema" ID="78f615e2-048a-46d2-b10d-d7e6dc5d5d9b" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCStartUpSvc.svc?xsd=xsd1" />
+    <MetadataFile FileName="SCStartUpSvc1.disco" MetadataType="Disco" ID="44ae7cc1-ec28-4db6-9799-be61c8221f9a" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCStartUpSvc.svc?disco" />
+    <MetadataFile FileName="SCStartUpSvc42.xsd" MetadataType="Schema" ID="a3a69e67-30d5-4a3c-aedb-fa994fdce048" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCStartUpSvc.svc?xsd=xsd0" />
+    <MetadataFile FileName="SCStartUpSvc43.xsd" MetadataType="Schema" ID="92f61d1f-960b-40af-9951-c311b324e3fb" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCStartUpSvc.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

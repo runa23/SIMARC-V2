@@ -1,36 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SCM0100Back" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SCM0100Back" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:42007/SCM0100Svc.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SC_BackEnd" />
-  <xs:complexType name="SCM0100DTO01">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SC_BackEnd" base="q1:SC_DTOBase">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="REGIONAL_ID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="REGIONAL_NAME" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="SCM0100DTO01" nillable="true" type="tns:SCM0100DTO01" />
-  <xs:complexType name="ArrayOfSCM0100DTO02">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="SCM0100DTO02" nillable="true" type="tns:SCM0100DTO02" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfSCM0100DTO02" nillable="true" type="tns:ArrayOfSCM0100DTO02" />
-  <xs:complexType name="SCM0100DTO02">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="REGIONAL_ID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="REGIONAL_NAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="SCM0100DTO02" nillable="true" type="tns:SCM0100DTO02" />
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SCM0100Back" />
+  <xs:import schemaLocation="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SC_BackEnd" />
+  <xs:import schemaLocation="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Svc_SC_GetRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SCM0100Back" minOccurs="0" name="poEntity" nillable="true" type="q1:SCM0100DTO01" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SC_BackEnd" minOccurs="0" name="poCRUDMode" type="q2:eCRUDMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Svc_SC_GetRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SCM0100Back" minOccurs="0" name="Svc_SC_GetRecordResult" nillable="true" type="q3:SCM0100DTO01" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Svc_SC_Save">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SCM0100Back" minOccurs="0" name="poEntity" nillable="true" type="q4:SCM0100DTO01" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SC_BackEnd" minOccurs="0" name="poCRUDMode" type="q5:eCRUDMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Svc_SC_SaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SCM0100Back" minOccurs="0" name="Svc_SC_SaveResult" nillable="true" type="q6:SCM0100DTO01" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Svc_SC_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SCM0100Back" minOccurs="0" name="poEntity" nillable="true" type="q7:SCM0100DTO01" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Svc_SC_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="poparam" nillable="true" type="q8:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SCM0100Back" minOccurs="0" name="getListResult" nillable="true" type="q9:ArrayOfSCM0100DTO02" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

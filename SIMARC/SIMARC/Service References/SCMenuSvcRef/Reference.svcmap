@@ -21,15 +21,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:42007/SCMenuSvc.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:42007/SIMARCBack/SCMenuSvc.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SCMenuSvc.wsdl" MetadataType="Wsdl" ID="dcc5f078-e0b9-4622-969e-6a77fcc7ec27" SourceId="1" SourceUrl="http://localhost:42007/SCMenuSvc.svc?wsdl" />
-    <MetadataFile FileName="SCMenuSvc.xsd" MetadataType="Schema" ID="af9a7bb0-b80d-42a1-b95c-6a4f0ad39cb5" SourceId="1" SourceUrl="http://localhost:42007/SCMenuSvc.svc?xsd=xsd2" />
-    <MetadataFile FileName="SCMenuSvc1.xsd" MetadataType="Schema" ID="efd5b8b7-fdb6-43d5-a312-27905627756e" SourceId="1" SourceUrl="http://localhost:42007/SCMenuSvc.svc?xsd=xsd1" />
-    <MetadataFile FileName="SCMenuSvc2.xsd" MetadataType="Schema" ID="28bc8e07-1c89-4b7e-881c-b0a60936b977" SourceId="1" SourceUrl="http://localhost:42007/SCMenuSvc.svc?xsd=xsd0" />
-    <MetadataFile FileName="SCMenuSvc3.xsd" MetadataType="Schema" ID="4d8c5766-8415-48b2-9ff7-a6bee7e36243" SourceId="1" SourceUrl="http://localhost:42007/SCMenuSvc.svc?xsd=xsd3" />
-    <MetadataFile FileName="SCMenuSvc.disco" MetadataType="Disco" ID="e54f570e-74df-4c71-abe0-87b4684dbdc7" SourceId="1" SourceUrl="http://localhost:42007/SCMenuSvc.svc?disco" />
+    <MetadataFile FileName="SCMenuSvc1.wsdl" MetadataType="Wsdl" ID="40e4191a-aafa-4480-84b2-0b20ea319e42" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCMenuSvc.svc?wsdl" />
+    <MetadataFile FileName="SCMenuSvc4.xsd" MetadataType="Schema" ID="794e51d1-266f-4659-84ab-aa3ff469d7fe" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCMenuSvc.svc?xsd=xsd2" />
+    <MetadataFile FileName="SCMenuSvc41.xsd" MetadataType="Schema" ID="ba61244c-fc27-4559-9ebd-3894c50a3caa" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCMenuSvc.svc?xsd=xsd0" />
+    <MetadataFile FileName="SCMenuSvc1.disco" MetadataType="Disco" ID="7352c9f6-3a24-44ad-9436-fb103040ad0f" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCMenuSvc.svc?disco" />
+    <MetadataFile FileName="SCMenuSvc42.xsd" MetadataType="Schema" ID="89afbe24-98a5-43b9-a238-69b78cb0cc43" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCMenuSvc.svc?xsd=xsd3" />
+    <MetadataFile FileName="SCMenuSvc43.xsd" MetadataType="Schema" ID="43a2a27a-ac71-49ea-bd33-f5558b9c684a" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCMenuSvc.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
