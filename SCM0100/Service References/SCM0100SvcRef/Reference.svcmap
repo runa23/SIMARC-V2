@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cd569856-d5e8-4ae3-b58a-36da1e45b1e9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d9734194-df2d-4ca5-af52-baaf2690febb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -24,14 +24,14 @@
     <MetadataSource Address="http://localhost:42007/SIMARCBack/SCM0100Svc.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SCM0100Svc.xsd" MetadataType="Schema" ID="65672e77-b6cc-4188-a55d-bfb6ed191a9e" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd1" />
-    <MetadataFile FileName="SCM0100Svc1.xsd" MetadataType="Schema" ID="d2d12117-03d9-4f7b-8411-509137dccb82" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd0" />
-    <MetadataFile FileName="SCM0100Svc2.xsd" MetadataType="Schema" ID="67e0c8e8-24e1-44d5-9418-ec591f626f6e" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd3" />
-    <MetadataFile FileName="SCM0100Svc3.xsd" MetadataType="Schema" ID="ba718863-67df-4594-8ff1-12277c7e3415" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd2" />
-    <MetadataFile FileName="SCM0100Svc4.xsd" MetadataType="Schema" ID="48637f20-3b31-4313-a57a-b7ff96fc937a" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd5" />
-    <MetadataFile FileName="SCM0100Svc5.xsd" MetadataType="Schema" ID="ba8ef17e-d302-44e0-b0dd-94f7b755e2a6" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd4" />
-    <MetadataFile FileName="SCM0100Svc.disco" MetadataType="Disco" ID="b35af8f6-b856-4ad8-aa8d-7415dea1a571" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?disco" />
-    <MetadataFile FileName="SCM0100Svc.wsdl" MetadataType="Wsdl" ID="5967488b-71c4-4d2b-9faa-4c3a8932a33f" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?wsdl" />
+    <MetadataFile FileName="SCM0100Svc.xsd" MetadataType="Schema" ID="1cab4bbb-7c6b-4586-ae61-c616bd7cd3ae" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd1" />
+    <MetadataFile FileName="SCM0100Svc1.xsd" MetadataType="Schema" ID="5453170e-f119-4130-bfdd-2a5bfda08688" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd0" />
+    <MetadataFile FileName="SCM0100Svc2.xsd" MetadataType="Schema" ID="c57893e7-f12f-4a20-8ccb-08177cf551e5" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd3" />
+    <MetadataFile FileName="SCM0100Svc3.xsd" MetadataType="Schema" ID="743eafd7-50f4-487c-9d11-9eef61de17b9" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd2" />
+    <MetadataFile FileName="SCM0100Svc4.xsd" MetadataType="Schema" ID="88a42fbd-5765-4d71-b904-5b940465f856" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd5" />
+    <MetadataFile FileName="SCM0100Svc5.xsd" MetadataType="Schema" ID="ba1fbf9e-9bb2-4909-897a-69d2a423bc65" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?xsd=xsd4" />
+    <MetadataFile FileName="SCM0100Svc.disco" MetadataType="Disco" ID="e60c92aa-a5df-4211-b648-5636bbb6f80b" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?disco" />
+    <MetadataFile FileName="SCM0100Svc.wsdl" MetadataType="Wsdl" ID="a890c3e3-38ce-4e91-b4f6-fa29f94ff104" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SCM0100Svc.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

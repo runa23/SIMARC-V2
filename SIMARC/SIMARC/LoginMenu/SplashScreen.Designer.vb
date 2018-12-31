@@ -36,6 +36,10 @@ Partial Class SplashScreen
         Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar1.TabIndex = 0
         '
+        'BackgroundWorker1
+        '
+        Me.BackgroundWorker1.WorkerReportsProgress = True
+        '
         'VersionLabel
         '
         Me.VersionLabel.BackColor = System.Drawing.Color.Transparent

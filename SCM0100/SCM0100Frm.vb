@@ -46,15 +46,17 @@ Public Class SCM0100Frm
 
     Private Sub SC_Conductor1_SC_AfterEdit(ByRef poEntity As Object) Handles SC_Conductor1.SC_AfterEdit
         TabControl1.SelectedTab = TabData
+        REGIONAL_IDSC_TextBox.Enabled = False
+        REGIONAL_IDSC_TextBox.ReadOnly = True
     End Sub
 
     Private Sub SC_Conductor1_SC_ConvertParentGridEntity(poEntity As Object, ByRef poParentEntity As Object) Handles SC_Conductor1.SC_ConvertParentGridEntity
         Dim loEntity As SCM0100DTO01 = poEntity
         poParentEntity = New SCM0100DTO02
 
-        With CType(poEntity, SCM0100DTO02)
+        With CType(poEntity, SCM0100DTO01)
             poParentEntity.REGIONAL_ID = .REGIONAL_ID
-            poParentEntity.REGINAL_NAME = .REGIONAL_NAME
+            poParentEntity.REGIONAL_NAME = .REGIONAL_NAME
             poParentEntity.CREA_BY = .CREA_BY
             poParentEntity.CREA_DATE = .CREA_DATE
             poParentEntity.UPD_BY = .UPD_BY
@@ -66,6 +68,8 @@ Public Class SCM0100Frm
         If peMode = SC_Conductor.e_Mode.NormalMode Then
             TabControl1.SelectedTab = TabList
         End If
+        REGIONAL_IDSC_TextBox.Enabled = True
+        REGIONAL_IDSC_TextBox.ReadOnly = False
         SC_ErrorProvider1.Clear()
     End Sub
 
@@ -132,7 +136,7 @@ Public Class SCM0100Frm
             loService = New SCM0100SvcClient
 
             loList = loService.getList(poparam)
-
+            SCM0100DTO02BindingSource.DataSource = New SC_BindingListView(Of SCM0100DTO02)(loList)
             loService.Close()
 
         Catch ex As FaultException(Of SC_ServiceExceptions)
