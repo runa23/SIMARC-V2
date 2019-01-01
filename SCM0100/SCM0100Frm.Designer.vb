@@ -25,39 +25,39 @@ Partial Class SCM0100Frm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SCM0100Frm))
         Me.SC_Add1 = New SC_Win_FrontEnd.SC_Add()
         Me.SC_Conductor1 = New SC_Win_FrontEnd.SC_Conductor(Me.components)
+        Me.SCM0100DTO01BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SCM0100DTO02BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SC_Cancel1 = New SC_Win_FrontEnd.SC_Cancel()
         Me.SC_Refresh1 = New SC_Win_FrontEnd.SC_Refresh()
         Me.SC_Edit1 = New SC_Win_FrontEnd.SC_Edit()
         Me.SC_Delete1 = New SC_Win_FrontEnd.SC_Delete()
         Me.SC_Save1 = New SC_Win_FrontEnd.SC_Save()
         Me.SC_ExportCSV1 = New SC_Win_FrontEnd.SC_ExportCSV(Me.components)
-        Me.VersionLabel = New System.Windows.Forms.Label()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabList = New System.Windows.Forms.TabPage()
         Me.SCM0100DTO02SC_DataGridView = New SC_Win_FrontEnd.SC_DataGridView()
-        Me.SC_GridSearch1 = New SC_Win_FrontEnd.SC_GridSearch()
-        Me.TabData = New System.Windows.Forms.TabPage()
-        Me.REGIONAL_NAMESC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
-        Me.REGIONAL_IDSC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
-        Me.SC_ErrorProvider1 = New SC_Win_FrontEnd.SC_ErrorProvider(Me.components)
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SCM0100DTO02BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SCM0100DTO01BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VersionLabel = New System.Windows.Forms.Label()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabList = New System.Windows.Forms.TabPage()
+        Me.SC_GridSearch1 = New SC_Win_FrontEnd.SC_GridSearch()
+        Me.TabData = New System.Windows.Forms.TabPage()
+        Me.REGIONAL_NAMESC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
+        Me.REGIONAL_IDSC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
+        Me.SC_ErrorProvider1 = New SC_Win_FrontEnd.SC_ErrorProvider(Me.components)
         REGIONAL_IDLabel = New System.Windows.Forms.Label()
         REGIONAL_NAMELabel = New System.Windows.Forms.Label()
         CType(Me.SC_Conductor1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SCM0100DTO01BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SCM0100DTO02BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SCM0100DTO02SC_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabList.SuspendLayout()
-        CType(Me.SCM0100DTO02SC_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabData.SuspendLayout()
         CType(Me.SC_ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SCM0100DTO02BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SCM0100DTO01BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'REGIONAL_IDLabel
@@ -96,6 +96,14 @@ Partial Class SCM0100Frm
         Me.SC_Conductor1.SC_BindingSource = Me.SCM0100DTO01BindingSource
         Me.SC_Conductor1.SC_ParentBindingSource = Me.SCM0100DTO02BindingSource
         Me.SC_Conductor1.SC_ParentKey = "REGIONAL_ID"
+        '
+        'SCM0100DTO01BindingSource
+        '
+        Me.SCM0100DTO01BindingSource.DataSource = GetType(SCM0100.SCM0100SvcRef.SCM0100DTO01)
+        '
+        'SCM0100DTO02BindingSource
+        '
+        Me.SCM0100DTO02BindingSource.DataSource = GetType(SCM0100.SCM0100SvcRef.SCM0100DTO02)
         '
         'SC_Cancel1
         '
@@ -177,6 +185,68 @@ Partial Class SCM0100Frm
         Me.SC_ExportCSV1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.SC_ExportCSV1.UseVisualStyleBackColor = True
         '
+        'SCM0100DTO02SC_DataGridView
+        '
+        Me.SCM0100DTO02SC_DataGridView.AllowUserToAddRows = False
+        Me.SCM0100DTO02SC_DataGridView.AllowUserToDeleteRows = False
+        Me.SCM0100DTO02SC_DataGridView.AllowUserToOrderColumns = True
+        Me.SCM0100DTO02SC_DataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SCM0100DTO02SC_DataGridView.AutoGenerateColumns = False
+        Me.SCM0100DTO02SC_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SCM0100DTO02SC_DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
+        Me.SCM0100DTO02SC_DataGridView.DataSource = Me.SCM0100DTO02BindingSource
+        Me.SCM0100DTO02SC_DataGridView.Location = New System.Drawing.Point(6, 6)
+        Me.SCM0100DTO02SC_DataGridView.Name = "SCM0100DTO02SC_DataGridView"
+        Me.SCM0100DTO02SC_DataGridView.ReadOnly = True
+        Me.SCM0100DTO02SC_DataGridView.SC_ConductorSource = Nothing
+        Me.SCM0100DTO02SC_DataGridView.Size = New System.Drawing.Size(944, 376)
+        Me.SCM0100DTO02SC_DataGridView.TabIndex = 2
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "REGIONAL_ID"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Regional ID"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "REGIONAL_NAME"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Regional Name"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 200
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "CREA_BY"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Create By"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "CREA_DATE"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Create Date"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "UPD_BY"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Update By"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "UPD_DATE"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Update Date"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        '
         'VersionLabel
         '
         Me.VersionLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -213,25 +283,6 @@ Partial Class SCM0100Frm
         Me.TabList.Text = "List"
         Me.TabList.UseVisualStyleBackColor = True
         '
-        'SCM0100DTO02SC_DataGridView
-        '
-        Me.SCM0100DTO02SC_DataGridView.AllowUserToAddRows = False
-        Me.SCM0100DTO02SC_DataGridView.AllowUserToDeleteRows = False
-        Me.SCM0100DTO02SC_DataGridView.AllowUserToOrderColumns = True
-        Me.SCM0100DTO02SC_DataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SCM0100DTO02SC_DataGridView.AutoGenerateColumns = False
-        Me.SCM0100DTO02SC_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SCM0100DTO02SC_DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
-        Me.SCM0100DTO02SC_DataGridView.DataSource = Me.SCM0100DTO02BindingSource
-        Me.SCM0100DTO02SC_DataGridView.Location = New System.Drawing.Point(6, 6)
-        Me.SCM0100DTO02SC_DataGridView.Name = "SCM0100DTO02SC_DataGridView"
-        Me.SCM0100DTO02SC_DataGridView.ReadOnly = True
-        Me.SCM0100DTO02SC_DataGridView.SC_ConductorSource = Nothing
-        Me.SCM0100DTO02SC_DataGridView.Size = New System.Drawing.Size(944, 376)
-        Me.SCM0100DTO02SC_DataGridView.TabIndex = 2
-        '
         'SC_GridSearch1
         '
         Me.SC_GridSearch1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
@@ -240,7 +291,7 @@ Partial Class SCM0100Frm
         Me.SC_GridSearch1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SC_GridSearch1.Location = New System.Drawing.Point(6, 388)
         Me.SC_GridSearch1.Name = "SC_GridSearch1"
-        Me.SC_GridSearch1.SC_BindingSource = Nothing
+        Me.SC_GridSearch1.SC_BindingSource = Me.SCM0100DTO02BindingSource
         Me.SC_GridSearch1.Size = New System.Drawing.Size(944, 30)
         Me.SC_GridSearch1.TabIndex = 2
         '
@@ -286,57 +337,6 @@ Partial Class SCM0100Frm
         '
         Me.SC_ErrorProvider1.ContainerControl = Me
         '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "REGIONAL_ID"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Regional ID"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "REGIONAL_NAME"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Regional Name"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Width = 200
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "CREA_BY"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Create By"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "CREA_DATE"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Create Date"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "UPD_BY"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Update By"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "UPD_DATE"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Update Date"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        '
-        'SCM0100DTO02BindingSource
-        '
-        Me.SCM0100DTO02BindingSource.DataSource = GetType(SCM0100.SCM0100SvcRef.SCM0100DTO02)
-        '
-        'SCM0100DTO01BindingSource
-        '
-        Me.SCM0100DTO01BindingSource.DataSource = GetType(SCM0100.SCM0100SvcRef.SCM0100DTO01)
-        '
         'SCM0100Frm
         '
         Me.ClientSize = New System.Drawing.Size(988, 519)
@@ -351,14 +351,14 @@ Partial Class SCM0100Frm
         Me.Controls.Add(Me.SC_Add1)
         Me.Name = "SCM0100Frm"
         CType(Me.SC_Conductor1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SCM0100DTO01BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SCM0100DTO02BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SCM0100DTO02SC_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabList.ResumeLayout(False)
-        CType(Me.SCM0100DTO02SC_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabData.ResumeLayout(False)
         Me.TabData.PerformLayout()
         CType(Me.SC_ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SCM0100DTO02BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SCM0100DTO01BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

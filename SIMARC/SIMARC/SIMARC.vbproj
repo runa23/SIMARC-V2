@@ -57,6 +57,9 @@
     <Reference Include="SCM0100">
       <HintPath>..\..\SCM0100\bin\Debug\SCM0100.dll</HintPath>
     </Reference>
+    <Reference Include="SCM0200">
+      <HintPath>..\..\SCM0200\bin\Debug\SCM0200.dll</HintPath>
+    </Reference>
     <Reference Include="SC_BackEnd">
       <HintPath>..\..\Library\SC_BackEnd.dll</HintPath>
     </Reference>
