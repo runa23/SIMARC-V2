@@ -43,11 +43,11 @@ Partial Class SCM0200Frm
         Me.SC_Add1 = New SC_Win_FrontEnd.SC_Add()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabList = New System.Windows.Forms.TabPage()
-        Me.SC_GridSearch1 = New SC_Win_FrontEnd.SC_GridSearch()
         Me.TabData = New System.Windows.Forms.TabPage()
         Me.COMPANY_NAMESC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
         Me.COMPANY_IDSC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
         Me.SC_ErrorProvider1 = New SC_Win_FrontEnd.SC_ErrorProvider(Me.components)
+        Me.SC_GridSearch1 = New SC_Win_FrontEnd.SC_GridSearch()
         COMPANY_IDLabel = New System.Windows.Forms.Label()
         COMPANY_NAMELabel = New System.Windows.Forms.Label()
         CType(Me.SC_Conductor1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -282,18 +282,6 @@ Partial Class SCM0200Frm
         Me.TabList.Text = "List"
         Me.TabList.UseVisualStyleBackColor = True
         '
-        'SC_GridSearch1
-        '
-        Me.SC_GridSearch1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SC_GridSearch1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.SC_GridSearch1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.SC_GridSearch1.Location = New System.Drawing.Point(6, 364)
-        Me.SC_GridSearch1.Name = "SC_GridSearch1"
-        Me.SC_GridSearch1.SC_BindingSource = Me.SCM0200DTO02BindingSource
-        Me.SC_GridSearch1.Size = New System.Drawing.Size(931, 30)
-        Me.SC_GridSearch1.TabIndex = 1
-        '
         'TabData
         '
         Me.TabData.Controls.Add(COMPANY_NAMELabel)
@@ -336,6 +324,18 @@ Partial Class SCM0200Frm
         '
         Me.SC_ErrorProvider1.ContainerControl = Me
         '
+        'SC_GridSearch1
+        '
+        Me.SC_GridSearch1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SC_GridSearch1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.SC_GridSearch1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.SC_GridSearch1.Location = New System.Drawing.Point(6, 364)
+        Me.SC_GridSearch1.Name = "SC_GridSearch1"
+        Me.SC_GridSearch1.SC_BindingSource = Me.SCM0200DTO02BindingSource
+        Me.SC_GridSearch1.Size = New System.Drawing.Size(931, 30)
+        Me.SC_GridSearch1.TabIndex = 1
+        '
         'SCM0200Frm
         '
         Me.ClientSize = New System.Drawing.Size(975, 495)
@@ -372,7 +372,6 @@ Partial Class SCM0200Frm
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabList As System.Windows.Forms.TabPage
     Friend WithEvents TabData As System.Windows.Forms.TabPage
-    Friend WithEvents SC_GridSearch1 As SC_Win_FrontEnd.SC_GridSearch
     Friend WithEvents SCM0200DTO02SC_DataGridView As SC_Win_FrontEnd.SC_DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -386,5 +385,6 @@ Partial Class SCM0200Frm
     Friend WithEvents SCM0200DTO01BindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents COMPANY_IDSC_TextBox As SC_Win_FrontEnd.SC_TextBox
     Friend WithEvents SC_ErrorProvider1 As SC_Win_FrontEnd.SC_ErrorProvider
+    Friend WithEvents SC_GridSearch1 As SC_Win_FrontEnd.SC_GridSearch
 
 End Class
