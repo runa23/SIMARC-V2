@@ -23,6 +23,8 @@ Partial Class SCM0100Frm
         Dim REGIONAL_IDLabel As System.Windows.Forms.Label
         Dim REGIONAL_NAMELabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SCM0100Frm))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SC_Add1 = New SC_Win_FrontEnd.SC_Add()
         Me.SC_Conductor1 = New SC_Win_FrontEnd.SC_Conductor(Me.components)
         Me.SCM0100DTO01BindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -43,11 +45,11 @@ Partial Class SCM0100Frm
         Me.VersionLabel = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabList = New System.Windows.Forms.TabPage()
-        Me.SC_GridSearch1 = New SC_Win_FrontEnd.SC_GridSearch()
         Me.TabData = New System.Windows.Forms.TabPage()
         Me.REGIONAL_NAMESC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
         Me.REGIONAL_IDSC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
         Me.SC_ErrorProvider1 = New SC_Win_FrontEnd.SC_ErrorProvider(Me.components)
+        Me.SC_GridSearch1 = New SC_Win_FrontEnd.SC_GridSearch()
         REGIONAL_IDLabel = New System.Windows.Forms.Label()
         REGIONAL_NAMELabel = New System.Windows.Forms.Label()
         CType(Me.SC_Conductor1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +67,7 @@ Partial Class SCM0100Frm
         REGIONAL_IDLabel.AutoSize = True
         REGIONAL_IDLabel.Location = New System.Drawing.Point(41, 9)
         REGIONAL_IDLabel.Name = "REGIONAL_IDLabel"
-        REGIONAL_IDLabel.Size = New System.Drawing.Size(73, 13)
+        REGIONAL_IDLabel.Size = New System.Drawing.Size(75, 13)
         REGIONAL_IDLabel.TabIndex = 0
         REGIONAL_IDLabel.Text = "*Regional ID :"
         '
@@ -74,7 +76,7 @@ Partial Class SCM0100Frm
         REGIONAL_NAMELabel.AutoSize = True
         REGIONAL_NAMELabel.Location = New System.Drawing.Point(28, 35)
         REGIONAL_NAMELabel.Name = "REGIONAL_NAMELabel"
-        REGIONAL_NAMELabel.Size = New System.Drawing.Size(86, 13)
+        REGIONAL_NAMELabel.Size = New System.Drawing.Size(85, 13)
         REGIONAL_NAMELabel.TabIndex = 2
         REGIONAL_NAMELabel.Text = "Regional Name :"
         '
@@ -190,6 +192,9 @@ Partial Class SCM0100Frm
         Me.SCM0100DTO02SC_DataGridView.AllowUserToAddRows = False
         Me.SCM0100DTO02SC_DataGridView.AllowUserToDeleteRows = False
         Me.SCM0100DTO02SC_DataGridView.AllowUserToOrderColumns = True
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SCM0100DTO02SC_DataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.SCM0100DTO02SC_DataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -200,6 +205,8 @@ Partial Class SCM0100Frm
         Me.SCM0100DTO02SC_DataGridView.Location = New System.Drawing.Point(6, 6)
         Me.SCM0100DTO02SC_DataGridView.Name = "SCM0100DTO02SC_DataGridView"
         Me.SCM0100DTO02SC_DataGridView.ReadOnly = True
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SCM0100DTO02SC_DataGridView.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.SCM0100DTO02SC_DataGridView.SC_ConductorSource = Nothing
         Me.SCM0100DTO02SC_DataGridView.Size = New System.Drawing.Size(944, 376)
         Me.SCM0100DTO02SC_DataGridView.TabIndex = 2
@@ -273,8 +280,8 @@ Partial Class SCM0100Frm
         'TabList
         '
         Me.TabList.AutoScroll = True
-        Me.TabList.Controls.Add(Me.SCM0100DTO02SC_DataGridView)
         Me.TabList.Controls.Add(Me.SC_GridSearch1)
+        Me.TabList.Controls.Add(Me.SCM0100DTO02SC_DataGridView)
         Me.TabList.Location = New System.Drawing.Point(4, 22)
         Me.TabList.Name = "TabList"
         Me.TabList.Padding = New System.Windows.Forms.Padding(3)
@@ -282,18 +289,6 @@ Partial Class SCM0100Frm
         Me.TabList.TabIndex = 0
         Me.TabList.Text = "List"
         Me.TabList.UseVisualStyleBackColor = True
-        '
-        'SC_GridSearch1
-        '
-        Me.SC_GridSearch1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SC_GridSearch1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.SC_GridSearch1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.SC_GridSearch1.Location = New System.Drawing.Point(6, 388)
-        Me.SC_GridSearch1.Name = "SC_GridSearch1"
-        Me.SC_GridSearch1.SC_BindingSource = Me.SCM0100DTO02BindingSource
-        Me.SC_GridSearch1.Size = New System.Drawing.Size(944, 30)
-        Me.SC_GridSearch1.TabIndex = 2
         '
         'TabData
         '
@@ -318,7 +313,7 @@ Partial Class SCM0100Frm
         Me.REGIONAL_NAMESC_TextBox.SC_ConductorSource = Me.SC_Conductor1
         Me.REGIONAL_NAMESC_TextBox.SC_EnableADD = True
         Me.REGIONAL_NAMESC_TextBox.SC_EnableEDIT = True
-        Me.REGIONAL_NAMESC_TextBox.Size = New System.Drawing.Size(309, 20)
+        Me.REGIONAL_NAMESC_TextBox.Size = New System.Drawing.Size(309, 21)
         Me.REGIONAL_NAMESC_TextBox.TabIndex = 81
         '
         'REGIONAL_IDSC_TextBox
@@ -330,12 +325,24 @@ Partial Class SCM0100Frm
         Me.REGIONAL_IDSC_TextBox.Name = "REGIONAL_IDSC_TextBox"
         Me.REGIONAL_IDSC_TextBox.SC_ConductorSource = Me.SC_Conductor1
         Me.REGIONAL_IDSC_TextBox.SC_EnableADD = True
-        Me.REGIONAL_IDSC_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.REGIONAL_IDSC_TextBox.Size = New System.Drawing.Size(100, 21)
         Me.REGIONAL_IDSC_TextBox.TabIndex = 80
         '
         'SC_ErrorProvider1
         '
         Me.SC_ErrorProvider1.ContainerControl = Me
+        '
+        'SC_GridSearch1
+        '
+        Me.SC_GridSearch1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SC_GridSearch1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.SC_GridSearch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.SC_GridSearch1.Location = New System.Drawing.Point(6, 386)
+        Me.SC_GridSearch1.Name = "SC_GridSearch1"
+        Me.SC_GridSearch1.SC_BindingSource = Me.SCM0100DTO02BindingSource
+        Me.SC_GridSearch1.Size = New System.Drawing.Size(944, 32)
+        Me.SC_GridSearch1.TabIndex = 3
         '
         'SCM0100Frm
         '
@@ -373,7 +380,6 @@ Partial Class SCM0100Frm
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabList As System.Windows.Forms.TabPage
     Friend WithEvents TabData As System.Windows.Forms.TabPage
-    Friend WithEvents SC_GridSearch1 As SC_Win_FrontEnd.SC_GridSearch
     Friend WithEvents SC_Conductor1 As SC_Win_FrontEnd.SC_Conductor
     Friend WithEvents REGIONAL_NAMESC_TextBox As SC_Win_FrontEnd.SC_TextBox
     Friend WithEvents SCM0100DTO01BindingSource As System.Windows.Forms.BindingSource
@@ -387,5 +393,6 @@ Partial Class SCM0100Frm
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SC_GridSearch1 As SC_Win_FrontEnd.SC_GridSearch
 
 End Class

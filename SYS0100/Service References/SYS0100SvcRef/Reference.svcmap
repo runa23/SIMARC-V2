@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d0c3e598-3f76-4b63-beee-8023924e7398" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:42007/SIMARCBack/SYS0100Svc.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SYS0100Svc.xsd" MetadataType="Schema" ID="5d98e5ac-56e9-493a-902b-14844dfce61f" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SYS0100Svc.svc?xsd=xsd1" />
+    <MetadataFile FileName="SYS0100Svc1.xsd" MetadataType="Schema" ID="6f6d2689-77a6-4c1d-9556-de38712b44bf" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SYS0100Svc.svc?xsd=xsd3" />
+    <MetadataFile FileName="SYS0100Svc2.xsd" MetadataType="Schema" ID="d3452c04-d235-4d5a-8823-a034498c794a" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SYS0100Svc.svc?xsd=xsd2" />
+    <MetadataFile FileName="SYS0100Svc.disco" MetadataType="Disco" ID="03ddaf49-211b-43a1-88da-f708ca5a9f72" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SYS0100Svc.svc?disco" />
+    <MetadataFile FileName="SYS0100Svc3.xsd" MetadataType="Schema" ID="fdfa4493-e150-4f18-a856-3f25acc8a013" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SYS0100Svc.svc?xsd=xsd0" />
+    <MetadataFile FileName="SYS0100Svc4.xsd" MetadataType="Schema" ID="d8b6642a-80f0-403f-986c-c33a8c0a2db1" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SYS0100Svc.svc?xsd=xsd5" />
+    <MetadataFile FileName="SYS0100Svc5.xsd" MetadataType="Schema" ID="edb223fb-56d2-49b6-bd63-69a3512761f5" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SYS0100Svc.svc?xsd=xsd4" />
+    <MetadataFile FileName="SYS0100Svc.wsdl" MetadataType="Wsdl" ID="6a134922-b264-4698-8648-418507e0ce31" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/SYS0100Svc.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -60,15 +60,23 @@
     <Reference Include="SCM0200">
       <HintPath>..\..\SCM0200\bin\Debug\SCM0200.dll</HintPath>
     </Reference>
-    <Reference Include="SC_BackEnd">
+    <Reference Include="SCM0300">
+      <HintPath>..\..\SCM0300\bin\Debug\SCM0300.dll</HintPath>
+    </Reference>
+    <Reference Include="SC_BackEnd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Library\SC_BackEnd.dll</HintPath>
     </Reference>
-    <Reference Include="SC_Common">
+    <Reference Include="SC_Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Library\SC_Common.dll</HintPath>
     </Reference>
     <Reference Include="SC_Win_FrontEnd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SCM0200\bin\Debug\SC_Win_FrontEnd.dll</HintPath>
+      <HintPath>..\..\Library\SC_Win_FrontEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="SYS0100">
+      <HintPath>..\..\SYS0100\bin\Debug\SYS0100.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

@@ -19,15 +19,16 @@ Partial Class SCM0200Frm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim COMPANY_IDLabel As System.Windows.Forms.Label
         Dim COMPANY_NAMELabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SCM0200Frm))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.VersionLabel = New System.Windows.Forms.Label()
-        Me.SC_ExportCSV1 = New SC_Win_FrontEnd.SC_ExportCSV(Me.components)
-        Me.SC_Conductor1 = New SC_Win_FrontEnd.SC_Conductor(Me.components)
-        Me.SCM0200DTO01BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SCM0200DTO02BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SC_ExportCSV1 = New SC_Win_FrontEnd.SC_ExportCSV()
+        Me.SC_Conductor1 = New SC_Win_FrontEnd.SC_Conductor()
+        Me.SCM0200DTO01BindingSource = New System.Windows.Forms.BindingSource()
+        Me.SCM0200DTO02BindingSource = New System.Windows.Forms.BindingSource()
         Me.SCM0200DTO02SC_DataGridView = New SC_Win_FrontEnd.SC_DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -46,7 +47,7 @@ Partial Class SCM0200Frm
         Me.TabData = New System.Windows.Forms.TabPage()
         Me.COMPANY_NAMESC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
         Me.COMPANY_IDSC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
-        Me.SC_ErrorProvider1 = New SC_Win_FrontEnd.SC_ErrorProvider(Me.components)
+        Me.SC_ErrorProvider1 = New SC_Win_FrontEnd.SC_ErrorProvider()
         Me.SC_GridSearch1 = New SC_Win_FrontEnd.SC_GridSearch()
         COMPANY_IDLabel = New System.Windows.Forms.Label()
         COMPANY_NAMELabel = New System.Windows.Forms.Label()
@@ -65,7 +66,7 @@ Partial Class SCM0200Frm
         COMPANY_IDLabel.AutoSize = True
         COMPANY_IDLabel.Location = New System.Drawing.Point(37, 9)
         COMPANY_IDLabel.Name = "COMPANY_IDLabel"
-        COMPANY_IDLabel.Size = New System.Drawing.Size(78, 13)
+        COMPANY_IDLabel.Size = New System.Drawing.Size(82, 13)
         COMPANY_IDLabel.TabIndex = 0
         COMPANY_IDLabel.Text = "* Company ID :"
         '
@@ -74,7 +75,7 @@ Partial Class SCM0200Frm
         COMPANY_NAMELabel.AutoSize = True
         COMPANY_NAMELabel.Location = New System.Drawing.Point(27, 35)
         COMPANY_NAMELabel.Name = "COMPANY_NAMELabel"
-        COMPANY_NAMELabel.Size = New System.Drawing.Size(88, 13)
+        COMPANY_NAMELabel.Size = New System.Drawing.Size(89, 13)
         COMPANY_NAMELabel.TabIndex = 2
         COMPANY_NAMELabel.Text = "Company Name :"
         '
@@ -122,6 +123,9 @@ Partial Class SCM0200Frm
         Me.SCM0200DTO02SC_DataGridView.AllowUserToAddRows = False
         Me.SCM0200DTO02SC_DataGridView.AllowUserToDeleteRows = False
         Me.SCM0200DTO02SC_DataGridView.AllowUserToOrderColumns = True
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SCM0200DTO02SC_DataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.SCM0200DTO02SC_DataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -132,6 +136,8 @@ Partial Class SCM0200Frm
         Me.SCM0200DTO02SC_DataGridView.Location = New System.Drawing.Point(6, 6)
         Me.SCM0200DTO02SC_DataGridView.Name = "SCM0200DTO02SC_DataGridView"
         Me.SCM0200DTO02SC_DataGridView.ReadOnly = True
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SCM0200DTO02SC_DataGridView.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.SCM0200DTO02SC_DataGridView.SC_ConductorSource = Nothing
         Me.SCM0200DTO02SC_DataGridView.Size = New System.Drawing.Size(931, 352)
         Me.SCM0200DTO02SC_DataGridView.TabIndex = 0
@@ -305,7 +311,7 @@ Partial Class SCM0200Frm
         Me.COMPANY_NAMESC_TextBox.SC_ConductorSource = Me.SC_Conductor1
         Me.COMPANY_NAMESC_TextBox.SC_EnableADD = True
         Me.COMPANY_NAMESC_TextBox.SC_EnableEDIT = True
-        Me.COMPANY_NAMESC_TextBox.Size = New System.Drawing.Size(328, 20)
+        Me.COMPANY_NAMESC_TextBox.Size = New System.Drawing.Size(328, 21)
         Me.COMPANY_NAMESC_TextBox.TabIndex = 3
         '
         'COMPANY_IDSC_TextBox
@@ -317,7 +323,7 @@ Partial Class SCM0200Frm
         Me.COMPANY_IDSC_TextBox.Name = "COMPANY_IDSC_TextBox"
         Me.COMPANY_IDSC_TextBox.SC_ConductorSource = Me.SC_Conductor1
         Me.COMPANY_IDSC_TextBox.SC_EnableADD = True
-        Me.COMPANY_IDSC_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.COMPANY_IDSC_TextBox.Size = New System.Drawing.Size(100, 21)
         Me.COMPANY_IDSC_TextBox.TabIndex = 1
         '
         'SC_ErrorProvider1
@@ -329,11 +335,11 @@ Partial Class SCM0200Frm
         Me.SC_GridSearch1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SC_GridSearch1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.SC_GridSearch1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.SC_GridSearch1.Location = New System.Drawing.Point(6, 364)
+        Me.SC_GridSearch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.SC_GridSearch1.Location = New System.Drawing.Point(6, 362)
         Me.SC_GridSearch1.Name = "SC_GridSearch1"
         Me.SC_GridSearch1.SC_BindingSource = Me.SCM0200DTO02BindingSource
-        Me.SC_GridSearch1.Size = New System.Drawing.Size(931, 30)
+        Me.SC_GridSearch1.Size = New System.Drawing.Size(931, 32)
         Me.SC_GridSearch1.TabIndex = 1
         '
         'SCM0200Frm

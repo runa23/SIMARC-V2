@@ -23,7 +23,7 @@ Public Class SCM0100Frm
         loService.Close()
     End Sub
 
-    Private Sub SC_Conductor1_SC_AfterCancel(ByRef poEntity As Object) Handles SC_Conductor1.SC_AfterCancel
+    Private Sub SC_Conductor1_SC_AfterCancel1(poEntity As Object) Handles SC_Conductor1.SC_AfterCancel
         Dim loException As New SC_Exception
         Dim loService As New SCM0100SvcClient
 

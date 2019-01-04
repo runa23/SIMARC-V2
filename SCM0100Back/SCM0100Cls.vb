@@ -5,6 +5,7 @@ Imports System.Data.SqlClient
 Public Class SCM0100Cls
     Inherits SC_BusinessObject(Of SCM0100DTO01)
 
+
     Protected Overrides Sub SC_Deleting(poEntity As SCM0100DTO01)
         Dim loException As New SC_Exception
         Dim loDb As New SC_Db
@@ -100,7 +101,6 @@ Public Class SCM0100Cls
             loException.Add(ex)
         End Try
         loException.ThrowExceptionIfErrors()
-        
     End Sub
 
     Function getList(poparam As List(Of Object)) As List(Of SCM0100DTO02)

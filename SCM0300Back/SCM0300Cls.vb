@@ -40,9 +40,6 @@ Public Class SCM0300Cls
             lcCmd = "SELECT [COMPANY_OFFICE_ID]"
             lcCmd = lcCmd & ",[COMPANY_OFFICE]"
             lcCmd = lcCmd & ",[COMPANY_ID]"
-            lcCmd = lcCmd & ",[PHONE]"
-            lcCmd = lcCmd & ",[SEQUENCE]"
-            lcCmd = lcCmd & ",[COMPANY_OFFICE_INDEX]"
             lcCmd = lcCmd & ",[CREA_BY]"
             lcCmd = lcCmd & ",[CREA_DATE]"
             lcCmd = lcCmd & ",[UPD_BY]"
@@ -75,9 +72,6 @@ Public Class SCM0300Cls
                 lcCmd = "SELECT [COMPANY_OFFICE_ID]"
                 lcCmd = lcCmd & ",[COMPANY_OFFICE]"
                 lcCmd = lcCmd & ",[COMPANY_ID]"
-                lcCmd = lcCmd & ",[PHONE]"
-                lcCmd = lcCmd & ",[SEQUENCE]"
-                lcCmd = lcCmd & ",[COMPANY_OFFICE_INDEX]"
                 lcCmd = lcCmd & ",[CREA_BY]"
                 lcCmd = lcCmd & ",[CREA_DATE]"
                 lcCmd = lcCmd & ",[UPD_BY]"
@@ -127,9 +121,6 @@ Public Class SCM0300Cls
             lcCmd = "SELECT [COMPANY_OFFICE_ID]"
             lcCmd = lcCmd & ",[COMPANY_OFFICE]"
             lcCmd = lcCmd & ",[COMPANY_ID]"
-            lcCmd = lcCmd & ",[PHONE]"
-            lcCmd = lcCmd & ",[SEQUENCE]"
-            lcCmd = lcCmd & ",[COMPANY_OFFICE_INDEX]"
             lcCmd = lcCmd & ",[CREA_BY]"
             lcCmd = lcCmd & ",[CREA_DATE]"
             lcCmd = lcCmd & ",[UPD_BY]"
@@ -137,6 +128,7 @@ Public Class SCM0300Cls
             lcCmd = lcCmd & " FROM [SIMARC].[dbo].[M_COMPANY_OFFICE] (NOLOCK)"
 
             loReturn = loDb.SQLExecObjectQuery(Of SCM0300DTO02)(lcCmd, loDb.GetConnection, True)
+            Return loReturn
 
         Catch ex As Exception
             loException.Add(ex)

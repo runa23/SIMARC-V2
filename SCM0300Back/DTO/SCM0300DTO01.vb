@@ -6,7 +6,7 @@ Public Class SCM0300DTO01
     Public COMPANY_OFFICE As String
     Public COMPANY_ID As String
     Public PHONE As String
-    Public SEQUENCE As Integer
+    Public SEQUENCE As Int16
     Public COMPANY_OFFICE_INDEX As String
     Public CREA_BY As String
     Public CREA_DATE As Date
