@@ -13,5 +13,7 @@ Public Interface ISCStartUpSvc
     <FaultContract(GetType(SC_ServiceExceptions))> _
     Function UpdateFile(ByVal pcFileSupportId As String, ByVal pcFileSupportName As String) As Byte()
 
-
+    <OperationContract()> _
+    <FaultContract(GetType(SC_ServiceExceptions))> _
+    Function UpdateAppDllPath(ByVal AppPath As String) As String
 End Interface

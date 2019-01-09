@@ -113,6 +113,13 @@ Namespace SCStartUpSvcRef
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISCStartUpSvc/UpdateFile", ReplyAction:="http://tempuri.org/ISCStartUpSvc/UpdateFileResponse")>  _
         Function UpdateFileAsync(ByVal pcFileSupportId As String, ByVal pcFileSupportName As String) As System.Threading.Tasks.Task(Of Byte())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISCStartUpSvc/UpdateAppDllPath", ReplyAction:="http://tempuri.org/ISCStartUpSvc/UpdateAppDllPathResponse"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/ISCStartUpSvc/UpdateAppDllPathSC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common")>  _
+        Function UpdateAppDllPath(ByVal AppPath As String) As String
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISCStartUpSvc/UpdateAppDllPath", ReplyAction:="http://tempuri.org/ISCStartUpSvc/UpdateAppDllPathResponse")>  _
+        Function UpdateAppDllPathAsync(ByVal AppPath As String) As System.Threading.Tasks.Task(Of String)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -160,6 +167,14 @@ Namespace SCStartUpSvcRef
         
         Public Function UpdateFileAsync(ByVal pcFileSupportId As String, ByVal pcFileSupportName As String) As System.Threading.Tasks.Task(Of Byte()) Implements SCStartUpSvcRef.ISCStartUpSvc.UpdateFileAsync
             Return MyBase.Channel.UpdateFileAsync(pcFileSupportId, pcFileSupportName)
+        End Function
+        
+        Public Function UpdateAppDllPath(ByVal AppPath As String) As String Implements SCStartUpSvcRef.ISCStartUpSvc.UpdateAppDllPath
+            Return MyBase.Channel.UpdateAppDllPath(AppPath)
+        End Function
+        
+        Public Function UpdateAppDllPathAsync(ByVal AppPath As String) As System.Threading.Tasks.Task(Of String) Implements SCStartUpSvcRef.ISCStartUpSvc.UpdateAppDllPathAsync
+            Return MyBase.Channel.UpdateAppDllPathAsync(AppPath)
         End Function
     End Class
 End Namespace

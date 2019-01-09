@@ -1,6 +1,8 @@
 ﻿Imports SC_Common
 Imports SC_BackEnd
 Imports System.IO
+Imports System.Configuration
+Imports System.Web.Configuration
 Public Class SCStartUpSvc
     Implements ISCStartUpSvc
 
@@ -39,6 +41,33 @@ Public Class SCStartUpSvc
             End If
 
             Return SC_Utility.GetByteFromFile(lcFile)
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+        loException.ConvertAndThrowToServiceExceptionIfErrors()
+    End Function
+
+    Public Function UpdateAppDllPath(AppPath As String) As String Implements ISCStartUpSvc.UpdateAppDllPath
+        Dim loException As New SC_Exception
+        Dim loConfig As Configuration
+        Dim loAppDllPath As String
+        Dim loRtn As String
+
+        Try
+            loConfig = WebConfigurationManager.OpenWebConfiguration("~")
+
+            loAppDllPath = WebConfigurationManager.AppSettings("AppDllPath")
+
+            If loAppDllPath <> AppPath Or loAppDllPath = "" Then
+
+                loConfig.AppSettings.Settings("AppDllPath").Value = AppPath
+                loConfig.Save(ConfigurationSaveMode.Modified)
+                ConfigurationManager.RefreshSection("AppSettings")
+            End If
+
+            loRtn = WebConfigurationManager.AppSettings("AppDllPath")
+            Return loRtn
+
         Catch ex As Exception
             loException.Add(ex)
         End Try

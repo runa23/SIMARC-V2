@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SYS0400Back" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SYS0400Back" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:42007/SIMARCBack/SYS0401Svc.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SC_BackEnd" />
+  <xs:complexType name="SYS0401DTO01">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SC_BackEnd" base="q1:SC_DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ADD_PERMIT" type="xs:boolean" />
+          <xs:element minOccurs="0" name="APP_ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="APP_NAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DELETE_PERMIT" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EDIT_PERMIT" type="xs:boolean" />
+          <xs:element minOccurs="0" name="READ_PERMIT" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ROLE_ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SYS0401DTO01" nillable="true" type="tns:SYS0401DTO01" />
+  <xs:complexType name="ArrayOfSYS0401DTO02">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYS0401DTO02" nillable="true" type="tns:SYS0401DTO02" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYS0401DTO02" nillable="true" type="tns:ArrayOfSYS0401DTO02" />
+  <xs:complexType name="SYS0401DTO02">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADD_PERMIT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="APP_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DELETE_PERMIT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EDIT_PERMIT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="READ_PERMIT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ROLE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYS0401DTO02" nillable="true" type="tns:SYS0401DTO02" />
+  <xs:complexType name="ArrayOfLKMSys_AppDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LKMSys_AppDTO" nillable="true" type="tns:LKMSys_AppDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLKMSys_AppDTO" nillable="true" type="tns:ArrayOfLKMSys_AppDTO" />
+  <xs:complexType name="LKMSys_AppDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APP_DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LKMSys_AppDTO" nillable="true" type="tns:LKMSys_AppDTO" />
+</xs:schema>

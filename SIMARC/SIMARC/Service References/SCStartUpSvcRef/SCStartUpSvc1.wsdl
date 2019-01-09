@@ -26,6 +26,15 @@
   <wsdl:message name="ISCStartUpSvc_UpdateFile_SC_ServiceExceptionsFault_FaultMessage">
     <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q2:SC_ServiceExceptions" />
   </wsdl:message>
+  <wsdl:message name="ISCStartUpSvc_UpdateAppDllPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAppDllPath" />
+  </wsdl:message>
+  <wsdl:message name="ISCStartUpSvc_UpdateAppDllPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAppDllPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISCStartUpSvc_UpdateAppDllPath_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q3:SC_ServiceExceptions" />
+  </wsdl:message>
   <wsdl:portType name="ISCStartUpSvc">
     <wsdl:operation name="GetListFileSupportVersion">
       <wsdl:input wsaw:Action="http://tempuri.org/ISCStartUpSvc/GetListFileSupportVersion" message="tns:ISCStartUpSvc_GetListFileSupportVersion_InputMessage" />
@@ -36,6 +45,11 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISCStartUpSvc/UpdateFile" message="tns:ISCStartUpSvc_UpdateFile_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISCStartUpSvc/UpdateFileResponse" message="tns:ISCStartUpSvc_UpdateFile_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/ISCStartUpSvc/UpdateFileSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:ISCStartUpSvc_UpdateFile_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppDllPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISCStartUpSvc/UpdateAppDllPath" message="tns:ISCStartUpSvc_UpdateAppDllPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISCStartUpSvc/UpdateAppDllPathResponse" message="tns:ISCStartUpSvc_UpdateAppDllPath_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISCStartUpSvc/UpdateAppDllPathSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:ISCStartUpSvc_UpdateAppDllPath_SC_ServiceExceptionsFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISCStartUpSvc" type="tns:ISCStartUpSvc">
@@ -54,6 +68,18 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateFile">
       <soap:operation soapAction="http://tempuri.org/ISCStartUpSvc/UpdateFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppDllPath">
+      <soap:operation soapAction="http://tempuri.org/ISCStartUpSvc/UpdateAppDllPath" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

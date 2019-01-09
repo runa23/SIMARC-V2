@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SYS0300Back" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SYS0300Back" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:42007/SIMARCBack/SYS0300Svc.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SC_BackEnd" />
+  <xs:complexType name="SYS0300DTO01">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SC_BackEnd" base="q1:SC_DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="APP_DESC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="APP_GROUP_ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="APP_ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="APP_NAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="APP_TYPE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DLL_FILE" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="DLL_FILE_VERSION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MODULE_ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UPDATE_DLL_FILE" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="VERSION" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SYS0300DTO01" nillable="true" type="tns:SYS0300DTO01" />
+  <xs:complexType name="ArrayOfSYS0300DTO02">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYS0300DTO02" nillable="true" type="tns:SYS0300DTO02" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYS0300DTO02" nillable="true" type="tns:ArrayOfSYS0300DTO02" />
+  <xs:complexType name="SYS0300DTO02">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APP_DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_GROUP_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MODULE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VERSION" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYS0300DTO02" nillable="true" type="tns:SYS0300DTO02" />
+  <xs:complexType name="ArrayOfLKM_SysModuleDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LKM_SysModuleDTO" nillable="true" type="tns:LKM_SysModuleDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLKM_SysModuleDTO" nillable="true" type="tns:ArrayOfLKM_SysModuleDTO" />
+  <xs:complexType name="LKM_SysModuleDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MODULE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODULE_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LKM_SysModuleDTO" nillable="true" type="tns:LKM_SysModuleDTO" />
+  <xs:complexType name="ArrayOfLKM_SysAppGroupDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LKM_SysAppGroupDTO" nillable="true" type="tns:LKM_SysAppGroupDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLKM_SysAppGroupDTO" nillable="true" type="tns:ArrayOfLKM_SysAppGroupDTO" />
+  <xs:complexType name="LKM_SysAppGroupDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APP_GROUP_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_GROUP_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LKM_SysAppGroupDTO" nillable="true" type="tns:LKM_SysAppGroupDTO" />
+  <xs:complexType name="ArrayOfLKM_SysAppTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LKM_SysAppTypeDTO" nillable="true" type="tns:LKM_SysAppTypeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLKM_SysAppTypeDTO" nillable="true" type="tns:ArrayOfLKM_SysAppTypeDTO" />
+  <xs:complexType name="LKM_SysAppTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PARAMETER_VALUE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LKM_SysAppTypeDTO" nillable="true" type="tns:LKM_SysAppTypeDTO" />
+</xs:schema>

@@ -27,6 +27,8 @@ Public Class SCM0300Frm
 
         COMPANY_OFFICE_IDSC_TextBox.Focus()
 
+        loService.Close()
+
         If loException.Haserror Then
             SC_DisplayException(loException)
         End If

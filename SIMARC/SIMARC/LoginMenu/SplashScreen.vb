@@ -6,6 +6,7 @@ Imports System.ServiceModel.Configuration
 Imports System.Collections.Generic
 Imports SC_Common
 Imports System.Reflection
+
 Public Class SplashScreen
     Dim lbUpdated As Boolean = False
     Public Const lcSIMARCVersion As String = "2.00.000"
@@ -21,10 +22,13 @@ Public Class SplashScreen
         Dim loUriIn As Uri = Nothing
         Dim lcRelAddr As String = ""
         Dim loUriOut As Uri = Nothing
-        Dim loFileMap As New ExeConfigurationFileMap()
+        Dim lcWebConfigPath As String
+        Dim loService As SCStartUpSvcClient
+        Dim loRtn As String
 
         Try
             loUserConfig = GetUserConfig()
+
             Try
                 lcSIMARCServiceUrl = loUserConfig.AppSettings.Settings.Item("SIMARCServiceUrl").Value.ToString.Trim
             Catch ex As Exception
@@ -33,6 +37,7 @@ Public Class SplashScreen
 
             loConfig = ConfigurationManager.OpenExeConfiguration(Assembly.GetEntryAssembly().Location)
             loClientSection = CType(loConfig.GetSection("system.serviceModel/client"), ClientSection)
+
 
             For Each x As ChannelEndpointElement In loClientSection.Endpoints
                 lcServiceUrl = lcSIMARCServiceUrl
@@ -75,6 +80,13 @@ Public Class SplashScreen
 
             ConfigurationManager.RefreshSection("system.serviceModel/client")
             loConfig.Save()
+
+            lcWebConfigPath = Application.StartupPath & "\dll\"
+            loService = New SCStartUpSvcClient
+
+            loRtn = loService.UpdateAppDllPath(lcWebConfigPath)
+
+            loService.Close()
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -185,7 +197,7 @@ Public Class SplashScreen
         BackgroundWorker1.ReportProgress(1)
         ChangeConfiguration()
         BackgroundWorker1.ReportProgress(2)
-        'CheckUpdatefileSupport()
+        CheckUpdatefileSupport()
         BackgroundWorker1.ReportProgress(100)
     End Sub
 
