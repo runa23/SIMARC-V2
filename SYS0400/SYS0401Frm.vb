@@ -164,4 +164,11 @@ Public Class SYS0401Frm
         poTargetForm = New SYS0401FrmLkm_App
         poParameter = _RoleID
     End Sub
+
+    Private Sub AppSC_LookUp_SC_Return_LookUp(poReturnObject As Object) Handles AppSC_LookUp.SC_Return_LookUp
+        With CType(SYS0401DTO01BindingSource.Current, SYS0401DTO01)
+            .APP_ID = poReturnObject.APP_ID
+            .APP_NAME = poReturnObject.APP_NAME
+        End With
+    End Sub
 End Class

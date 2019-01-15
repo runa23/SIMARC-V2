@@ -435,7 +435,6 @@ Partial Class SYS0401Frm
         Me.APP_NAMESC_TextBox.Name = "APP_NAMESC_TextBox"
         Me.APP_NAMESC_TextBox.ReadOnly = True
         Me.APP_NAMESC_TextBox.SC_ConductorSource = Me.SC_Conductor1
-        Me.APP_NAMESC_TextBox.SC_EnableADD = True
         Me.APP_NAMESC_TextBox.Size = New System.Drawing.Size(203, 21)
         Me.APP_NAMESC_TextBox.TabIndex = 3
         '

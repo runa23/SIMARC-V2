@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SYS0501Svc" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:42007/SIMARCBack/SYS0501Svc.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:42007/SIMARCBack/SYS0501Svc.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SC_Common" />
+      <xsd:import schemaLocation="http://localhost:42007/SIMARCBack/SYS0501Svc.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:42007/SIMARCBack/SYS0501Svc.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SYS0500Back" />
+      <xsd:import schemaLocation="http://localhost:42007/SIMARCBack/SYS0501Svc.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SC_BackEnd" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISYS0501Svc_Svc_SC_GetRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Svc_SC_GetRecord" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_Svc_SC_GetRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Svc_SC_GetRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_Svc_SC_GetRecord_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q1:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_Svc_SC_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Svc_SC_Save" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_Svc_SC_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Svc_SC_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_Svc_SC_Save_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q2:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_Svc_SC_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Svc_SC_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_Svc_SC_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Svc_SC_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_Svc_SC_Delete_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q3:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_getList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getList" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_getList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_getList_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q4:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_getRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRole" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_getRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0501Svc_getRole_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q5:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:portType name="ISYS0501Svc">
+    <wsdl:operation name="Svc_SC_GetRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/SC_IServicebaseOf_SYS0501DTO01/Svc_SC_GetRecord" message="tns:ISYS0501Svc_Svc_SC_GetRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SC_IServicebaseOf_SYS0501DTO01/Svc_SC_GetRecordResponse" message="tns:ISYS0501Svc_Svc_SC_GetRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/SC_IServicebaseOf_SYS0501DTO01/Svc_SC_GetRecordSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:ISYS0501Svc_Svc_SC_GetRecord_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Svc_SC_Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/SC_IServicebaseOf_SYS0501DTO01/Svc_SC_Save" message="tns:ISYS0501Svc_Svc_SC_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SC_IServicebaseOf_SYS0501DTO01/Svc_SC_SaveResponse" message="tns:ISYS0501Svc_Svc_SC_Save_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/SC_IServicebaseOf_SYS0501DTO01/Svc_SC_SaveSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:ISYS0501Svc_Svc_SC_Save_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Svc_SC_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/SC_IServicebaseOf_SYS0501DTO01/Svc_SC_Delete" message="tns:ISYS0501Svc_Svc_SC_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SC_IServicebaseOf_SYS0501DTO01/Svc_SC_DeleteResponse" message="tns:ISYS0501Svc_Svc_SC_Delete_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/SC_IServicebaseOf_SYS0501DTO01/Svc_SC_DeleteSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:ISYS0501Svc_Svc_SC_Delete_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISYS0501Svc/getList" message="tns:ISYS0501Svc_getList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISYS0501Svc/getListResponse" message="tns:ISYS0501Svc_getList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISYS0501Svc/getListSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:ISYS0501Svc_getList_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISYS0501Svc/getRole" message="tns:ISYS0501Svc_getRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISYS0501Svc/getRoleResponse" message="tns:ISYS0501Svc_getRole_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISYS0501Svc/getRoleSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:ISYS0501Svc_getRole_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISYS0501Svc" type="tns:ISYS0501Svc">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Svc_SC_GetRecord">
+      <soap:operation soapAction="http://tempuri.org/SC_IServicebaseOf_SYS0501DTO01/Svc_SC_GetRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Svc_SC_Save">
+      <soap:operation soapAction="http://tempuri.org/SC_IServicebaseOf_SYS0501DTO01/Svc_SC_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Svc_SC_Delete">
+      <soap:operation soapAction="http://tempuri.org/SC_IServicebaseOf_SYS0501DTO01/Svc_SC_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getList">
+      <soap:operation soapAction="http://tempuri.org/ISYS0501Svc/getList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRole">
+      <soap:operation soapAction="http://tempuri.org/ISYS0501Svc/getRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SYS0501Svc">
+    <wsdl:port name="BasicHttpBinding_ISYS0501Svc" binding="tns:BasicHttpBinding_ISYS0501Svc">
+      <soap:address location="http://localhost:42007/SIMARCBack/SYS0501Svc.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
