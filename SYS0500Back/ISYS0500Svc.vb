@@ -9,7 +9,7 @@ Public Interface ISYS0500Svc
 
     <OperationContract()>
         <FaultContract(GetType(SC_ServiceExceptions))>
-    Function getList(ByVal poparam As List(Of Object)) As List(Of SYS0500DTO02)
+    Function getList() As List(Of SYS0500DTO02)
 
     <OperationContract()>
         <FaultContract(GetType(SC_ServiceExceptions))>
@@ -21,6 +21,10 @@ Public Interface ISYS0500Svc
 
     <OperationContract()>
         <FaultContract(GetType(SC_ServiceExceptions))>
-    Function getCompanyOffice() As List(Of LKM_CompanyOfficeDTO)
+    Function getCompanyOffice(ByVal poparam As List(Of Object)) As List(Of LKM_CompanyOfficeDTO)
+
+    <OperationContract()>
+        <FaultContract(GetType(SC_ServiceExceptions))>
+    Function getCompanyOfficeMap(ByVal poparam As List(Of Object)) As List(Of LKM_Company_Office_MapDTO)
 
 End Interface

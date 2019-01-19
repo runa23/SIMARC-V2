@@ -17,12 +17,12 @@ Public Class SYS0500Cls
             lcCmd = "EXEC SYS0500 'DELETE"
             lcCmd = lcCmd & "','" & poEntity.USER_ID
             lcCmd = lcCmd & "','" & poEntity.PASSWORD
-            lcCmd = lcCmd & "','" & poEntity.EMPLOYEE_NO
+            lcCmd = lcCmd & "','" & poEntity.REGIONAL
             lcCmd = lcCmd & "','" & poEntity.COMPANY_ID
             lcCmd = lcCmd & "','" & poEntity.COMPANY_OFFICE_ID
             lcCmd = lcCmd & "','" & poEntity.COMPANY_OFFICE_MAP_ID
-            lcCmd = lcCmd & "','" & poEntity.VALID_FROM
-            lcCmd = lcCmd & "','" & poEntity.VALID_TO
+            lcCmd = lcCmd & "','" & poEntity.VALID_FROM.ToString("yyyyMMdd")
+            lcCmd = lcCmd & "','" & poEntity.VALID_TO.ToString("yyyyMMdd")
             lcCmd = lcCmd & "','" & poEntity.DEFAULT_APP
             lcCmd = lcCmd & "','" & poEntity.CREA_BY.Trim
             lcCmd = lcCmd & "','" & poEntity.UPD_BY.Trim & "'"
@@ -44,7 +44,7 @@ Public Class SYS0500Cls
         Try
             lcCmd = "SELECT [USER_ID]"
             lcCmd = lcCmd & ",[PASSWORD]"
-            lcCmd = lcCmd & ",[EMPLOYEE_NO]"
+            lcCmd = lcCmd & ",[REGIONAL]"
             lcCmd = lcCmd & ",[COMPANY_ID]"
             lcCmd = lcCmd & ",[COMPANY_OFFICE_ID]"
             lcCmd = lcCmd & ",[COMPANY_OFFICE_MAP_ID]"
@@ -79,7 +79,7 @@ Public Class SYS0500Cls
             If poCRUDMode = eCRUDMode.AddMode Then
                 lcCmd = "SELECT [USER_ID]"
                 lcCmd = lcCmd & ",[PASSWORD]"
-                lcCmd = lcCmd & ",[EMPLOYEE_NO]"
+                lcCmd = lcCmd & ",[REGIONAL]"
                 lcCmd = lcCmd & ",[COMPANY_ID]"
                 lcCmd = lcCmd & ",[COMPANY_OFFICE_ID]"
                 lcCmd = lcCmd & ",[COMPANY_OFFICE_MAP_ID]"
@@ -100,31 +100,33 @@ Public Class SYS0500Cls
 
                 lcCmd = "EXEC SYS0500 'INSERT"
                 lcCmd = lcCmd & "','" & poNewEntity.USER_ID
-                lcCmd = lcCmd & "','" & poNewEntity.PASSWORD
-                lcCmd = lcCmd & "','" & poNewEntity.EMPLOYEE_NO
+                lcCmd = lcCmd & "','" & SC_Utility.Encrypt(poNewEntity.USER_ID.Trim, poNewEntity.PASSWORD.Trim)
+                lcCmd = lcCmd & "','" & poNewEntity.REGIONAL
                 lcCmd = lcCmd & "','" & poNewEntity.COMPANY_ID
                 lcCmd = lcCmd & "','" & poNewEntity.COMPANY_OFFICE_ID
                 lcCmd = lcCmd & "','" & poNewEntity.COMPANY_OFFICE_MAP_ID
-                lcCmd = lcCmd & "','" & poNewEntity.VALID_FROM
-                lcCmd = lcCmd & "','" & poNewEntity.VALID_TO
+                lcCmd = lcCmd & "','" & poNewEntity.VALID_FROM.ToString("yyyyMMdd")
+                lcCmd = lcCmd & "','" & poNewEntity.VALID_TO.ToString("yyyyMMdd")
                 lcCmd = lcCmd & "','" & poNewEntity.DEFAULT_APP
                 lcCmd = lcCmd & "','" & poNewEntity.CREA_BY.Trim
                 lcCmd = lcCmd & "','" & poNewEntity.UPD_BY.Trim & "'"
 
             Else
 
-                lcCmd = "EXEC SYS0500 'UPDATE"
-                lcCmd = lcCmd & "','" & poNewEntity.USER_ID
-                lcCmd = lcCmd & "','" & poNewEntity.PASSWORD
-                lcCmd = lcCmd & "','" & poNewEntity.EMPLOYEE_NO
-                lcCmd = lcCmd & "','" & poNewEntity.COMPANY_ID
-                lcCmd = lcCmd & "','" & poNewEntity.COMPANY_OFFICE_ID
-                lcCmd = lcCmd & "','" & poNewEntity.COMPANY_OFFICE_MAP_ID
-                lcCmd = lcCmd & "','" & poNewEntity.VALID_FROM
-                lcCmd = lcCmd & "','" & poNewEntity.VALID_TO
-                lcCmd = lcCmd & "','" & poNewEntity.DEFAULT_APP
-                lcCmd = lcCmd & "','" & poNewEntity.CREA_BY.Trim
-                lcCmd = lcCmd & "','" & poNewEntity.UPD_BY.Trim & "'"
+                lcCmd = "UPDATE SYS_USER SET "
+                lcCmd = lcCmd & "REGIONAL = '" & poNewEntity.REGIONAL.Trim & "',"
+                lcCmd = lcCmd & "COMPANY_ID = '" & poNewEntity.COMPANY_ID.Trim & "',"
+                lcCmd = lcCmd & "COMPANY_OFFICE_ID = '" & poNewEntity.COMPANY_OFFICE_ID.Trim & "',"
+                lcCmd = lcCmd & "COMPANY_OFFICE_MAP_ID = '" & poNewEntity.COMPANY_OFFICE_MAP_ID.Trim & "',"
+                lcCmd = lcCmd & "VALID_FROM = '" & poNewEntity.VALID_FROM.ToString("yyyyMMdd") & "',"
+                lcCmd = lcCmd & "VALID_TO = '" & poNewEntity.VALID_TO.ToString("yyyyMMdd") & "'"
+
+                If poNewEntity.INPUT_PASS = True Then
+                    lcCmd = lcCmd & ",PASSWORD = '" & SC_Utility.Encrypt(poNewEntity.USER_ID.Trim, poNewEntity.PASSWORD.Trim) & "'"
+                End If
+
+                lcCmd = lcCmd & " WHERE USER_ID = '" & poNewEntity.USER_ID & "'"
+
             End If
 
             loDb.SqlExecNonQuery(lcCmd, loConn, True)
@@ -155,16 +157,43 @@ Public Class SYS0500Cls
         loException.ThrowExceptionIfErrors()
     End Function
 
-    Function getCompanyOffice() As List(Of LKM_CompanyOfficeDTO)
+    Function getRegional() As List(Of LKM_RegionalDTO)
+        Dim loException As New SC_Exception
+        Dim loDb As New SC_Db
+        Dim lcCmd As String
+        Dim loReturn As List(Of LKM_RegionalDTO)
+
+        Try
+            lcCmd = "SELECT REGIONAL_ID,"
+            lcCmd = lcCmd & "REGIONAL_NAME"
+            lcCmd = lcCmd & " FROM M_REGIONAL (NOLOCK)"
+
+            loReturn = loDb.SQLExecObjectQuery(Of LKM_RegionalDTO)(lcCmd, loDb.GetConnection, True)
+            Return loReturn
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+        loException.ThrowExceptionIfErrors()
+    End Function
+
+    Function getCompanyOffice(poparam As List(Of Object)) As List(Of LKM_CompanyOfficeDTO)
         Dim loException As New SC_Exception
         Dim loDb As New SC_Db
         Dim lcCmd As String
         Dim loReturn As List(Of LKM_CompanyOfficeDTO)
+        Dim loCompany As String
 
         Try
+
+            loCompany = poparam.Item(0)
+
             lcCmd = "SELECT COMPANY_OFFICE_ID,"
             lcCmd = lcCmd & "COMPANY_OFFICE"
             lcCmd = lcCmd & " FROM M_COMPANY_OFFICE (NOLOCK)"
+
+            If loCompany IsNot Nothing Then
+                lcCmd = lcCmd & " WHERE COMPANY_ID = '" & loCompany & "'"
+            End If
 
             loReturn = loDb.SQLExecObjectQuery(Of LKM_CompanyOfficeDTO)(lcCmd, loDb.GetConnection, True)
             Return loReturn
@@ -174,7 +203,32 @@ Public Class SYS0500Cls
         loException.ThrowExceptionIfErrors()
     End Function
 
-    Function getList(poparam As List(Of Object)) As List(Of SYS0500DTO02)
+    Function getCompanyOfficeMap(poparam As List(Of Object)) As List(Of LKM_Company_Office_MapDTO)
+        Dim loException As New SC_Exception
+        Dim loDb As New SC_Db
+        Dim lcCmd As String
+        Dim loReturn As List(Of LKM_Company_Office_MapDTO)
+        Dim loRegional As String
+
+
+        Try
+            loRegional = poparam.Item(0)
+
+            lcCmd = "SELECT DISTINCT COMPANY_OFFICE_MAP_ID FROM M_COMPANY_OFFICE_MAP"
+
+            If loRegional IsNot Nothing Then
+                lcCmd = lcCmd & " WHERE REGIONAL_ID = '" & loRegional & "'"
+            End If
+
+            loReturn = loDb.SQLExecObjectQuery(Of LKM_Company_Office_MapDTO)(lcCmd, loDb.GetConnection, True)
+            Return loReturn
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+        loException.ThrowExceptionIfErrors()
+    End Function
+
+    Function getList() As List(Of SYS0500DTO02)
         Dim loException As New SC_Exception
         Dim loDb As New SC_Db
         Dim lcCmd As String
@@ -183,7 +237,7 @@ Public Class SYS0500Cls
         Try
             lcCmd = "SELECT [USER_ID]"
             lcCmd = lcCmd & ",[PASSWORD]"
-            lcCmd = lcCmd & ",[EMPLOYEE_NO]"
+            lcCmd = lcCmd & ",[REGIONAL]"
             lcCmd = lcCmd & ",[COMPANY_ID]"
             lcCmd = lcCmd & ",[COMPANY_OFFICE_ID]"
             lcCmd = lcCmd & ",[COMPANY_OFFICE_MAP_ID]"
@@ -197,25 +251,6 @@ Public Class SYS0500Cls
             lcCmd = lcCmd & " FROM [SIMARC].[dbo].[SYS_USER] (NOLOCK)"
 
             loReturn = loDb.SQLExecObjectQuery(Of SYS0500DTO02)(lcCmd, loDb.GetConnection, True)
-            Return loReturn
-        Catch ex As Exception
-            loException.Add(ex)
-        End Try
-        loException.ThrowExceptionIfErrors()
-    End Function
-
-    Function getRegional() As List(Of LKM_RegionalDTO)
-        Dim loException As New SC_Exception
-        Dim loDb As New SC_Db
-        Dim lcCmd As String
-        Dim loReturn As List(Of LKM_RegionalDTO)
-
-        Try
-            lcCmd = "SELECT REGIONAL_ID,"
-            lcCmd = lcCmd & "REGIONAL_NAME"
-            lcCmd = lcCmd & " FROM M_REGIONAL (NOLOCK)"
-
-            loReturn = loDb.SQLExecObjectQuery(Of LKM_RegionalDTO)(lcCmd, loDb.GetConnection, True)
             Return loReturn
         Catch ex As Exception
             loException.Add(ex)

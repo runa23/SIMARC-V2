@@ -1,7 +1,7 @@
 ﻿Public Class SYS0500DTO02
     Public USER_ID As String
     Public PASSWORD As String
-    Public EMPLOYEE_NO As String
+    Public REGIONAL As String
     Public COMPANY_ID As String
     Public COMPANY_OFFICE_ID As String
     Public COMPANY_OFFICE_MAP_ID As String

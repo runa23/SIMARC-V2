@@ -151,6 +151,10 @@ Public Class SplashScreen
             MessageBox.Show(ex.Message)
             Me.DialogResult = System.Windows.Forms.DialogResult.Abort
         End Try
+
+        If loException.Haserror Then
+            MessageBox.Show(loException.ErrorList(0).ErrDescp)
+        End If
     End Sub
 
     Private Function GetUserConfig() As Configuration

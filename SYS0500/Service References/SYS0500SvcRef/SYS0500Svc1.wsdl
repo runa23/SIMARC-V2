@@ -73,6 +73,15 @@
   <wsdl:message name="ISYS0500Svc_getCompanyOffice_SC_ServiceExceptionsFault_FaultMessage">
     <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q7:SC_ServiceExceptions" />
   </wsdl:message>
+  <wsdl:message name="ISYS0500Svc_getCompanyOfficeMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCompanyOfficeMap" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0500Svc_getCompanyOfficeMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCompanyOfficeMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISYS0500Svc_getCompanyOfficeMap_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q8:SC_ServiceExceptions" />
+  </wsdl:message>
   <wsdl:portType name="ISYS0500Svc">
     <wsdl:operation name="Svc_SC_GetRecord">
       <wsdl:input wsaw:Action="http://tempuri.org/SC_IServicebaseOf_SYS0500DTO01/Svc_SC_GetRecord" message="tns:ISYS0500Svc_Svc_SC_GetRecord_InputMessage" />
@@ -108,6 +117,11 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISYS0500Svc/getCompanyOffice" message="tns:ISYS0500Svc_getCompanyOffice_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISYS0500Svc/getCompanyOfficeResponse" message="tns:ISYS0500Svc_getCompanyOffice_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/ISYS0500Svc/getCompanyOfficeSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:ISYS0500Svc_getCompanyOffice_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCompanyOfficeMap">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISYS0500Svc/getCompanyOfficeMap" message="tns:ISYS0500Svc_getCompanyOfficeMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISYS0500Svc/getCompanyOfficeMapResponse" message="tns:ISYS0500Svc_getCompanyOfficeMap_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISYS0500Svc/getCompanyOfficeMapSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:ISYS0500Svc_getCompanyOfficeMap_SC_ServiceExceptionsFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISYS0500Svc" type="tns:ISYS0500Svc">
@@ -186,6 +200,18 @@
     </wsdl:operation>
     <wsdl:operation name="getCompanyOffice">
       <soap:operation soapAction="http://tempuri.org/ISYS0500Svc/getCompanyOffice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCompanyOfficeMap">
+      <soap:operation soapAction="http://tempuri.org/ISYS0500Svc/getCompanyOfficeMap" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

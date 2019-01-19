@@ -65,6 +65,9 @@ Namespace SYS0501SvcRef
         Private ROLE_IDField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ROLE_NAMEField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private UPD_BYField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -108,6 +111,19 @@ Namespace SYS0501SvcRef
                 If (Object.ReferenceEquals(Me.ROLE_IDField, value) <> true) Then
                     Me.ROLE_IDField = value
                     Me.RaisePropertyChanged("ROLE_ID")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ROLE_NAME() As String
+            Get
+                Return Me.ROLE_NAMEField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ROLE_NAMEField, value) <> true) Then
+                    Me.ROLE_NAMEField = value
+                    Me.RaisePropertyChanged("ROLE_NAME")
                 End If
             End Set
         End Property
@@ -190,6 +206,9 @@ Namespace SYS0501SvcRef
         Private ROLE_IDField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ROLE_NAMEField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private UPD_BYField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -243,6 +262,19 @@ Namespace SYS0501SvcRef
                 If (Object.ReferenceEquals(Me.ROLE_IDField, value) <> true) Then
                     Me.ROLE_IDField = value
                     Me.RaisePropertyChanged("ROLE_ID")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ROLE_NAME() As String
+            Get
+                Return Me.ROLE_NAMEField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ROLE_NAMEField, value) <> true) Then
+                    Me.ROLE_NAMEField = value
+                    Me.RaisePropertyChanged("ROLE_NAME")
                 End If
             End Set
         End Property

@@ -14,7 +14,7 @@ Public Class SYS0501Cls
         Try
             loConn = loDb.GetConnection
 
-            lcCmd = "EXEC SYS0500 'DELETE"
+            lcCmd = "EXEC SYS0510 'DELETE"
             lcCmd = lcCmd & "','" & poEntity.USER_ID
             lcCmd = lcCmd & "','" & poEntity.ROLE_ID
             lcCmd = lcCmd & "','" & poEntity.CREA_BY.Trim
@@ -34,15 +34,19 @@ Public Class SYS0501Cls
         Dim loReturn As SYS0501DTO01
 
         Try
-            lcCmd = "SELECT [USER_ID]"
-            lcCmd = lcCmd & ",[ROLE_ID]"
-            lcCmd = lcCmd & ",[CREA_BY]"
-            lcCmd = lcCmd & ",[CREA_DATE]"
-            lcCmd = lcCmd & ",[UPD_BY]"
-            lcCmd = lcCmd & ",[UPD_DATE]"
-            lcCmd = lcCmd & " FROM [SIMARC].[dbo].[SYS_USER_ROLE] (NOLOCK)"
-            lcCmd = lcCmd & " WHERE USER_ID = '" & poEntity.USER_ID & "'"
-            lcCmd = lcCmd & " AND ROLE_ID = '" & poEntity.ROLE_ID & "'"
+
+            lcCmd = "SELECT SYS_USER.USER_ID"
+            lcCmd = lcCmd & ",SYS_USER_ROLE.ROLE_ID"
+            lcCmd = lcCmd & ",SYS_ROLE.ROLE_NAME"
+            lcCmd = lcCmd & ",SYS_USER_ROLE.crea_by"
+            lcCmd = lcCmd & ",SYS_USER_ROLE.crea_date"
+            lcCmd = lcCmd & ",SYS_USER_ROLE.upd_date"
+            lcCmd = lcCmd & ",SYS_USER_ROLE.upd_by"
+            lcCmd = lcCmd & " FROM SYS_USER (NOLOCK)"
+            lcCmd = lcCmd & " INNER JOIN SYS_USER_ROLE ON SYS_USER.USER_ID = SYS_USER_ROLE.USER_ID"
+            lcCmd = lcCmd & " INNER JOIN SYS_ROLE ON SYS_USER_ROLE.ROLE_ID = SYS_ROLE.ROLE_ID"
+            lcCmd = lcCmd & " WHERE SYS_USER_ROLE.USER_ID = '" & poEntity.USER_ID & "'"
+            'lcCmd = lcCmd & " AND SYS_USER_ROLE.ROLE_ID = '" & poEntity.ROLE_ID & "'"
 
             loReturn = loDb.SQLExecObjectQuery(Of SYS0501DTO01)(lcCmd, loDb.GetConnection, True).FirstOrDefault
             Return loReturn
@@ -63,31 +67,35 @@ Public Class SYS0501Cls
             loConn = loDb.GetConnection
 
             If poCRUDMode = eCRUDMode.AddMode Then
-                lcCmd = "SELECT [USER_ID]"
-                lcCmd = lcCmd & ",[ROLE_ID]"
-                lcCmd = lcCmd & ",[CREA_BY]"
-                lcCmd = lcCmd & ",[CREA_DATE]"
-                lcCmd = lcCmd & ",[UPD_BY]"
-                lcCmd = lcCmd & ",[UPD_DATE]"
-                lcCmd = lcCmd & " FROM [SIMARC].[dbo].[SYS_USER_ROLE] (NOLOCK)"
-                lcCmd = lcCmd & " WHERE USER_ID = '" & poNewEntity.USER_ID & "'"
-                lcCmd = lcCmd & " AND ROLE_ID = '" & poNewEntity.ROLE_ID & "'"
+                lcCmd = "SELECT SYS_USER.USER_ID"
+                lcCmd = lcCmd & ",SYS_USER_ROLE.ROLE_ID"
+                lcCmd = lcCmd & ",SYS_ROLE.ROLE_NAME"
+                lcCmd = lcCmd & ",SYS_USER_ROLE.crea_by"
+                lcCmd = lcCmd & ",SYS_USER_ROLE.crea_date"
+                lcCmd = lcCmd & ",SYS_USER_ROLE.upd_date"
+                lcCmd = lcCmd & ",SYS_USER_ROLE.upd_by"
+                lcCmd = lcCmd & " FROM SYS_USER (NOLOCK)"
+                lcCmd = lcCmd & " INNER JOIN SYS_USER_ROLE ON SYS_USER.USER_ID = SYS_USER_ROLE.USER_ID"
+                lcCmd = lcCmd & " INNER JOIN SYS_ROLE ON SYS_USER_ROLE.ROLE_ID = SYS_ROLE.ROLE_ID"
+                lcCmd = lcCmd & " WHERE SYS_USER_ROLE.USER_ID = '" & poNewEntity.USER_ID & "'"
+                lcCmd = lcCmd & " AND SYS_USER_ROLE.ROLE_ID = '" & poNewEntity.ROLE_ID & "'"
 
                 If loDb.SqlExecQuery(lcCmd, loConn, False).Rows.Count > 0 Then
                     loException.Add("Validasi", "Data tidak dapat disimpan. Data Role User " & poNewEntity.USER_ID & " sudah ada")
                     Exit Try
                 End If
 
-                lcCmd = "EXEC SYS0500 'DELETE"
+                lcCmd = "EXEC SYS0510 'INSERT"
                 lcCmd = lcCmd & "','" & poNewEntity.USER_ID
                 lcCmd = lcCmd & "','" & poNewEntity.ROLE_ID
                 lcCmd = lcCmd & "','" & poNewEntity.CREA_BY.Trim
                 lcCmd = lcCmd & "','" & poNewEntity.UPD_BY.Trim & "'"
 
                 loDb.SqlExecNonQuery(lcCmd, loConn, True)
-
-                loConn.Close()
             End If
+
+
+            loConn.Close()
         Catch ex As Exception
             loException.Add(ex)
         End Try
@@ -101,16 +109,17 @@ Public Class SYS0501Cls
         Dim loReturn As List(Of SYS0501DTO02)
 
         Try
-            lcCmd = "SELECT A.USER_ID"
-            lcCmd = lcCmd & ",B.ROLE_ID"
-            lcCmd = lcCmd & ",B.crea_by"
-            lcCmd = lcCmd & ",B.crea_date"
-            lcCmd = lcCmd & ",B.upd_date"
-            lcCmd = lcCmd & ",B.upd_by"
-            lcCmd = lcCmd & " FROM SYS_USER A (NOLOCK)"
-            lcCmd = lcCmd & " INNER JOIN SYS_USER_ROLE B ON A.USER_ID = B.USER_ID"
-            lcCmd = lcCmd & " INNER JOIN SYS_ROLE C ON B.ROLE_ID = C.ROLE_ID"
-            lcCmd = lcCmd & " WHERE B.ROLE_ID = '" & poparam & "'"
+            lcCmd = "SELECT SYS_USER.USER_ID"
+            lcCmd = lcCmd & ",SYS_USER_ROLE.ROLE_ID"
+            lcCmd = lcCmd & ",SYS_ROLE.ROLE_NAME"
+            lcCmd = lcCmd & ",SYS_USER_ROLE.crea_by"
+            lcCmd = lcCmd & ",SYS_USER_ROLE.crea_date"
+            lcCmd = lcCmd & ",SYS_USER_ROLE.upd_date"
+            lcCmd = lcCmd & ",SYS_USER_ROLE.upd_by"
+            lcCmd = lcCmd & " FROM SYS_USER (NOLOCK)"
+            lcCmd = lcCmd & " INNER JOIN SYS_USER_ROLE ON SYS_USER.USER_ID = SYS_USER_ROLE.USER_ID"
+            lcCmd = lcCmd & " INNER JOIN SYS_ROLE ON SYS_USER_ROLE.ROLE_ID = SYS_ROLE.ROLE_ID"
+            lcCmd = lcCmd & " WHERE SYS_USER_ROLE.USER_ID = '" & poparam & "'"
 
             loReturn = loDb.SQLExecObjectQuery(Of SYS0501DTO02)(lcCmd, loDb.GetConnection, True)
             Return loReturn
@@ -127,13 +136,7 @@ Public Class SYS0501Cls
         Dim loReturn As List(Of LKM_RoleDTO)
 
         Try
-            lcCmd = "SELECT [USER_ID]"
-            lcCmd = lcCmd & ",[ROLE_ID]"
-            lcCmd = lcCmd & ",[CREA_BY]"
-            lcCmd = lcCmd & ",[CREA_DATE]"
-            lcCmd = lcCmd & ",[UPD_BY]"
-            lcCmd = lcCmd & ",[UPD_DATE]"
-            lcCmd = lcCmd & " FROM [SIMARC].[dbo].[SYS_USER_ROLE] (NOLOCK)"
+            lcCmd = "SELECT ROLE_ID, ROLE_NAME FROM SYS_ROLE (NOLOCK)"
 
             loReturn = loDb.SQLExecObjectQuery(Of LKM_RoleDTO)(lcCmd, loDb.GetConnection, True)
             Return loReturn

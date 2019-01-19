@@ -74,10 +74,13 @@ Namespace SYS0500SvcRef
         Private DEFAULT_APPField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private EMPLOYEE_NOField As String
+        Private INPUT_PASSField As Boolean
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private PASSWORDField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private REGIONALField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private UPD_BYField As String
@@ -173,14 +176,14 @@ Namespace SYS0500SvcRef
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property EMPLOYEE_NO() As String
+        Public Property INPUT_PASS() As Boolean
             Get
-                Return Me.EMPLOYEE_NOField
+                Return Me.INPUT_PASSField
             End Get
             Set
-                If (Object.ReferenceEquals(Me.EMPLOYEE_NOField, value) <> true) Then
-                    Me.EMPLOYEE_NOField = value
-                    Me.RaisePropertyChanged("EMPLOYEE_NO")
+                If (Me.INPUT_PASSField.Equals(value) <> true) Then
+                    Me.INPUT_PASSField = value
+                    Me.RaisePropertyChanged("INPUT_PASS")
                 End If
             End Set
         End Property
@@ -194,6 +197,19 @@ Namespace SYS0500SvcRef
                 If (Object.ReferenceEquals(Me.PASSWORDField, value) <> true) Then
                     Me.PASSWORDField = value
                     Me.RaisePropertyChanged("PASSWORD")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property REGIONAL() As String
+            Get
+                Return Me.REGIONALField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.REGIONALField, value) <> true) Then
+                    Me.REGIONALField = value
+                    Me.RaisePropertyChanged("REGIONAL")
                 End If
             End Set
         End Property
@@ -311,10 +327,10 @@ Namespace SYS0500SvcRef
         Private DEFAULT_APPField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private EMPLOYEE_NOField As String
+        Private PASSWORDField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private PASSWORDField As String
+        Private REGIONALField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private UPD_BYField As String
@@ -420,19 +436,6 @@ Namespace SYS0500SvcRef
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property EMPLOYEE_NO() As String
-            Get
-                Return Me.EMPLOYEE_NOField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.EMPLOYEE_NOField, value) <> true) Then
-                    Me.EMPLOYEE_NOField = value
-                    Me.RaisePropertyChanged("EMPLOYEE_NO")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property PASSWORD() As String
             Get
                 Return Me.PASSWORDField
@@ -441,6 +444,19 @@ Namespace SYS0500SvcRef
                 If (Object.ReferenceEquals(Me.PASSWORDField, value) <> true) Then
                     Me.PASSWORDField = value
                     Me.RaisePropertyChanged("PASSWORD")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property REGIONAL() As String
+            Get
+                Return Me.REGIONALField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.REGIONALField, value) <> true) Then
+                    Me.REGIONALField = value
+                    Me.RaisePropertyChanged("REGIONAL")
                 End If
             End Set
         End Property
@@ -709,6 +725,53 @@ Namespace SYS0500SvcRef
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="LKM_Company_Office_MapDTO", [Namespace]:="http://schemas.datacontract.org/2004/07/SYS0500Back"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class LKM_Company_Office_MapDTO
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private COMPANY_OFFICE_MAP_IDField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property COMPANY_OFFICE_MAP_ID() As String
+            Get
+                Return Me.COMPANY_OFFICE_MAP_IDField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.COMPANY_OFFICE_MAP_IDField, value) <> true) Then
+                    Me.COMPANY_OFFICE_MAP_IDField = value
+                    Me.RaisePropertyChanged("COMPANY_OFFICE_MAP_ID")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
      System.ServiceModel.ServiceContractAttribute(ConfigurationName:="SYS0500SvcRef.ISYS0500Svc")>  _
     Public Interface ISYS0500Svc
@@ -738,28 +801,11 @@ Namespace SYS0500SvcRef
         Function Svc_SC_DeleteAsync(ByVal poEntity As SYS0500SvcRef.SYS0500DTO01) As System.Threading.Tasks.Task
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISYS0500Svc/getList", ReplyAction:="http://tempuri.org/ISYS0500Svc/getListResponse"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/ISYS0500Svc/getListSC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common"),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.SC_DTOBase)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.eCRUDMode)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.SYS0500DTO01)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.SYS0500DTO02))),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.SYS0500DTO02)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_RegionalDTO))),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_RegionalDTO)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO))),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_CompanyDTO)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO))),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_CompanyOfficeDTO)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of Object))),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ServiceExceptions)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_Error))),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_Error)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_ErrorDetail))),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ErrorDetail))>  _
-        Function getList(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of SYS0500SvcRef.SYS0500DTO02)
+         System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/ISYS0500Svc/getListSC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common")>  _
+        Function getList() As System.Collections.Generic.List(Of SYS0500SvcRef.SYS0500DTO02)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISYS0500Svc/getList", ReplyAction:="http://tempuri.org/ISYS0500Svc/getListResponse")>  _
-        Function getListAsync(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.SYS0500DTO02))
+        Function getListAsync() As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.SYS0500DTO02))
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISYS0500Svc/getRegional", ReplyAction:="http://tempuri.org/ISYS0500Svc/getRegionalResponse"),  _
          System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/ISYS0500Svc/getRegionalSC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common")>  _
@@ -776,11 +822,56 @@ Namespace SYS0500SvcRef
         Function getCompanyAsync() As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO))
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISYS0500Svc/getCompanyOffice", ReplyAction:="http://tempuri.org/ISYS0500Svc/getCompanyOfficeResponse"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/ISYS0500Svc/getCompanyOfficeSC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common")>  _
-        Function getCompanyOffice() As System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO)
+         System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/ISYS0500Svc/getCompanyOfficeSC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.SC_DTOBase)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.eCRUDMode)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.SYS0500DTO01)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.SYS0500DTO02))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.SYS0500DTO02)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_RegionalDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_RegionalDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_CompanyDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_CompanyOfficeDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_Company_Office_MapDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_Company_Office_MapDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of Object))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ServiceExceptions)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_Error))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_Error)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_ErrorDetail))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ErrorDetail))>  _
+        Function getCompanyOffice(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISYS0500Svc/getCompanyOffice", ReplyAction:="http://tempuri.org/ISYS0500Svc/getCompanyOfficeResponse")>  _
-        Function getCompanyOfficeAsync() As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO))
+        Function getCompanyOfficeAsync(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO))
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISYS0500Svc/getCompanyOfficeMap", ReplyAction:="http://tempuri.org/ISYS0500Svc/getCompanyOfficeMapResponse"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/ISYS0500Svc/getCompanyOfficeMapSC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.SC_DTOBase)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.eCRUDMode)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.SYS0500DTO01)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.SYS0500DTO02))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.SYS0500DTO02)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_RegionalDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_RegionalDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_CompanyDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_CompanyOfficeDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_Company_Office_MapDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_Company_Office_MapDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of Object))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ServiceExceptions)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_Error))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_Error)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_ErrorDetail))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ErrorDetail))>  _
+        Function getCompanyOfficeMap(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of SYS0500SvcRef.LKM_Company_Office_MapDTO)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISYS0500Svc/getCompanyOfficeMap", ReplyAction:="http://tempuri.org/ISYS0500Svc/getCompanyOfficeMapResponse")>  _
+        Function getCompanyOfficeMapAsync(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.LKM_Company_Office_MapDTO))
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -838,12 +929,12 @@ Namespace SYS0500SvcRef
             Return MyBase.Channel.Svc_SC_DeleteAsync(poEntity)
         End Function
         
-        Public Function getList(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of SYS0500SvcRef.SYS0500DTO02) Implements SYS0500SvcRef.ISYS0500Svc.getList
-            Return MyBase.Channel.getList(poparam)
+        Public Function getList() As System.Collections.Generic.List(Of SYS0500SvcRef.SYS0500DTO02) Implements SYS0500SvcRef.ISYS0500Svc.getList
+            Return MyBase.Channel.getList
         End Function
         
-        Public Function getListAsync(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.SYS0500DTO02)) Implements SYS0500SvcRef.ISYS0500Svc.getListAsync
-            Return MyBase.Channel.getListAsync(poparam)
+        Public Function getListAsync() As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.SYS0500DTO02)) Implements SYS0500SvcRef.ISYS0500Svc.getListAsync
+            Return MyBase.Channel.getListAsync
         End Function
         
         Public Function getRegional() As System.Collections.Generic.List(Of SYS0500SvcRef.LKM_RegionalDTO) Implements SYS0500SvcRef.ISYS0500Svc.getRegional
@@ -862,12 +953,20 @@ Namespace SYS0500SvcRef
             Return MyBase.Channel.getCompanyAsync
         End Function
         
-        Public Function getCompanyOffice() As System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO) Implements SYS0500SvcRef.ISYS0500Svc.getCompanyOffice
-            Return MyBase.Channel.getCompanyOffice
+        Public Function getCompanyOffice(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO) Implements SYS0500SvcRef.ISYS0500Svc.getCompanyOffice
+            Return MyBase.Channel.getCompanyOffice(poparam)
         End Function
         
-        Public Function getCompanyOfficeAsync() As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO)) Implements SYS0500SvcRef.ISYS0500Svc.getCompanyOfficeAsync
-            Return MyBase.Channel.getCompanyOfficeAsync
+        Public Function getCompanyOfficeAsync(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO)) Implements SYS0500SvcRef.ISYS0500Svc.getCompanyOfficeAsync
+            Return MyBase.Channel.getCompanyOfficeAsync(poparam)
+        End Function
+        
+        Public Function getCompanyOfficeMap(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of SYS0500SvcRef.LKM_Company_Office_MapDTO) Implements SYS0500SvcRef.ISYS0500Svc.getCompanyOfficeMap
+            Return MyBase.Channel.getCompanyOfficeMap(poparam)
+        End Function
+        
+        Public Function getCompanyOfficeMapAsync(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.LKM_Company_Office_MapDTO)) Implements SYS0500SvcRef.ISYS0500Svc.getCompanyOfficeMapAsync
+            Return MyBase.Channel.getCompanyOfficeMapAsync(poparam)
         End Function
     End Class
 End Namespace

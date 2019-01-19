@@ -94,6 +94,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SYS0400\bin\Debug\SYS0400.dll</HintPath>
     </Reference>
+    <Reference Include="SYS0500, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SYS0500\bin\Debug\SYS0500.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -293,11 +297,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\SCMenuSvcRef\SCMenuSvc1.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\SCStartUpSvcRef\SCStartUpSvc1.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="SimarcLogo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

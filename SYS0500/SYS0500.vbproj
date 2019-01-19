@@ -43,6 +43,11 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="SC_Common">
       <HintPath>..\Library\SC_Common.dll</HintPath>
     </Reference>
@@ -50,7 +55,9 @@
       <HintPath>..\Library\SC_Win_FrontEnd.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -103,8 +110,15 @@
     <Compile Include="SYS0500Frm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SYS0501Frm.Designer.vb">
+      <DependentUpon>SYS0501Frm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYS0501Frm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -113,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SYS0500Frm.resx">
       <DependentUpon>SYS0500Frm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS0501Frm.resx">
+      <DependentUpon>SYS0501Frm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +149,9 @@
     <None Include="Service References\SYS0500SvcRef\SYS0500.SYS0500SvcRef.LKM_CompanyOfficeDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\SYS0500SvcRef\SYS0500.SYS0500SvcRef.LKM_Company_Office_MapDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SYS0500SvcRef\SYS0500.SYS0500SvcRef.LKM_RegionalDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -141,23 +161,23 @@
     <None Include="Service References\SYS0500SvcRef\SYS0500.SYS0500SvcRef.SYS0500DTO02.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SYS0500SvcRef\SYS0500Svc.wsdl" />
-    <None Include="Service References\SYS0500SvcRef\SYS0500Svc.xsd">
+    <None Include="Service References\SYS0500SvcRef\SYS0500Svc1.wsdl" />
+    <None Include="Service References\SYS0500SvcRef\SYS0500Svc6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SYS0500SvcRef\SYS0500Svc1.xsd">
+    <None Include="Service References\SYS0500SvcRef\SYS0500Svc61.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SYS0500SvcRef\SYS0500Svc2.xsd">
+    <None Include="Service References\SYS0500SvcRef\SYS0500Svc62.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SYS0500SvcRef\SYS0500Svc3.xsd">
+    <None Include="Service References\SYS0500SvcRef\SYS0500Svc63.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SYS0500SvcRef\SYS0500Svc4.xsd">
+    <None Include="Service References\SYS0500SvcRef\SYS0500Svc64.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SYS0500SvcRef\SYS0500Svc5.xsd">
+    <None Include="Service References\SYS0500SvcRef\SYS0500Svc65.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SYS0501SvcRef\SYS0500.SYS0501SvcRef.LKM_RoleDTO.datasource">
@@ -194,7 +214,19 @@
     <WCFMetadataStorage Include="Service References\SYS0501SvcRef\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SYS0500SvcRef\SYS0500Svc.disco" />
+    <None Include="Service References\SYS0501SvcRef\SYS0501Svc.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SYS0501SvcRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SYS0501SvcRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SYS0501SvcRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\SYS0500SvcRef\configuration91.svcinfo" />
@@ -209,19 +241,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SYS0501SvcRef\SYS0501Svc.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SYS0501SvcRef\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SYS0501SvcRef\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SYS0501SvcRef\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.vb</LastGenOutput>
-    </None>
+    <None Include="Service References\SYS0500SvcRef\SYS0500Svc1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

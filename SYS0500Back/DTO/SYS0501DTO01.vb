@@ -4,6 +4,7 @@ Public Class SYS0501DTO01
 
     Public USER_ID As String
     Public ROLE_ID As String
+    Public ROLE_NAME As String
     Public CREA_BY As String
     Public CREA_DATE As Date
     Public UPD_BY As String

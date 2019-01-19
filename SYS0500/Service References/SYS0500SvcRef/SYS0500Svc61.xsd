@@ -11,8 +11,9 @@
           <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
           <xs:element minOccurs="0" name="DEFAULT_APP" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="EMPLOYEE_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="INPUT_PASS" type="xs:boolean" />
           <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REGIONAL" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
           <xs:element minOccurs="0" name="USER_ID" nillable="true" type="xs:string" />
@@ -37,8 +38,8 @@
       <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
       <xs:element minOccurs="0" name="DEFAULT_APP" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EMPLOYEE_NO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REGIONAL" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
       <xs:element minOccurs="0" name="USER_ID" nillable="true" type="xs:string" />
@@ -86,4 +87,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="LKM_CompanyOfficeDTO" nillable="true" type="tns:LKM_CompanyOfficeDTO" />
+  <xs:complexType name="ArrayOfLKM_Company_Office_MapDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LKM_Company_Office_MapDTO" nillable="true" type="tns:LKM_Company_Office_MapDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLKM_Company_Office_MapDTO" nillable="true" type="tns:ArrayOfLKM_Company_Office_MapDTO" />
+  <xs:complexType name="LKM_Company_Office_MapDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_OFFICE_MAP_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LKM_Company_Office_MapDTO" nillable="true" type="tns:LKM_Company_Office_MapDTO" />
 </xs:schema>

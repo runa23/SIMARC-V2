@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="DTO\LKM_CompanyDTO.vb" />
     <Compile Include="DTO\LKM_CompanyOfficeDTO.vb" />
+    <Compile Include="DTO\LKM_Company_Office_MapDTO.vb" />
     <Compile Include="DTO\LKM_RegionalDTO.vb" />
     <Compile Include="DTO\LKM_RoleDTO.vb" />
     <Compile Include="DTO\SYS0500DTO01.vb" />

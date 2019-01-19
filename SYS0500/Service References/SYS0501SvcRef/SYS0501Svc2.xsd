@@ -8,6 +8,7 @@
           <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
           <xs:element minOccurs="0" name="ROLE_ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ROLE_NAME" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
           <xs:element minOccurs="0" name="USER_ID" nillable="true" type="xs:string" />
@@ -27,6 +28,7 @@
       <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ROLE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROLE_NAME" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
       <xs:element minOccurs="0" name="USER_ID" nillable="true" type="xs:string" />

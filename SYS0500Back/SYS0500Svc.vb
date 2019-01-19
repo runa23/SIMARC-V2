@@ -61,35 +61,6 @@ Public Class SYS0500Svc
         loException.ConvertAndThrowToServiceExceptionIfErrors()
     End Function
 
-    Public Function getCompanyOffice() As List(Of LKM_CompanyOfficeDTO) Implements ISYS0500Svc.getCompanyOffice
-        Dim loException As New SC_Exception
-        Dim loCls As New SYS0500Cls
-        Dim loReturn As List(Of LKM_CompanyOfficeDTO)
-
-        Try
-            loReturn = loCls.getCompanyOffice()
-            Return loReturn
-        Catch ex As Exception
-            loException.Add(ex)
-        End Try
-        loException.ConvertAndThrowToServiceExceptionIfErrors()
-    End Function
-
-    Public Function getList(poparam As List(Of Object)) As List(Of SYS0500DTO02) Implements ISYS0500Svc.getList
-        Dim loException As New SC_Exception
-        Dim loCls As New SYS0500Cls
-        Dim loReturn As List(Of SYS0500DTO02)
-
-        Try
-            loReturn = loCls.getList(poparam)
-            Return loReturn
-        Catch ex As Exception
-            loException.Add(ex)
-        End Try
-
-        loException.ConvertAndThrowToServiceExceptionIfErrors()
-    End Function
-
     Public Function getRegional() As List(Of LKM_RegionalDTO) Implements ISYS0500Svc.getRegional
         Dim loException As New SC_Exception
         Dim loCls As New SYS0500Cls
@@ -97,6 +68,48 @@ Public Class SYS0500Svc
 
         Try
             loReturn = loCls.getRegional()
+            Return loReturn
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+
+        loException.ConvertAndThrowToServiceExceptionIfErrors()
+    End Function
+
+    Public Function getCompanyOffice(poparam As List(Of Object)) As List(Of LKM_CompanyOfficeDTO) Implements ISYS0500Svc.getCompanyOffice
+        Dim loException As New SC_Exception
+        Dim loCls As New SYS0500Cls
+        Dim loReturn As List(Of LKM_CompanyOfficeDTO)
+
+        Try
+            loReturn = loCls.getCompanyOffice(poparam)
+            Return loReturn
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+        loException.ConvertAndThrowToServiceExceptionIfErrors()
+    End Function
+
+    Public Function getCompanyOfficeMap(poparam As List(Of Object)) As List(Of LKM_Company_Office_MapDTO) Implements ISYS0500Svc.getCompanyOfficeMap
+        Dim loException As New SC_Exception
+        Dim loCls As New SYS0500Cls
+        Dim loReturn As List(Of LKM_Company_Office_MapDTO)
+
+        Try
+            loReturn = loCls.getCompanyOfficeMap(poparam)
+            Return loReturn
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+    End Function
+
+    Public Function getList() As List(Of SYS0500DTO02) Implements ISYS0500Svc.getList
+        Dim loException As New SC_Exception
+        Dim loCls As New SYS0500Cls
+        Dim loReturn As List(Of SYS0500DTO02)
+
+        Try
+            loReturn = loCls.getList()
             Return loReturn
         Catch ex As Exception
             loException.Add(ex)
