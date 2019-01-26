@@ -7,4 +7,13 @@
 -->
 <GenericObjectDataSource DisplayName="LKM_CompanyOfficeDTO" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
    <TypeInfo>MTN0100.MTN0100SvcRef.LKM_CompanyOfficeDTO, Service References.MTN0100SvcRef.Reference.vb, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeUISetting>
+      <PropertyUISettings>
+         <PropertyUISetting Name="COMPANY_OFFICE_ID">
+            <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+                  <BindableControlInfo Name="SC_ComboBox" Type="SC_Win_FrontEnd.SC_ComboBox" AssemblyName="SC_Win_FrontEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" AssemblyCodeBase="file:///D:/Repo/SIMARC-V2/Library/SC_Win_FrontEnd.dll" Frameworks=".NETFramework,Version=v4.0;.NETFramework,Version=v4.5;.NETFramework,Version=v4.5.1;.NETFramework,Version=v4.5.2" />
+               </ControlSetting></ControlSettings>
+         </PropertyUISetting>
+      </PropertyUISettings>
+   </TypeUISetting>
 </GenericObjectDataSource>

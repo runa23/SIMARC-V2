@@ -21,17 +21,17 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:42007/SIMARCBack/MTN0100.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:42007/SIMARCBack/MTN0100Svc.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MTN0100.xsd" MetadataType="Schema" ID="16459e85-df91-4fcb-acf4-5c9b96bfc508" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100.svc?xsd=xsd0" />
-    <MetadataFile FileName="MTN0100Svc.wsdl" MetadataType="Wsdl" ID="b1291d46-41cb-4143-a745-876fea35d2eb" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100.svc?wsdl" />
-    <MetadataFile FileName="MTN0100.disco" MetadataType="Disco" ID="6b9dd09e-870f-469f-ab0d-095d4f13c86b" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100.svc?disco" />
-    <MetadataFile FileName="MTN01001.xsd" MetadataType="Schema" ID="81db93b5-f54e-41d5-a0ea-387c59a88e43" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100.svc?xsd=xsd4" />
-    <MetadataFile FileName="MTN01002.xsd" MetadataType="Schema" ID="758573df-3e32-47e5-8202-7e08cc17879f" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100.svc?xsd=xsd5" />
-    <MetadataFile FileName="MTN01003.xsd" MetadataType="Schema" ID="19d8d170-04fa-4cb0-9877-7c17cc567d33" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100.svc?xsd=xsd1" />
-    <MetadataFile FileName="MTN01004.xsd" MetadataType="Schema" ID="ee92765e-c6e5-43ed-926a-9fad233ae439" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100.svc?xsd=xsd2" />
-    <MetadataFile FileName="MTN01005.xsd" MetadataType="Schema" ID="f7b88916-5fa9-44b8-8337-2007ec1cfbb5" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100.svc?xsd=xsd3" />
+    <MetadataFile FileName="MTN0100Svc.xsd" MetadataType="Schema" ID="85493a37-928f-4f31-806a-f5317db715b1" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100Svc.svc?xsd=xsd0" />
+    <MetadataFile FileName="MTN0100Svc1.wsdl" MetadataType="Wsdl" ID="ae89f2b8-8d33-4ae3-a80e-5b054a3512c8" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100Svc.svc?wsdl" />
+    <MetadataFile FileName="MTN0100Svc1.xsd" MetadataType="Schema" ID="3586a681-5dd9-4a44-b2a0-6ec534932c1e" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100Svc.svc?xsd=xsd4" />
+    <MetadataFile FileName="MTN0100Svc.disco" MetadataType="Disco" ID="3d1d5584-808e-45bb-aaa5-0eb2e9b5e09d" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100Svc.svc?disco" />
+    <MetadataFile FileName="MTN0100Svc2.xsd" MetadataType="Schema" ID="d2d53e9b-5f8b-4268-9d18-0067e713b7cb" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100Svc.svc?xsd=xsd5" />
+    <MetadataFile FileName="MTN0100Svc3.xsd" MetadataType="Schema" ID="7cc924bf-bf01-4537-ab91-532562a1dd1c" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100Svc.svc?xsd=xsd3" />
+    <MetadataFile FileName="MTN0100Svc4.xsd" MetadataType="Schema" ID="b2101ced-74bc-49fe-aa0b-b2cbe00efd52" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100Svc.svc?xsd=xsd2" />
+    <MetadataFile FileName="MTN0100Svc5.xsd" MetadataType="Schema" ID="dac385a1-b72f-4d00-99b2-8fa44ef2ca28" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/MTN0100Svc.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

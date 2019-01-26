@@ -22,5 +22,8 @@ Public Interface IMTN0100Svc
         <FaultContract(GetType(SC_ServiceExceptions))>
     Function getOffice(ByVal poParam As List(Of Object)) As List(Of LKM_CompanyOfficeDTO)
 
+    <OperationContract()>
+        <FaultContract(GetType(SC_ServiceExceptions))>
+    Function getOutlet(ByVal poParam As List(Of Object)) As List(Of LKM_OutletDTO)
 
 End Interface

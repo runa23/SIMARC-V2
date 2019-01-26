@@ -74,10 +74,16 @@ Namespace MTN0100SvcRef
         Private FROM_DATEField As Date
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private MAINTENANCE_DETAILField As System.Collections.Generic.List(Of MTN0100SvcRef.Maintenance_DetailDTO)
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private MAINTENANCE_IDField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private OUTLET_IDField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private OUTLET_NAMEField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private TO_DATEField As Date
@@ -167,6 +173,19 @@ Namespace MTN0100SvcRef
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property MAINTENANCE_DETAIL() As System.Collections.Generic.List(Of MTN0100SvcRef.Maintenance_DetailDTO)
+            Get
+                Return Me.MAINTENANCE_DETAILField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.MAINTENANCE_DETAILField, value) <> true) Then
+                    Me.MAINTENANCE_DETAILField = value
+                    Me.RaisePropertyChanged("MAINTENANCE_DETAIL")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property MAINTENANCE_ID() As String
             Get
                 Return Me.MAINTENANCE_IDField
@@ -188,6 +207,19 @@ Namespace MTN0100SvcRef
                 If (Object.ReferenceEquals(Me.OUTLET_IDField, value) <> true) Then
                     Me.OUTLET_IDField = value
                     Me.RaisePropertyChanged("OUTLET_ID")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property OUTLET_NAME() As String
+            Get
+                Return Me.OUTLET_NAMEField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.OUTLET_NAMEField, value) <> true) Then
+                    Me.OUTLET_NAMEField = value
+                    Me.RaisePropertyChanged("OUTLET_NAME")
                 End If
             End Set
         End Property
@@ -230,6 +262,213 @@ Namespace MTN0100SvcRef
                 End If
             End Set
         End Property
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="Maintenance_DetailDTO", [Namespace]:="http://schemas.datacontract.org/2004/07/MTN0100Back"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class Maintenance_DetailDTO
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CASE_IDField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CASE_NAMEField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CREA_BYField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CREA_DATEField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private DAMAGEField As Boolean
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private GOODField As Boolean
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private MAINTENANCE_IDField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private MAJORField As Boolean
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private MINORField As Boolean
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private UPD_BYField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private UPD_DATEField As Date
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CASE_ID() As Integer
+            Get
+                Return Me.CASE_IDField
+            End Get
+            Set
+                If (Me.CASE_IDField.Equals(value) <> true) Then
+                    Me.CASE_IDField = value
+                    Me.RaisePropertyChanged("CASE_ID")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CASE_NAME() As String
+            Get
+                Return Me.CASE_NAMEField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.CASE_NAMEField, value) <> true) Then
+                    Me.CASE_NAMEField = value
+                    Me.RaisePropertyChanged("CASE_NAME")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CREA_BY() As String
+            Get
+                Return Me.CREA_BYField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.CREA_BYField, value) <> true) Then
+                    Me.CREA_BYField = value
+                    Me.RaisePropertyChanged("CREA_BY")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CREA_DATE() As Date
+            Get
+                Return Me.CREA_DATEField
+            End Get
+            Set
+                If (Me.CREA_DATEField.Equals(value) <> true) Then
+                    Me.CREA_DATEField = value
+                    Me.RaisePropertyChanged("CREA_DATE")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property DAMAGE() As Boolean
+            Get
+                Return Me.DAMAGEField
+            End Get
+            Set
+                If (Me.DAMAGEField.Equals(value) <> true) Then
+                    Me.DAMAGEField = value
+                    Me.RaisePropertyChanged("DAMAGE")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property GOOD() As Boolean
+            Get
+                Return Me.GOODField
+            End Get
+            Set
+                If (Me.GOODField.Equals(value) <> true) Then
+                    Me.GOODField = value
+                    Me.RaisePropertyChanged("GOOD")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property MAINTENANCE_ID() As String
+            Get
+                Return Me.MAINTENANCE_IDField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.MAINTENANCE_IDField, value) <> true) Then
+                    Me.MAINTENANCE_IDField = value
+                    Me.RaisePropertyChanged("MAINTENANCE_ID")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property MAJOR() As Boolean
+            Get
+                Return Me.MAJORField
+            End Get
+            Set
+                If (Me.MAJORField.Equals(value) <> true) Then
+                    Me.MAJORField = value
+                    Me.RaisePropertyChanged("MAJOR")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property MINOR() As Boolean
+            Get
+                Return Me.MINORField
+            End Get
+            Set
+                If (Me.MINORField.Equals(value) <> true) Then
+                    Me.MINORField = value
+                    Me.RaisePropertyChanged("MINOR")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property UPD_BY() As String
+            Get
+                Return Me.UPD_BYField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.UPD_BYField, value) <> true) Then
+                    Me.UPD_BYField = value
+                    Me.RaisePropertyChanged("UPD_BY")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property UPD_DATE() As Date
+            Get
+                Return Me.UPD_DATEField
+            End Get
+            Set
+                If (Me.UPD_DATEField.Equals(value) <> true) Then
+                    Me.UPD_DATEField = value
+                    Me.RaisePropertyChanged("UPD_DATE")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
     End Class
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
@@ -285,6 +524,9 @@ Namespace MTN0100SvcRef
         Private OUTLET_IDField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private OUTLET_NAMEField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private TO_DATEField As Date
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -408,6 +650,19 @@ Namespace MTN0100SvcRef
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property OUTLET_NAME() As String
+            Get
+                Return Me.OUTLET_NAMEField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.OUTLET_NAMEField, value) <> true) Then
+                    Me.OUTLET_NAMEField = value
+                    Me.RaisePropertyChanged("OUTLET_NAME")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property TO_DATE() As Date
             Get
                 Return Me.TO_DATEField
@@ -416,197 +671,6 @@ Namespace MTN0100SvcRef
                 If (Me.TO_DATEField.Equals(value) <> true) Then
                     Me.TO_DATEField = value
                     Me.RaisePropertyChanged("TO_DATE")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property UPD_BY() As String
-            Get
-                Return Me.UPD_BYField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.UPD_BYField, value) <> true) Then
-                    Me.UPD_BYField = value
-                    Me.RaisePropertyChanged("UPD_BY")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property UPD_DATE() As Date
-            Get
-                Return Me.UPD_DATEField
-            End Get
-            Set
-                If (Me.UPD_DATEField.Equals(value) <> true) Then
-                    Me.UPD_DATEField = value
-                    Me.RaisePropertyChanged("UPD_DATE")
-                End If
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="Maintenance_DetailDTO", [Namespace]:="http://schemas.datacontract.org/2004/07/MTN0100Back"),  _
-     System.SerializableAttribute()>  _
-    Partial Public Class Maintenance_DetailDTO
-        Inherits Object
-        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-        
-        <System.NonSerializedAttribute()>  _
-        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private BROKENField As Boolean
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private CASE_IDField As Integer
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private CREA_BYField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private CREA_DATEField As Date
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private GOODField As Boolean
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private MAINTENANCE_IDField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private MAJORField As Boolean
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private MINORField As Boolean
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private UPD_BYField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private UPD_DATEField As Date
-        
-        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
-        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
-            Get
-                Return Me.extensionDataField
-            End Get
-            Set
-                Me.extensionDataField = value
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property BROKEN() As Boolean
-            Get
-                Return Me.BROKENField
-            End Get
-            Set
-                If (Me.BROKENField.Equals(value) <> true) Then
-                    Me.BROKENField = value
-                    Me.RaisePropertyChanged("BROKEN")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property CASE_ID() As Integer
-            Get
-                Return Me.CASE_IDField
-            End Get
-            Set
-                If (Me.CASE_IDField.Equals(value) <> true) Then
-                    Me.CASE_IDField = value
-                    Me.RaisePropertyChanged("CASE_ID")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property CREA_BY() As String
-            Get
-                Return Me.CREA_BYField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.CREA_BYField, value) <> true) Then
-                    Me.CREA_BYField = value
-                    Me.RaisePropertyChanged("CREA_BY")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property CREA_DATE() As Date
-            Get
-                Return Me.CREA_DATEField
-            End Get
-            Set
-                If (Me.CREA_DATEField.Equals(value) <> true) Then
-                    Me.CREA_DATEField = value
-                    Me.RaisePropertyChanged("CREA_DATE")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property GOOD() As Boolean
-            Get
-                Return Me.GOODField
-            End Get
-            Set
-                If (Me.GOODField.Equals(value) <> true) Then
-                    Me.GOODField = value
-                    Me.RaisePropertyChanged("GOOD")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property MAINTENANCE_ID() As String
-            Get
-                Return Me.MAINTENANCE_IDField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.MAINTENANCE_IDField, value) <> true) Then
-                    Me.MAINTENANCE_IDField = value
-                    Me.RaisePropertyChanged("MAINTENANCE_ID")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property MAJOR() As Boolean
-            Get
-                Return Me.MAJORField
-            End Get
-            Set
-                If (Me.MAJORField.Equals(value) <> true) Then
-                    Me.MAJORField = value
-                    Me.RaisePropertyChanged("MAJOR")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property MINOR() As Boolean
-            Get
-                Return Me.MINORField
-            End Get
-            Set
-                If (Me.MINORField.Equals(value) <> true) Then
-                    Me.MINORField = value
-                    Me.RaisePropertyChanged("MINOR")
                 End If
             End Set
         End Property
@@ -773,6 +837,69 @@ Namespace MTN0100SvcRef
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="LKM_OutletDTO", [Namespace]:="http://schemas.datacontract.org/2004/07/MTN0100Back"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class LKM_OutletDTO
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private OUTLET_IDField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private OUTLET_NAMEField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property OUTLET_ID() As String
+            Get
+                Return Me.OUTLET_IDField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.OUTLET_IDField, value) <> true) Then
+                    Me.OUTLET_IDField = value
+                    Me.RaisePropertyChanged("OUTLET_ID")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property OUTLET_NAME() As String
+            Get
+                Return Me.OUTLET_NAMEField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.OUTLET_NAMEField, value) <> true) Then
+                    Me.OUTLET_NAMEField = value
+                    Me.RaisePropertyChanged("OUTLET_NAME")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
      System.ServiceModel.ServiceContractAttribute(ConfigurationName:="MTN0100SvcRef.IMTN0100Svc")>  _
     Public Interface IMTN0100Svc
@@ -809,17 +936,19 @@ Namespace MTN0100SvcRef
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_ErrorDetail))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ErrorDetail)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of Object))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.SC_DTOBase)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.eCRUDMode)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.MTN0100DTO01)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.MTN0100DTO02))),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.MTN0100DTO02)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.Maintenance_DetailDTO))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.Maintenance_DetailDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.MTN0100DTO02))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.MTN0100DTO02)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.LKM_CompanyDTO))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.LKM_CompanyDTO)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.LKM_CompanyOfficeDTO))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.LKM_CompanyOfficeDTO)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.SC_DTOBase)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.eCRUDMode))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.LKM_OutletDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.LKM_OutletDTO))>  _
         Function getList(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of MTN0100SvcRef.MTN0100DTO02)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IMTN0100Svc/getList", ReplyAction:="http://tempuri.org/IMTN0100Svc/getListResponse")>  _
@@ -840,17 +969,19 @@ Namespace MTN0100SvcRef
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_ErrorDetail))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ErrorDetail)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of Object))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.SC_DTOBase)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.eCRUDMode)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.MTN0100DTO01)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.MTN0100DTO02))),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.MTN0100DTO02)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.Maintenance_DetailDTO))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.Maintenance_DetailDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.MTN0100DTO02))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.MTN0100DTO02)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.LKM_CompanyDTO))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.LKM_CompanyDTO)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.LKM_CompanyOfficeDTO))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.LKM_CompanyOfficeDTO)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.SC_DTOBase)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.eCRUDMode))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.LKM_OutletDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.LKM_OutletDTO))>  _
         Function getCompany(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of MTN0100SvcRef.LKM_CompanyDTO)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IMTN0100Svc/getCompany", ReplyAction:="http://tempuri.org/IMTN0100Svc/getCompanyResponse")>  _
@@ -864,21 +995,49 @@ Namespace MTN0100SvcRef
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_ErrorDetail))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ErrorDetail)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of Object))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.SC_DTOBase)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.eCRUDMode)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.MTN0100DTO01)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.MTN0100DTO02))),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.MTN0100DTO02)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.Maintenance_DetailDTO))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.Maintenance_DetailDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.MTN0100DTO02))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.MTN0100DTO02)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.LKM_CompanyDTO))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.LKM_CompanyDTO)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.LKM_CompanyOfficeDTO))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.LKM_CompanyOfficeDTO)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.SC_DTOBase)),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.eCRUDMode))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.LKM_OutletDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.LKM_OutletDTO))>  _
         Function getOffice(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of MTN0100SvcRef.LKM_CompanyOfficeDTO)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IMTN0100Svc/getOffice", ReplyAction:="http://tempuri.org/IMTN0100Svc/getOfficeResponse")>  _
         Function getOfficeAsync(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of MTN0100SvcRef.LKM_CompanyOfficeDTO))
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IMTN0100Svc/getOutlet", ReplyAction:="http://tempuri.org/IMTN0100Svc/getOutletResponse"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/IMTN0100Svc/getOutletSC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ServiceExceptions)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_Error))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_Error)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_ErrorDetail))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ErrorDetail)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of Object))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.SC_DTOBase)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.eCRUDMode)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.MTN0100DTO01)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.Maintenance_DetailDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.Maintenance_DetailDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.MTN0100DTO02))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.MTN0100DTO02)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.LKM_CompanyDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.LKM_CompanyDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.LKM_CompanyOfficeDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.LKM_CompanyOfficeDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of MTN0100SvcRef.LKM_OutletDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(MTN0100SvcRef.LKM_OutletDTO))>  _
+        Function getOutlet(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of MTN0100SvcRef.LKM_OutletDTO)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IMTN0100Svc/getOutlet", ReplyAction:="http://tempuri.org/IMTN0100Svc/getOutletResponse")>  _
+        Function getOutletAsync(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of MTN0100SvcRef.LKM_OutletDTO))
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -966,6 +1125,14 @@ Namespace MTN0100SvcRef
         
         Public Function getOfficeAsync(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of MTN0100SvcRef.LKM_CompanyOfficeDTO)) Implements MTN0100SvcRef.IMTN0100Svc.getOfficeAsync
             Return MyBase.Channel.getOfficeAsync(poParam)
+        End Function
+        
+        Public Function getOutlet(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of MTN0100SvcRef.LKM_OutletDTO) Implements MTN0100SvcRef.IMTN0100Svc.getOutlet
+            Return MyBase.Channel.getOutlet(poParam)
+        End Function
+        
+        Public Function getOutletAsync(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of MTN0100SvcRef.LKM_OutletDTO)) Implements MTN0100SvcRef.IMTN0100Svc.getOutletAsync
+            Return MyBase.Channel.getOutletAsync(poParam)
         End Function
     End Class
 End Namespace

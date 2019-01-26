@@ -78,6 +78,12 @@
     <Compile Include="MTN0100Frm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MTN0100Frm_LKM_Outlet.Designer.vb">
+      <DependentUpon>MTN0100Frm_LKM_Outlet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MTN0100Frm_LKM_Outlet.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -103,6 +109,9 @@
     <EmbeddedResource Include="MTN0100Frm.resx">
       <DependentUpon>MTN0100Frm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MTN0100Frm_LKM_Outlet.resx">
+      <DependentUpon>MTN0100Frm_LKM_Outlet.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -127,6 +136,9 @@
     <None Include="Service References\MTN0100SvcRef\MTN0100.MTN0100SvcRef.LKM_CompanyOfficeDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\MTN0100SvcRef\MTN0100.MTN0100SvcRef.LKM_OutletDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\MTN0100SvcRef\MTN0100.MTN0100SvcRef.Maintenance_DetailDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -136,25 +148,6 @@
     <None Include="Service References\MTN0100SvcRef\MTN0100.MTN0100SvcRef.MTN0100DTO02.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MTN0100SvcRef\MTN0100.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MTN0100SvcRef\MTN01001.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MTN0100SvcRef\MTN01002.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MTN0100SvcRef\MTN01003.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MTN0100SvcRef\MTN01004.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MTN0100SvcRef\MTN01005.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MTN0100SvcRef\MTN0100Svc.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -163,19 +156,38 @@
     <WCFMetadataStorage Include="Service References\MTN0100SvcRef\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MTN0100SvcRef\MTN0100.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\MTN0100SvcRef\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\MTN0100SvcRef\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\MTN0100SvcRef\MTN0100Svc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MTN0100SvcRef\MTN0100Svc1.wsdl" />
+    <None Include="Service References\MTN0100SvcRef\MTN0100Svc1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MTN0100SvcRef\MTN0100Svc2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MTN0100SvcRef\MTN0100Svc3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MTN0100SvcRef\MTN0100Svc4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MTN0100SvcRef\MTN0100Svc5.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\MTN0100SvcRef\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MTN0100SvcRef\MTN0100Svc.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

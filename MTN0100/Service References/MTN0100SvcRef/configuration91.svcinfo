@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="FQ3wSCu2iZDGNz1TsdKZmKS9FaE=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="vWCw9vN0Vfya1D6C7P5qFyTV0Pk=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IMTN0100Svc">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IMTN0100Svc" contract="MTN0100SvcRef.IMTN0100Svc" bindingType="basicHttpBinding" address="http://localhost:42007/SIMARCBack/MTN0100.svc" bindingConfiguration="BasicHttpBinding_IMTN0100Svc">
+    <endpoint name="BasicHttpBinding_IMTN0100Svc" contract="MTN0100SvcRef.IMTN0100Svc" bindingType="basicHttpBinding" address="http://localhost:42007/SIMARCBack/MTN0100Svc.svc" bindingConfiguration="BasicHttpBinding_IMTN0100Svc">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:42007/SIMARCBack/MTN0100.svc</serializedValue>
+          <serializedValue>http://localhost:42007/SIMARCBack/MTN0100Svc.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

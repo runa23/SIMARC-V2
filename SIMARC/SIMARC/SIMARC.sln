@@ -44,6 +44,9 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SYS0500Back", "..\..\SYS0500Back\SYS0500Back.vbproj", "{84F5CB0C-1ADB-40F0-9FBF-F3CAD5E2AC0D}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MTN0100", "..\..\MTN0100\MTN0100.vbproj", "{7BB475FB-42F9-4320-ACC8-057D96C8BD9A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{98513467-9CE6-46E3-8D87-F87A6392F3D8} = {98513467-9CE6-46E3-8D87-F87A6392F3D8}
+	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MTN0100Back", "..\..\MTN0100Back\MTN0100Back.vbproj", "{769F2BB7-837B-48BE-A101-2F1B20A18955}"
 EndProject
@@ -66,6 +69,13 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SIMARCBack/SIMARCBack", "ht
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		SlnRelativePath = "..\..\SIMARCBack\SIMARCBack\"
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RPR0100Back", "..\..\RPR0100Back\RPR0100Back.vbproj", "{B623939D-DDD6-46FB-9548-0FB4CDA577AD}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RPR0100", "..\..\RPR0100\RPR0100.vbproj", "{80DDFDF3-2285-4C05-87B9-BED1ECAED062}"
+	ProjectSection(ProjectDependencies) = postProject
+		{98513467-9CE6-46E3-8D87-F87A6392F3D8} = {98513467-9CE6-46E3-8D87-F87A6392F3D8}
 	EndProjectSection
 EndProject
 Global
@@ -154,6 +164,14 @@ Global
 		{98513467-9CE6-46E3-8D87-F87A6392F3D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98513467-9CE6-46E3-8D87-F87A6392F3D8}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{98513467-9CE6-46E3-8D87-F87A6392F3D8}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B623939D-DDD6-46FB-9548-0FB4CDA577AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B623939D-DDD6-46FB-9548-0FB4CDA577AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B623939D-DDD6-46FB-9548-0FB4CDA577AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B623939D-DDD6-46FB-9548-0FB4CDA577AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80DDFDF3-2285-4C05-87B9-BED1ECAED062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80DDFDF3-2285-4C05-87B9-BED1ECAED062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80DDFDF3-2285-4C05-87B9-BED1ECAED062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80DDFDF3-2285-4C05-87B9-BED1ECAED062}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -105,4 +105,19 @@ Public Class MTN0100Svc
 
         loException.ConvertAndThrowToServiceExceptionIfErrors()
     End Function
+
+    Public Function getOutlet(poParam As List(Of Object)) As List(Of LKM_OutletDTO) Implements IMTN0100Svc.getOutlet
+        Dim loException As New SC_Exception
+        Dim loCls As New MTN0100Cls
+        Dim loReturn As List(Of LKM_OutletDTO)
+
+        Try
+            loReturn = loCls.getOutlet(poParam)
+            Return loReturn
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+
+        loException.ConvertAndThrowToServiceExceptionIfErrors()
+    End Function
 End Class

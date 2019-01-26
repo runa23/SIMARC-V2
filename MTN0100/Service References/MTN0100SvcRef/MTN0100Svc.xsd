@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:42007/SIMARCBack/MTN0100.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MTN0100Back" />
-  <xs:import schemaLocation="http://localhost:42007/SIMARCBack/MTN0100.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SC_BackEnd" />
-  <xs:import schemaLocation="http://localhost:42007/SIMARCBack/MTN0100.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:42007/SIMARCBack/MTN0100Svc.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MTN0100Back" />
+  <xs:import schemaLocation="http://localhost:42007/SIMARCBack/MTN0100Svc.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SC_BackEnd" />
+  <xs:import schemaLocation="http://localhost:42007/SIMARCBack/MTN0100Svc.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="Svc_SC_GetRecord">
     <xs:complexType>
       <xs:sequence>
@@ -98,6 +98,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/MTN0100Back" minOccurs="0" name="getOfficeResult" nillable="true" type="q15:ArrayOfLKM_CompanyOfficeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOutlet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="poParam" nillable="true" type="q16:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOutletResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/MTN0100Back" minOccurs="0" name="getOutletResult" nillable="true" type="q17:ArrayOfLKM_OutletDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
