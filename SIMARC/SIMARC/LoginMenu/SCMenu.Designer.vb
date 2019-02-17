@@ -67,7 +67,7 @@ Partial Class SCMenu
         '
         'DefaultLookAndFeel1
         '
-        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013"
+        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "The Bezier"
         '
         'SplitContainerControl1
         '
@@ -151,7 +151,7 @@ Partial Class SCMenu
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.Size = New System.Drawing.Size(776, 442)
+        Me.TabControl1.Size = New System.Drawing.Size(778, 442)
         Me.TabControl1.TabIndex = 1
         '
         'StatusStrip1
@@ -166,7 +166,7 @@ Partial Class SCMenu
         'ToolStripStatusLabel1
         '
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(920, 17)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(921, 17)
         Me.ToolStripStatusLabel1.Spring = True
         Me.ToolStripStatusLabel1.Text = "Powered By SIMARC Dev Team"
         Me.ToolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -174,7 +174,7 @@ Partial Class SCMenu
         'VersionLabel
         '
         Me.VersionLabel.Name = "VersionLabel"
-        Me.VersionLabel.Size = New System.Drawing.Size(49, 17)
+        Me.VersionLabel.Size = New System.Drawing.Size(48, 17)
         Me.VersionLabel.Text = "Version "
         '
         'ChangePasswordLinkLabel
@@ -210,7 +210,6 @@ Partial Class SCMenu
         Me.PictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.[Auto]
         Me.PictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom
-        Me.PictureEdit1.Properties.ZoomAccelerationFactor = 1.0R
         Me.PictureEdit1.Size = New System.Drawing.Size(86, 59)
         Me.PictureEdit1.TabIndex = 20
         '
