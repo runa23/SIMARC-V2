@@ -59,4 +59,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getRegional">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRegionalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SCM0200Back" minOccurs="0" name="getRegionalResult" nillable="true" type="q10:ArrayOfLKM_RegionalDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

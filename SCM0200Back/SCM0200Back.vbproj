@@ -71,6 +71,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\LKM_RegionalDTO.vb" />
     <Compile Include="DTO\SCM0200DTO01.vb" />
     <Compile Include="DTO\SCM0200DTO02.vb" />
     <Compile Include="ISCM0200Svc.vb" />

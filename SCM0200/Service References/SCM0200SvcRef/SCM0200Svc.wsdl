@@ -46,6 +46,15 @@
   <wsdl:message name="ISCM0200Svc_getList_SC_ServiceExceptionsFault_FaultMessage">
     <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q4:SC_ServiceExceptions" />
   </wsdl:message>
+  <wsdl:message name="ISCM0200Svc_getRegional_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRegional" />
+  </wsdl:message>
+  <wsdl:message name="ISCM0200Svc_getRegional_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRegionalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISCM0200Svc_getRegional_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q5:SC_ServiceExceptions" />
+  </wsdl:message>
   <wsdl:portType name="ISCM0200Svc">
     <wsdl:operation name="Svc_SC_GetRecord">
       <wsdl:input wsaw:Action="http://tempuri.org/SC_IServicebaseOf_SCM0200DTO01/Svc_SC_GetRecord" message="tns:ISCM0200Svc_Svc_SC_GetRecord_InputMessage" />
@@ -66,6 +75,11 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISCM0200Svc/getList" message="tns:ISCM0200Svc_getList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISCM0200Svc/getListResponse" message="tns:ISCM0200Svc_getList_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/ISCM0200Svc/getListSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:ISCM0200Svc_getList_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRegional">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISCM0200Svc/getRegional" message="tns:ISCM0200Svc_getRegional_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISCM0200Svc/getRegionalResponse" message="tns:ISCM0200Svc_getRegional_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISCM0200Svc/getRegionalSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:ISCM0200Svc_getRegional_SC_ServiceExceptionsFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISCM0200Svc" type="tns:ISCM0200Svc">
@@ -108,6 +122,18 @@
     </wsdl:operation>
     <wsdl:operation name="getList">
       <soap:operation soapAction="http://tempuri.org/ISCM0200Svc/getList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRegional">
+      <soap:operation soapAction="http://tempuri.org/ISCM0200Svc/getRegional" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

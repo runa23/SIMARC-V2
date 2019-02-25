@@ -121,6 +121,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Service References\SCM0200SvcRef\SCM0200.SCM0200SvcRef.LKM_RegionalDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SCM0200SvcRef\SCM0200.SCM0200SvcRef.SCM0200DTO01.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

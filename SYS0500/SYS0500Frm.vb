@@ -5,7 +5,7 @@ Imports System.ServiceModel
 
 Public Class SYS0500Frm
     Public Const SysAppId As String = "SYS0500"
-    Public Const SysAppVersion As String = "0.00.007"
+    Public Const SysAppVersion As String = "0.00.002"
 
     Private Sub SC_Conductor1_SC_AfterAdd(ByRef poEntity As Object) Handles SC_Conductor1.SC_AfterAdd
         Dim loException As New SC_Exception
@@ -17,7 +17,7 @@ Public Class SYS0500Frm
         Dim loCompanyOfficeMap As List(Of LKM_Company_Office_MapDTO)
         Dim paramOffice As New List(Of Object)
         Dim paramMap As New List(Of Object)
-
+        Dim paramCompany As New List(Of Object)
 
         Try
             TabControl1.SelectedTab = TabData
@@ -35,11 +35,12 @@ Public Class SYS0500Frm
 
             paramOffice.Add(Nothing)
             paramMap.Add(Nothing)
+            paramCompany.Add(Nothing)
 
             loRegional = loService.getRegional()
             LKM_RegionalDTOBindingSource.DataSource = loRegional
 
-            loCompany = loService.getCompany()
+            loCompany = loService.getCompany(paramCompany)
             LKM_CompanyDTOBindingSource.DataSource = loCompany
 
             loCompanyOffice = loService.getCompanyOffice(paramOffice)
@@ -164,17 +165,19 @@ Public Class SYS0500Frm
         Dim loCompanyOfficeMap As List(Of LKM_Company_Office_MapDTO)
         Dim paramOffice As New List(Of Object)
         Dim paramMap As New List(Of Object)
+        Dim paramCompany As New List(Of Object)
 
         Try
             loService = New SYS0500SvcClient
 
             paramOffice.Add(Nothing)
             paramMap.Add(Nothing)
+            paramCompany.Add(Nothing)
 
             loRegional = loService.getRegional()
             LKM_RegionalDTOBindingSource.DataSource = loRegional
 
-            loCompany = loService.getCompany()
+            loCompany = loService.getCompany(paramCompany)
             LKM_CompanyDTOBindingSource.DataSource = loCompany
 
             loCompanyOffice = loService.getCompanyOffice(paramOffice)
@@ -319,68 +322,6 @@ Public Class SYS0500Frm
         loException.ThrowExceptionIfErrors()
     End Sub
 
-    Private Sub COMPANY_NAMESC_ComboBox_Validated(sender As Object, e As EventArgs) Handles COMPANY_NAMESC_ComboBox.Validated
-        Dim loException As New SC_Exception
-        Dim loService As SYS0500SvcClient
-        Dim loCompanyOffice As List(Of LKM_CompanyOfficeDTO)
-        Dim paramOffice As New List(Of Object)
-
-        Try
-            loService = New SYS0500SvcClient
-
-            If Not String.IsNullOrEmpty(COMPANY_NAMESC_ComboBox.SelectedValue.ToString) Then
-                paramOffice.Add(COMPANY_NAMESC_ComboBox.SelectedValue.ToString)
-            Else
-                paramOffice.Add(Nothing)
-            End If
-
-            loCompanyOffice = loService.getCompanyOffice(paramOffice)
-            LKM_CompanyOfficeDTOBindingSource.DataSource = New SC_BindingListView(Of LKM_CompanyOfficeDTO)(loCompanyOffice)
-
-            loService.Close()
-        Catch ex As FaultException(Of SC_ServiceExceptions)
-            loException.ErrorList.AddRange(ex.Detail.Exceptions)
-        Catch ex As FaultException
-            loException.Add(ex)
-        Catch ex As Exception
-            loException.Add(ex)
-        End Try
-        If loException.Haserror Then
-            SC_DisplayException(loException)
-        End If
-    End Sub
-
-    Private Sub REGIONAL_NAMESC_ComboBox_Validated(sender As Object, e As EventArgs) Handles REGIONAL_NAMESC_ComboBox.Validated
-        Dim loException As New SC_Exception
-        Dim loService As SYS0500SvcClient
-        Dim loCompanyOfficeMap As List(Of LKM_Company_Office_MapDTO)
-        Dim paramMap As New List(Of Object)
-
-        Try
-            loService = New SYS0500SvcClient
-
-            If Not String.IsNullOrEmpty(REGIONAL_NAMESC_ComboBox.SelectedValue.ToString) Then
-                paramMap.Add(REGIONAL_NAMESC_ComboBox.SelectedValue.ToString)
-            Else
-                paramMap.Add(Nothing)
-            End If
-
-            loCompanyOfficeMap = loService.getCompanyOfficeMap(paramMap)
-            LKM_Company_Office_MapDTOBindingSource.DataSource = New SC_BindingListView(Of LKM_Company_Office_MapDTO)(loCompanyOfficeMap)
-
-            loService.Close()
-        Catch ex As FaultException(Of SC_ServiceExceptions)
-            loException.ErrorList.AddRange(ex.Detail.Exceptions)
-        Catch ex As FaultException
-            loException.Add(ex)
-        Catch ex As Exception
-            loException.Add(ex)
-        End Try
-        If loException.Haserror Then
-            SC_DisplayException(loException)
-        End If
-    End Sub
-
     Private Sub SYS0500Frm_Load(sender As Object, e As EventArgs) Handles Me.Load
         VersionLabel.Text = SysAppId & " V. " & SysAppVersion
 
@@ -392,16 +333,19 @@ Public Class SYS0500Frm
         Dim loCompanyOfficeMap As List(Of LKM_Company_Office_MapDTO)
         Dim paramOffice As New List(Of Object)
         Dim paramMap As New List(Of Object)
+        Dim paramCompany As New List(Of Object)
+
         Try
             loService = New SYS0500SvcClient
 
             paramOffice.Add(Nothing)
             paramMap.Add(Nothing)
+            paramCompany.Add(Nothing)
 
             loRegional = loService.getRegional()
             LKM_RegionalDTOBindingSource.DataSource = loRegional
 
-            loCompany = loService.getCompany()
+            loCompany = loService.getCompany(paramCompany)
             LKM_CompanyDTOBindingSource.DataSource = loCompany
 
             loCompanyOffice = loService.getCompanyOffice(paramOffice)
@@ -427,5 +371,103 @@ Public Class SYS0500Frm
     Private Sub RoleSC_Detail_SC_Before_Open_Form(ByRef poTargetForm As SC_FormBase, ByRef poParameter As Object) Handles RoleSC_Detail.SC_Before_Open_Form
         poTargetForm = New SYS0501Frm
         poParameter = SYS0500DTO02BindingSource.Current
+    End Sub
+    Private Sub REGIONAL_NAMESC_ComboBox_Validating(sender As Object, e As ComponentModel.CancelEventArgs) Handles REGIONAL_NAMESC_ComboBox.Validating
+        Dim loException As New SC_Exception
+        Dim loService As SYS0500SvcClient
+        Dim loCompany As List(Of LKM_CompanyDTO)
+        Dim param As New List(Of Object)
+
+        Try
+            loService = New SYS0500SvcClient
+
+            If Not String.IsNullOrEmpty(REGIONAL_NAMESC_ComboBox.SelectedValue.ToString) Then
+                param.Add(REGIONAL_NAMESC_ComboBox.SelectedValue.ToString)
+            Else
+                param.Add(Nothing)
+            End If
+
+            loCompany = loService.getCompany(param)
+            LKM_CompanyDTOBindingSource.DataSource = New SC_BindingListView(Of LKM_CompanyDTO)(loCompany)
+
+            loService.Close()
+        Catch ex As FaultException(Of SC_ServiceExceptions)
+            loException.ErrorList.AddRange(ex.Detail.Exceptions)
+        Catch ex As FaultException
+            loException.Add(ex)
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+        If loException.Haserror Then
+            SC_DisplayException(loException)
+        End If
+    End Sub
+
+    Private Sub COMPANY_NAMESC_ComboBox_Validating(sender As Object, e As ComponentModel.CancelEventArgs) Handles COMPANY_NAMESC_ComboBox.Validating
+        Dim loException As New SC_Exception
+        Dim loService As SYS0500SvcClient
+        Dim loCompanyOffice As List(Of LKM_CompanyOfficeDTO)
+        Dim param As New List(Of Object)
+
+        Try
+            loService = New SYS0500SvcClient
+
+            If Not String.IsNullOrEmpty(COMPANY_NAMESC_ComboBox.SelectedValue.ToString) Then
+                param.Add(COMPANY_NAMESC_ComboBox.SelectedValue.ToString)
+            Else
+                param.Add(Nothing)
+            End If
+
+            loCompanyOffice = loService.getCompanyOffice(param)
+            LKM_CompanyOfficeDTOBindingSource.DataSource = New SC_BindingListView(Of LKM_CompanyOfficeDTO)(loCompanyOffice)
+
+            loService.Close()
+        Catch ex As FaultException(Of SC_ServiceExceptions)
+            loException.ErrorList.AddRange(ex.Detail.Exceptions)
+        Catch ex As FaultException
+            loException.Add(ex)
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+        If loException.Haserror Then
+            SC_DisplayException(loException)
+        End If
+    End Sub
+
+    Private Sub COMPANY_OFFICE_IDSC_ComboBox_Validating(sender As Object, e As ComponentModel.CancelEventArgs) Handles COMPANY_OFFICE_IDSC_ComboBox.Validating
+        Dim loException As New SC_Exception
+        Dim loService As SYS0500SvcClient
+        Dim loCompanyOfficeMap As List(Of LKM_Company_Office_MapDTO)
+        Dim param As New List(Of Object)
+
+        Try
+            loService = New SYS0500SvcClient
+
+            If Not String.IsNullOrEmpty(REGIONAL_NAMESC_ComboBox.SelectedValue.ToString) Then
+                param.Add(REGIONAL_NAMESC_ComboBox.SelectedValue.ToString)
+            Else
+                param.Add(Nothing)
+            End If
+
+            If Not String.IsNullOrEmpty(COMPANY_OFFICE_IDSC_ComboBox.SelectedValue.ToString) Then
+                param.Add(COMPANY_OFFICE_IDSC_ComboBox.SelectedValue.ToString)
+            Else
+                param.Add(Nothing)
+            End If
+
+            loCompanyOfficeMap = loService.getCompanyOfficeMap(param)
+            LKM_Company_Office_MapDTOBindingSource.DataSource = New SC_BindingListView(Of LKM_Company_Office_MapDTO)(loCompanyOfficeMap)
+
+            loService.Close()
+        Catch ex As FaultException(Of SC_ServiceExceptions)
+            loException.ErrorList.AddRange(ex.Detail.Exceptions)
+        Catch ex As FaultException
+            loException.Add(ex)
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+        If loException.Haserror Then
+            SC_DisplayException(loException)
+        End If
     End Sub
 End Class

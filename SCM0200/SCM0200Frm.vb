@@ -6,20 +6,33 @@ Imports System.Windows.Forms
 Imports System.Drawing
 Public Class SCM0200Frm
     Public Const SysAppId As String = "SCM0200"
-    Public Const SysAppVersion As String = "0.00.001"
+    Public Const SysAppVersion As String = "0.00.002"
 
     Private Sub SC_Conductor1_SC_AfterAdd(ByRef poEntity As Object) Handles SC_Conductor1.SC_AfterAdd
+        Dim loException As New SC_Exception
         Dim loService As SCM0200SvcClient
+        Dim loRegional As List(Of LKM_RegionalDTO)
 
         TabControl1.SelectedTab = TabData
 
         With CType(poEntity, SCM0200DTO01)
             .COMPANY_ID = ""
             .COMPANY_NAME = ""
+            REGIONAL_NAMESC_ComboBox.SelectedValue = 0
+            .REGIONAL_ID = REGIONAL_NAMESC_ComboBox.SelectedValue
         End With
 
         loService = New SCM0200SvcClient
+        loRegional = loService.getRegional()
+        LKM_RegionalDTOBindingSource.DataSource = New SC_BindingListView(Of LKM_RegionalDTO)(loRegional)
+
+        REGIONAL_NAMESC_ComboBox.Focus()
+
         loService.Close()
+
+        If loException.Haserror Then
+            SC_DisplayException(loException)
+        End If
     End Sub
 
     Private Sub SC_Conductor1_SC_AfterCancel(poEntity As Object) Handles SC_Conductor1.SC_AfterCancel
@@ -53,6 +66,7 @@ Public Class SCM0200Frm
         poParentEntity = New SCM0200DTO02
 
         With CType(poEntity, SCM0200DTO01)
+            poParentEntity.REGIONAL_ID = .REGIONAL_ID
             poParentEntity.COMPANY_ID = .COMPANY_ID
             poParentEntity.COMPANY_NAME = .COMPANY_NAME
             poParentEntity.CREA_BY = .CREA_BY
@@ -105,6 +119,7 @@ Public Class SCM0200Frm
             loKeyEntity = New SCM0200DTO01
             With CType(poEntity, SCM0200DTO02)
                 loKeyEntity.COMPANY_ID = .COMPANY_ID
+                loKeyEntity.REGIONAL_ID = .REGIONAL_ID
             End With
 
             loService = New SCM0200SvcClient
@@ -126,11 +141,14 @@ Public Class SCM0200Frm
         Dim loService As SCM0200SvcClient
         Dim loList As List(Of SCM0200DTO02)
         Dim poparam As New List(Of Object)
+        Dim loRegional As List(Of LKM_RegionalDTO)
 
         Try
             loService = New SCM0200SvcClient
 
             loList = loService.getList(poparam)
+            loRegional = loService.getRegional()
+            LKM_RegionalDTOBindingSource.DataSource = New SC_BindingListView(Of LKM_RegionalDTO)(loRegional)
             SCM0200DTO02BindingSource.DataSource = New SC_BindingListView(Of SCM0200DTO02)(loList)
             loService.Close()
 
@@ -174,6 +192,12 @@ Public Class SCM0200Frm
         Try
             SC_ErrorProvider1.Clear()
 
+            If String.IsNullOrEmpty(REGIONAL_NAMESC_ComboBox.Text) Then
+                lcErr = "Regional harus dipilih"
+                loException.Add("Validasi", lcErr)
+                SC_ErrorProvider1.SetError(REGIONAL_NAMESC_ComboBox, lcErr)
+            End If
+
             If String.IsNullOrEmpty(COMPANY_IDSC_TextBox.Text) Then
                 lcErr = "Company ID harus diisi"
                 loException.Add("Validasi", lcErr)
@@ -199,9 +223,12 @@ Public Class SCM0200Frm
         Dim loException As New SC_Exception
         Dim loService As SCM0200SvcClient
         Dim poparam As New List(Of Object)
+        Dim loRegional As New List(Of LKM_RegionalDTO)
 
         Try
             loService = New SCM0200SvcClient
+            loRegional = loService.getRegional()
+            LKM_RegionalDTOBindingSource.DataSource = New SC_BindingListView(Of LKM_RegionalDTO)(loRegional)
             loService.Close()
 
         Catch ex As FaultException(Of SC_ServiceExceptions)

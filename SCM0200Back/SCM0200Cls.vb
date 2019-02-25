@@ -15,6 +15,7 @@ Public Class SCM0200Cls
             loConn = loDb.GetConnection
 
             lcCmd = "EXEC SCM0200 'DELETE"
+            lcCmd = lcCmd & "','" & poEntity.REGIONAL_ID
             lcCmd = lcCmd & "','" & poEntity.COMPANY_ID
             lcCmd = lcCmd & "','" & poEntity.COMPANY_NAME
             lcCmd = lcCmd & "','" & poEntity.CREA_BY.Trim
@@ -34,7 +35,8 @@ Public Class SCM0200Cls
         Dim loReturn As SCM0200DTO01
 
         Try
-            lcCmd = "SELECT [COMPANY_ID]"
+            lcCmd = "SELECT [REGIONAL_ID]"
+            lcCmd = lcCmd & ",[COMPANY_ID] "
             lcCmd = lcCmd & ",[COMPANY_NAME]"
             lcCmd = lcCmd & ",[CREA_BY]"
             lcCmd = lcCmd & ",[CREA_DATE]"
@@ -42,6 +44,7 @@ Public Class SCM0200Cls
             lcCmd = lcCmd & ",[UPD_DATE]"
             lcCmd = lcCmd & " FROM [SIMARC].[dbo].[M_COMPANY] (NOLOCK)"
             lcCmd = lcCmd & " WHERE COMPANY_ID ='" & poEntity.COMPANY_ID.Trim & "'"
+            lcCmd = lcCmd & " AND REGIONAL_ID ='" & poEntity.REGIONAL_ID & "'"
 
             loReturn = loDb.SQLExecObjectQuery(Of SCM0200DTO01)(lcCmd, loDb.GetConnection, True).FirstOrDefault
 
@@ -65,7 +68,8 @@ Public Class SCM0200Cls
             loCmd = loDb.GetCommand
 
             If poCRUDMode = eCRUDMode.AddMode Then
-                lcCmd = "SELECT [COMPANY_ID]"
+                lcCmd = "SELECT [REGIONAL_ID]"
+                lcCmd = lcCmd & ",[COMPANY_ID] "
                 lcCmd = lcCmd & ",[COMPANY_NAME]"
                 lcCmd = lcCmd & ",[CREA_BY]"
                 lcCmd = lcCmd & ",[CREA_DATE]"
@@ -73,13 +77,15 @@ Public Class SCM0200Cls
                 lcCmd = lcCmd & ",[UPD_DATE]"
                 lcCmd = lcCmd & " FROM [SIMARC].[dbo].[M_COMPANY] (NOLOCK)"
                 lcCmd = lcCmd & " WHERE COMPANY_ID ='" & poNewEntity.COMPANY_ID.Trim & "'"
+                lcCmd = lcCmd & " AND REGIONAL_ID = '" & poNewEntity.REGIONAL_ID & "'"
 
                 If loDb.SqlExecQuery(lcCmd, loConn, False).Rows.Count > 0 Then
-                    loException.Add("Validasi", "Data tidak dapat disimpan. Data Company " & poNewEntity.COMPANY_ID & " sudah ada")
+                    loException.Add("Validasi", "Data tidak dapat disimpan. Data Company " & poNewEntity.COMPANY_ID & " pada Regional " & poNewEntity.REGIONAL_ID & " sudah ada")
                     Exit Try
                 End If
 
                 lcCmd = "EXEC SCM0200 'INSERT"
+                lcCmd = lcCmd & "','" & poNewEntity.REGIONAL_ID
                 lcCmd = lcCmd & "','" & poNewEntity.COMPANY_ID
                 lcCmd = lcCmd & "','" & poNewEntity.COMPANY_NAME
                 lcCmd = lcCmd & "','" & poNewEntity.CREA_BY.Trim
@@ -88,6 +94,7 @@ Public Class SCM0200Cls
             Else
 
                 lcCmd = "EXEC SCM0200 'UPDATE"
+                lcCmd = lcCmd & "','" & poNewEntity.REGIONAL_ID
                 lcCmd = lcCmd & "','" & poNewEntity.COMPANY_ID
                 lcCmd = lcCmd & "','" & poNewEntity.COMPANY_NAME
                 lcCmd = lcCmd & "','" & poNewEntity.CREA_BY.Trim
@@ -109,7 +116,8 @@ Public Class SCM0200Cls
         Dim loReturn As List(Of SCM0200DTO02)
 
         Try
-            lcCmd = "SELECT [COMPANY_ID]"
+            lcCmd = "SELECT [REGIONAL_ID]"
+            lcCmd = lcCmd & ",[COMPANY_ID] "
             lcCmd = lcCmd & ",[COMPANY_NAME]"
             lcCmd = lcCmd & ",[CREA_BY]"
             lcCmd = lcCmd & ",[CREA_DATE]"
@@ -118,6 +126,26 @@ Public Class SCM0200Cls
             lcCmd = lcCmd & " FROM [SIMARC].[dbo].[M_COMPANY] (NOLOCK)"
 
             loReturn = loDb.SQLExecObjectQuery(Of SCM0200DTO02)(lcCmd, loDb.GetConnection, True)
+            Return loReturn
+
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+        loException.ThrowExceptionIfErrors()
+    End Function
+
+    Function getRegional() As List(Of LKM_RegionalDTO)
+        Dim loException As New SC_Exception
+        Dim loDb As New SC_Db
+        Dim lcCmd As String
+        Dim loReturn As List(Of LKM_RegionalDTO)
+
+        Try
+            lcCmd = "SELECT [REGIONAL_ID]"
+            lcCmd = lcCmd & ",[REGIONAL_NAME]"
+            lcCmd = lcCmd & " FROM [SIMARC].[dbo].[M_REGIONAL] (NOLOCK)"
+
+            loReturn = loDb.SQLExecObjectQuery(Of LKM_RegionalDTO)(lcCmd, loDb.GetConnection, True)
             Return loReturn
 
         Catch ex As Exception

@@ -45,19 +45,21 @@ Public Class MTN0100Cls
         Dim loReturn As MTN0100DTO01
 
         Try
-            lcCmd = "SELECT [MAINTENANCE_ID]"
-            lcCmd = lcCmd & ",[COMPANY_ID]"
-            lcCmd = lcCmd & ",[COMPANY_OFFICE_ID]"
-            lcCmd = lcCmd & ",[FROM_DATE]"
-            lcCmd = lcCmd & ",[TO_DATE]"
-            lcCmd = lcCmd & ",[BARCODE]"
-            lcCmd = lcCmd & ",[OUTLET_ID]"
-            lcCmd = lcCmd & ",[CREA_BY]"
-            lcCmd = lcCmd & ",[CREA_DATE]"
-            lcCmd = lcCmd & ",[UPD_BY]"
-            lcCmd = lcCmd & ",[UPD_DATE] "
-            lcCmd = lcCmd & "FROM [SIMARC].[dbo].[T_MAINTENANCE]"
-            lcCmd = lcCmd & " WHERE MAINTENANCE_ID = '" & poEntity.MAINTENANCE_ID.Trim & "'"
+            lcCmd = "SELECT A.[MAINTENANCE_ID]"
+            lcCmd = lcCmd & ",A.[COMPANY_ID]"
+            lcCmd = lcCmd & ",A.[COMPANY_OFFICE_ID]"
+            lcCmd = lcCmd & ",A.[FROM_DATE]"
+            lcCmd = lcCmd & ",A.[TO_DATE]"
+            lcCmd = lcCmd & ",A.[BARCODE]"
+            lcCmd = lcCmd & ",B.[OUTLET_ID]"
+            lcCmd = lcCmd & ",B.[OUTLET_NAME]"
+            lcCmd = lcCmd & ",A.[CREA_BY]"
+            lcCmd = lcCmd & ",A.[CREA_DATE]"
+            lcCmd = lcCmd & ",A.[UPD_BY]"
+            lcCmd = lcCmd & ",A.[UPD_DATE] "
+            lcCmd = lcCmd & "FROM [SIMARC].[dbo].[T_MAINTENANCE] A (NOLOCK) "
+            lcCmd = lcCmd & "INNER JOIN M_OUTLET B (NOLOCK) ON A.OUTLET_ID = B.OUTLET_ID"
+            lcCmd = lcCmd & " WHERE A.MAINTENANCE_ID = '" & poEntity.MAINTENANCE_ID.Trim & "'"
 
             loReturn = loDb.SQLExecObjectQuery(Of MTN0100DTO01)(lcCmd, loDb.GetConnection, True).FirstOrDefault
             Return loReturn
@@ -88,7 +90,8 @@ Public Class MTN0100Cls
                 End If
 
                 Kode = Format(poNewEntity.FROM_DATE, "yyMM")
-                Kode = "MTN" & Kode & loHelper.SC_GenerateKey(Kode, 3, loConn)
+                Kode = "MTN" & Kode
+                Kode = Kode & loHelper.SC_GenerateKey(Kode, 3, loConn)
                 poNewEntity.MAINTENANCE_ID = Kode
 
                 lcCmd = "SELECT A.[MAINTENANCE_ID]"
@@ -281,6 +284,7 @@ Public Class MTN0100Cls
         Dim lcCmd As String
         Dim loReturn As List(Of MTN0100DTO02)
         Dim limit As String
+        Dim CompanyOffice As String
         Dim dari_tanggal As Date?
         Dim ke_tanggal As Date?
 
@@ -290,6 +294,7 @@ Public Class MTN0100Cls
                 limit = .Item(0)
                 dari_tanggal = .Item(1)
                 ke_tanggal = .Item(2)
+                CompanyOffice = .Item(3)
             End With
 
             If limit IsNot Nothing Then
@@ -311,9 +316,10 @@ Public Class MTN0100Cls
             lcCmd = lcCmd & ",A.[UPD_DATE] "
             lcCmd = lcCmd & "FROM [SIMARC].[dbo].[T_MAINTENANCE] A (NOLOCK) "
             lcCmd = lcCmd & "INNER JOIN M_OUTLET B (NOLOCK) ON A.OUTLET_ID = B.OUTLET_ID "
+            lcCmd = lcCmd & "WHERE A.COMPANY_OFFICE_ID = '" & CompanyOffice & "'"
 
             If dari_tanggal IsNot Nothing Then
-                lcCmd = lcCmd & "WHERE A.FROM_DATE BETWEEN '" & dari_tanggal.Value.ToString("yyyyMMdd") & "' "
+                lcCmd = lcCmd & "AND A.FROM_DATE BETWEEN '" & dari_tanggal.Value.ToString("yyyyMMdd") & "' "
                 lcCmd = lcCmd & "AND '" & ke_tanggal.Value.ToString("yyyyMMdd") & "'"
             End If
 

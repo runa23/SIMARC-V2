@@ -5,7 +5,7 @@ Imports System.ServiceModel
 
 Public Class MTN0100Frm
     Public Const SysAppId As String = "MTN0100"
-    Public Const SysAppVersion As String = "0.00.001"
+    Public Const SysAppVersion As String = "0.00.002"
 
     Private Sub MTN0100Frm_Load(sender As Object, e As EventArgs) Handles Me.Load
         VersionLabel.Text = SysAppId & " V. " & SysAppVersion
@@ -53,6 +53,7 @@ Public Class MTN0100Frm
         Dim poparam As New List(Of Object)
         Dim poDetail As New List(Of Object)
         Dim loListCompany As New List(Of LKM_CompanyDTO)
+        Dim loListOutlet As New List(Of LKM_OutletDTO)
         Dim loListCompanyOffice As New List(Of LKM_CompanyOfficeDTO)
         Dim loListDetail As New List(Of Maintenance_DetailDTO)
 
@@ -83,6 +84,8 @@ Public Class MTN0100Frm
             loListDetail = loService.getList_Detail(poEntity)
             Maintenance_DetailDTOBindingSource.DataSource = New SC_BindingListView(Of Maintenance_DetailDTO)(loListDetail)
             loService.Close()
+
+            GoodSC_CheckBox.Checked = False
 
         Catch ex As FaultException(Of SC_ServiceExceptions)
             loException.ErrorList.AddRange(ex.Detail.Exceptions)
@@ -148,6 +151,7 @@ Public Class MTN0100Frm
         With CType(poEntity, MTN0100DTO01)
             .CREA_BY = SC_GlobalVar.UserId
             .UPD_BY = SC_GlobalVar.UserId
+            .COMPANY_OFFICE_ID = SC_GlobalVar.CompanyOfficeId
         End With
     End Sub
 
@@ -184,10 +188,11 @@ Public Class MTN0100Frm
 
             loService = New MTN0100SvcClient
 
+            poEntityResult = loService.Svc_SC_GetRecord(loKeyEntity, eCRUDMode.NormalMode)
+
             loListDetail = loService.getList_Detail(loKeyEntity)
             Maintenance_DetailDTOBindingSource.DataSource = New SC_BindingListView(Of Maintenance_DetailDTO)(loListDetail)
 
-            poEntityResult = loService.Svc_SC_GetRecord(loKeyEntity, eCRUDMode.NormalMode)
             loService.Close()
 
         Catch ex As FaultException(Of SC_ServiceExceptions)
@@ -220,6 +225,8 @@ Public Class MTN0100Frm
                 poparam.Add(Nothing)
                 poparam.Add(Nothing)
             End If
+
+            poparam.Add(SC_GlobalVar.CompanyOfficeId)
 
             loService = New MTN0100SvcClient
             loList = loService.getList(poparam)

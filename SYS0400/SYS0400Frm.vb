@@ -5,7 +5,7 @@ Imports System.ServiceModel
 
 Public Class SYS0400Frm
     Public Const SysAppId As String = "SYS0400"
-    Public Const SysAppVersion As String = "0.00.004"
+    Public Const SysAppVersion As String = "0.00.001"
 
     Private Sub SC_Conductor1_SC_AfterAdd(ByRef poEntity As Object) Handles SC_Conductor1.SC_AfterAdd
         Dim loException As New SC_Exception

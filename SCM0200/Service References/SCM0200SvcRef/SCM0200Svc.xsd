@@ -9,6 +9,7 @@
           <xs:element minOccurs="0" name="COMPANY_NAME" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="REGIONAL_ID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
         </xs:sequence>
@@ -28,9 +29,23 @@
       <xs:element minOccurs="0" name="COMPANY_NAME" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="REGIONAL_ID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SCM0200DTO02" nillable="true" type="tns:SCM0200DTO02" />
+  <xs:complexType name="ArrayOfLKM_RegionalDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LKM_RegionalDTO" nillable="true" type="tns:LKM_RegionalDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLKM_RegionalDTO" nillable="true" type="tns:ArrayOfLKM_RegionalDTO" />
+  <xs:complexType name="LKM_RegionalDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="REGIONAL_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REGIONAL_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LKM_RegionalDTO" nillable="true" type="tns:LKM_RegionalDTO" />
 </xs:schema>

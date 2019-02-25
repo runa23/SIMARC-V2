@@ -59,10 +59,14 @@ Namespace RPR0100SvcRef
      System.Runtime.Serialization.KnownTypeAttribute(GetType(SC_Common.SC_Error)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_ErrorDetail))),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(SC_Common.SC_ErrorDetail)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(System.Collections.Generic.List(Of Object))),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(System.Collections.Generic.List(Of RPR0100SvcRef.RPR0100DTO02))),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(RPR0100SvcRef.RPR0100DTO02))>  _
     Partial Public Class RPR0100DTO01
         Inherits RPR0100SvcRef.SC_DTOBase
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private COMPANY_OFFICE_IDField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private CREA_BYField As String
@@ -90,6 +94,19 @@ Namespace RPR0100SvcRef
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private UPD_DATEField As Date
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property COMPANY_OFFICE_ID() As String
+            Get
+                Return Me.COMPANY_OFFICE_IDField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.COMPANY_OFFICE_IDField, value) <> true) Then
+                    Me.COMPANY_OFFICE_IDField = value
+                    Me.RaisePropertyChanged("COMPANY_OFFICE_ID")
+                End If
+            End Set
+        End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property CREA_BY() As String
@@ -237,6 +254,7 @@ Namespace RPR0100SvcRef
      System.Runtime.Serialization.KnownTypeAttribute(GetType(SC_Common.SC_Error)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_ErrorDetail))),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(SC_Common.SC_ErrorDetail)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(System.Collections.Generic.List(Of Object))),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(RPR0100SvcRef.RPR0100DTO01)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(System.Collections.Generic.List(Of RPR0100SvcRef.RPR0100DTO02)))>  _
     Partial Public Class RPR0100DTO02
@@ -245,6 +263,9 @@ Namespace RPR0100SvcRef
         
         <System.NonSerializedAttribute()>  _
         Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private COMPANY_OFFICE_IDField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private CREA_BYField As String
@@ -280,6 +301,19 @@ Namespace RPR0100SvcRef
             End Get
             Set
                 Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property COMPANY_OFFICE_ID() As String
+            Get
+                Return Me.COMPANY_OFFICE_IDField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.COMPANY_OFFICE_IDField, value) <> true) Then
+                    Me.COMPANY_OFFICE_IDField = value
+                    Me.RaisePropertyChanged("COMPANY_OFFICE_ID")
+                End If
             End Set
         End Property
         
@@ -439,11 +473,22 @@ Namespace RPR0100SvcRef
         Function Svc_SC_DeleteAsync(ByVal poEntity As RPR0100SvcRef.RPR0100DTO01) As System.Threading.Tasks.Task
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IRPR0100Svc/getList", ReplyAction:="http://tempuri.org/IRPR0100Svc/getListResponse"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/IRPR0100Svc/getListSC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common")>  _
-        Function getList() As System.Collections.Generic.List(Of RPR0100SvcRef.RPR0100DTO02)
+         System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/IRPR0100Svc/getListSC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(RPR0100SvcRef.SC_DTOBase)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(RPR0100SvcRef.eCRUDMode)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ServiceExceptions)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_Error))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_Error)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_ErrorDetail))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ErrorDetail)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of Object))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(RPR0100SvcRef.RPR0100DTO01)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of RPR0100SvcRef.RPR0100DTO02))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(RPR0100SvcRef.RPR0100DTO02))>  _
+        Function getList(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of RPR0100SvcRef.RPR0100DTO02)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IRPR0100Svc/getList", ReplyAction:="http://tempuri.org/IRPR0100Svc/getListResponse")>  _
-        Function getListAsync() As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of RPR0100SvcRef.RPR0100DTO02))
+        Function getListAsync(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of RPR0100SvcRef.RPR0100DTO02))
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -501,12 +546,12 @@ Namespace RPR0100SvcRef
             Return MyBase.Channel.Svc_SC_DeleteAsync(poEntity)
         End Function
         
-        Public Function getList() As System.Collections.Generic.List(Of RPR0100SvcRef.RPR0100DTO02) Implements RPR0100SvcRef.IRPR0100Svc.getList
-            Return MyBase.Channel.getList
+        Public Function getList(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of RPR0100SvcRef.RPR0100DTO02) Implements RPR0100SvcRef.IRPR0100Svc.getList
+            Return MyBase.Channel.getList(poParam)
         End Function
         
-        Public Function getListAsync() As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of RPR0100SvcRef.RPR0100DTO02)) Implements RPR0100SvcRef.IRPR0100Svc.getListAsync
-            Return MyBase.Channel.getListAsync
+        Public Function getListAsync(ByVal poParam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of RPR0100SvcRef.RPR0100DTO02)) Implements RPR0100SvcRef.IRPR0100Svc.getListAsync
+            Return MyBase.Channel.getListAsync(poParam)
         End Function
     End Class
 End Namespace

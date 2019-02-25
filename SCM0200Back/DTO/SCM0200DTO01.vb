@@ -2,6 +2,7 @@
 Public Class SCM0200DTO01
     Inherits SC_DTOBase
 
+    Public REGIONAL_ID As String
     Public COMPANY_ID As String
     Public COMPANY_NAME As String
     Public CREA_BY As String

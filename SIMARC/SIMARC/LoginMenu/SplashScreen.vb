@@ -85,7 +85,7 @@ Public Class SplashScreen
             loService = New SCStartUpSvcClient
 
             'dihidupkan hanya untuk build server
-            loRtn = loService.UpdateAppDllPath(lcWebConfigPath)
+            'loRtn = loService.UpdateAppDllPath(lcWebConfigPath)
 
             loService.Close()
 

@@ -4,7 +4,7 @@ Imports RPR0100.RPR0100SvcRef
 Imports System.ServiceModel
 Public Class RPR0100Frm
     Public Const SysAppId As String = "RPR0100"
-    Public Const SysAppVersion As String = "0.00.001"
+    Public Const SysAppVersion As String = "0.00.002"
 
     Private Sub RPR0100Frm_Load(sender As Object, e As EventArgs) Handles Me.Load
         VersionLabel.Text = SysAppId & " V. " & SysAppVersion
@@ -40,6 +40,7 @@ Public Class RPR0100Frm
             .HARGA_PART = 0
             .STOCK_PART = 0
             .SATUAN_PART = ""
+            .COMPANY_OFFICE_ID = ""
         End With
 
         loService = New RPR0100SvcClient
@@ -76,6 +77,7 @@ Public Class RPR0100Frm
         poParentEntity = New RPR0100DTO02
 
         With CType(poEntity, RPR0100DTO01)
+            poParentEntity.COMPANY_OFFICE_ID = .COMPANY_OFFICE_ID
             poParentEntity.KD_PART = .KD_PART
             poParentEntity.NAMA_PART = .NAMA_PART
             poParentEntity.HARGA_PART = .HARGA_PART
@@ -98,6 +100,7 @@ Public Class RPR0100Frm
         With CType(poEntity, RPR0100DTO01)
             .CREA_BY = SC_GlobalVar.UserId
             .UPD_BY = SC_GlobalVar.UserId
+            .COMPANY_OFFICE_ID = SC_GlobalVar.CompanyOfficeId
         End With
     End Sub
 
@@ -129,6 +132,7 @@ Public Class RPR0100Frm
             loKeyEntity = New RPR0100DTO01
             With CType(poEntity, RPR0100DTO02)
                 loKeyEntity.KD_PART = .KD_PART
+                loKeyEntity.COMPANY_OFFICE_ID = .COMPANY_OFFICE_ID
             End With
 
             loService = New RPR0100SvcClient
@@ -149,11 +153,14 @@ Public Class RPR0100Frm
         Dim loException As New SC_Exception
         Dim loService As RPR0100SvcClient
         Dim loList As List(Of RPR0100DTO02)
+        Dim poparam As New List(Of Object)
 
         Try
+            poparam.Add(SC_GlobalVar.CompanyOfficeId)
+
             loService = New RPR0100SvcClient
 
-            loList = loService.getList()
+            loList = loService.getList(poparam)
             RPR0100DTO02BindingSource.DataSource = New SC_BindingListView(Of RPR0100DTO02)(loList)
             loService.Close()
 

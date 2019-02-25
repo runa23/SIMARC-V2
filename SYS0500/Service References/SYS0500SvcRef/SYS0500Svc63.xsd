@@ -71,41 +71,43 @@
   </xs:element>
   <xs:element name="getCompany">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="poparam" nillable="true" type="q10:ArrayOfanyType" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getCompanyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SYS0500Back" minOccurs="0" name="getCompanyResult" nillable="true" type="q10:ArrayOfLKM_CompanyDTO" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SYS0500Back" minOccurs="0" name="getCompanyResult" nillable="true" type="q11:ArrayOfLKM_CompanyDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getCompanyOffice">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="poparam" nillable="true" type="q11:ArrayOfanyType" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="poparam" nillable="true" type="q12:ArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getCompanyOfficeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SYS0500Back" minOccurs="0" name="getCompanyOfficeResult" nillable="true" type="q12:ArrayOfLKM_CompanyOfficeDTO" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SYS0500Back" minOccurs="0" name="getCompanyOfficeResult" nillable="true" type="q13:ArrayOfLKM_CompanyOfficeDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getCompanyOfficeMap">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="poparam" nillable="true" type="q13:ArrayOfanyType" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="poparam" nillable="true" type="q14:ArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getCompanyOfficeMapResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SYS0500Back" minOccurs="0" name="getCompanyOfficeMapResult" nillable="true" type="q14:ArrayOfLKM_Company_Office_MapDTO" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SYS0500Back" minOccurs="0" name="getCompanyOfficeMapResult" nillable="true" type="q15:ArrayOfLKM_Company_Office_MapDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -5,11 +5,12 @@ Imports SYS0500.SYS0501SvcRef
 
 Public Class SYS0501Frm
     Private _UserID As String
-
-
     Private Sub SC_Conductor1_SC_AfterAdd(ByRef poEntity As Object) Handles SC_Conductor1.SC_AfterAdd
         TabControl1.SelectedTab = TabData
-
+        With CType(poEntity, SYS0501DTO01)
+            .CREA_DATE = Now
+            .UPD_DATE = Now
+        End With
     End Sub
 
     Private Sub SC_Conductor1_SC_BeforeEdit(poEntity As Object) Handles SC_Conductor1.SC_BeforeEdit
@@ -22,6 +23,7 @@ Public Class SYS0501Frm
         With CType(poEntity, SYS0501DTO01)
             poParentEntity.USER_ID = .USER_ID
             poParentEntity.ROLE_ID = .ROLE_ID
+            poParentEntity.ROLE_NAME = .ROLE_NAME
             poParentEntity.CREA_BY = .CREA_BY
             poParentEntity.CREA_DATE = .CREA_DATE
             poParentEntity.UPD_BY = .UPD_BY
@@ -133,13 +135,15 @@ Public Class SYS0501Frm
         Dim loRole As List(Of LKM_RoleDTO)
 
         Try
-            _UserID = poParameter.USER_ID
-            SYS0500DTO02BindingSource.DataSource = poParameter
 
             loService = New SYS0501SvcClient
 
+            _UserID = poParameter.USER_ID
+            USER_IDSC_TextBox.Text = _UserID
+            'SYS0500DTO02BindingSource.DataSource = poParameter
+
             loRole = loService.getRole()
-            LKM_RoleDTOBindingSource.DataSource = loRole
+            LKM_RoleDTOBindingSource.DataSource = New SC_BindingListView(Of LKM_RoleDTO)(loRole)
 
             loList = loService.getList(_UserID)
             SYS0501DTO02BindingSource.DataSource = New SC_BindingListView(Of SYS0501DTO02)(loList)

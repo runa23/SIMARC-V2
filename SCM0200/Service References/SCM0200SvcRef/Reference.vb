@@ -68,6 +68,9 @@ Namespace SCM0200SvcRef
         Private CREA_DATEField As Date
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private REGIONAL_IDField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private UPD_BYField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -121,6 +124,19 @@ Namespace SCM0200SvcRef
                 If (Me.CREA_DATEField.Equals(value) <> true) Then
                     Me.CREA_DATEField = value
                     Me.RaisePropertyChanged("CREA_DATE")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property REGIONAL_ID() As String
+            Get
+                Return Me.REGIONAL_IDField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.REGIONAL_IDField, value) <> true) Then
+                    Me.REGIONAL_IDField = value
+                    Me.RaisePropertyChanged("REGIONAL_ID")
                 End If
             End Set
         End Property
@@ -193,6 +209,9 @@ Namespace SCM0200SvcRef
         Private CREA_DATEField As Date
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private REGIONAL_IDField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private UPD_BYField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -261,6 +280,19 @@ Namespace SCM0200SvcRef
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property REGIONAL_ID() As String
+            Get
+                Return Me.REGIONAL_IDField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.REGIONAL_IDField, value) <> true) Then
+                    Me.REGIONAL_IDField = value
+                    Me.RaisePropertyChanged("REGIONAL_ID")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property UPD_BY() As String
             Get
                 Return Me.UPD_BYField
@@ -282,6 +314,69 @@ Namespace SCM0200SvcRef
                 If (Me.UPD_DATEField.Equals(value) <> true) Then
                     Me.UPD_DATEField = value
                     Me.RaisePropertyChanged("UPD_DATE")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="LKM_RegionalDTO", [Namespace]:="http://schemas.datacontract.org/2004/07/SCM0200Back"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class LKM_RegionalDTO
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private REGIONAL_IDField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private REGIONAL_NAMEField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property REGIONAL_ID() As String
+            Get
+                Return Me.REGIONAL_IDField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.REGIONAL_IDField, value) <> true) Then
+                    Me.REGIONAL_IDField = value
+                    Me.RaisePropertyChanged("REGIONAL_ID")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property REGIONAL_NAME() As String
+            Get
+                Return Me.REGIONAL_NAMEField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.REGIONAL_NAMEField, value) <> true) Then
+                    Me.REGIONAL_NAMEField = value
+                    Me.RaisePropertyChanged("REGIONAL_NAME")
                 End If
             End Set
         End Property
@@ -329,6 +424,8 @@ Namespace SCM0200SvcRef
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(SCM0200SvcRef.SCM0200DTO01)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SCM0200SvcRef.SCM0200DTO02))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(SCM0200SvcRef.SCM0200DTO02)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SCM0200SvcRef.LKM_RegionalDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SCM0200SvcRef.LKM_RegionalDTO)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of Object))),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ServiceExceptions)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_Error))),  _
@@ -341,6 +438,13 @@ Namespace SCM0200SvcRef
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISCM0200Svc/getList", ReplyAction:="http://tempuri.org/ISCM0200Svc/getListResponse")>  _
         Function getListAsync(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SCM0200SvcRef.SCM0200DTO02))
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISCM0200Svc/getRegional", ReplyAction:="http://tempuri.org/ISCM0200Svc/getRegionalResponse"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/ISCM0200Svc/getRegionalSC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common")>  _
+        Function getRegional() As System.Collections.Generic.List(Of SCM0200SvcRef.LKM_RegionalDTO)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISCM0200Svc/getRegional", ReplyAction:="http://tempuri.org/ISCM0200Svc/getRegionalResponse")>  _
+        Function getRegionalAsync() As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SCM0200SvcRef.LKM_RegionalDTO))
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -404,6 +508,14 @@ Namespace SCM0200SvcRef
         
         Public Function getListAsync(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SCM0200SvcRef.SCM0200DTO02)) Implements SCM0200SvcRef.ISCM0200Svc.getListAsync
             Return MyBase.Channel.getListAsync(poparam)
+        End Function
+        
+        Public Function getRegional() As System.Collections.Generic.List(Of SCM0200SvcRef.LKM_RegionalDTO) Implements SCM0200SvcRef.ISCM0200Svc.getRegional
+            Return MyBase.Channel.getRegional
+        End Function
+        
+        Public Function getRegionalAsync() As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SCM0200SvcRef.LKM_RegionalDTO)) Implements SCM0200SvcRef.ISCM0200Svc.getRegionalAsync
+            Return MyBase.Channel.getRegionalAsync
         End Function
     End Class
 End Namespace

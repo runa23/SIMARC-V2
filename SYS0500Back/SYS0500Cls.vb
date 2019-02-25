@@ -43,7 +43,6 @@ Public Class SYS0500Cls
 
         Try
             lcCmd = "SELECT [USER_ID]"
-            lcCmd = lcCmd & ",[PASSWORD]"
             lcCmd = lcCmd & ",[REGIONAL]"
             lcCmd = lcCmd & ",[COMPANY_ID]"
             lcCmd = lcCmd & ",[COMPANY_OFFICE_ID]"
@@ -78,7 +77,6 @@ Public Class SYS0500Cls
 
             If poCRUDMode = eCRUDMode.AddMode Then
                 lcCmd = "SELECT [USER_ID]"
-                lcCmd = lcCmd & ",[PASSWORD]"
                 lcCmd = lcCmd & ",[REGIONAL]"
                 lcCmd = lcCmd & ",[COMPANY_ID]"
                 lcCmd = lcCmd & ",[COMPANY_OFFICE_ID]"
@@ -138,25 +136,6 @@ Public Class SYS0500Cls
         loException.ThrowExceptionIfErrors()
     End Sub
 
-    Function getCompany() As List(Of LKM_CompanyDTO)
-        Dim loException As New SC_Exception
-        Dim loDb As New SC_Db
-        Dim lcCmd As String
-        Dim loReturn As List(Of LKM_CompanyDTO)
-
-        Try
-            lcCmd = "SELECT COMPANY_ID,"
-            lcCmd = lcCmd & "COMPANY_NAME"
-            lcCmd = lcCmd & " FROM M_COMPANY (NOLOCK)"
-
-            loReturn = loDb.SQLExecObjectQuery(Of LKM_CompanyDTO)(lcCmd, loDb.GetConnection, True)
-            Return loReturn
-        Catch ex As Exception
-            loException.Add(ex)
-        End Try
-        loException.ThrowExceptionIfErrors()
-    End Function
-
     Function getRegional() As List(Of LKM_RegionalDTO)
         Dim loException As New SC_Exception
         Dim loDb As New SC_Db
@@ -169,6 +148,36 @@ Public Class SYS0500Cls
             lcCmd = lcCmd & " FROM M_REGIONAL (NOLOCK)"
 
             loReturn = loDb.SQLExecObjectQuery(Of LKM_RegionalDTO)(lcCmd, loDb.GetConnection, True)
+            Return loReturn
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+        loException.ThrowExceptionIfErrors()
+    End Function
+
+    Function getCompany(poparam As List(Of Object)) As List(Of LKM_CompanyDTO)
+        Dim loException As New SC_Exception
+        Dim loDb As New SC_Db
+        Dim lcCmd As String
+        Dim loReturn As List(Of LKM_CompanyDTO)
+        Dim loRegional As String
+
+        Try
+
+            loRegional = poparam.Item(0)
+
+            lcCmd = "SELECT COMPANY_ID,"
+            lcCmd = lcCmd & "COMPANY_NAME"
+            lcCmd = lcCmd & " FROM M_COMPANY (NOLOCK)"
+
+            'If loRegional Is Nothing Then
+            '    lcCmd = lcCmd & " WHERE REGIONAL_ID = ''"
+            'Else
+            If loRegional IsNot Nothing Then
+                lcCmd = lcCmd & " WHERE REGIONAL_ID = '" & loRegional & "'"
+            End If
+
+            loReturn = loDb.SQLExecObjectQuery(Of LKM_CompanyDTO)(lcCmd, loDb.GetConnection, True)
             Return loReturn
         Catch ex As Exception
             loException.Add(ex)
@@ -191,6 +200,9 @@ Public Class SYS0500Cls
             lcCmd = lcCmd & "COMPANY_OFFICE"
             lcCmd = lcCmd & " FROM M_COMPANY_OFFICE (NOLOCK)"
 
+            'If loCompany Is Nothing Then
+            '    lcCmd = lcCmd & " WHERE COMPANY_ID = ''"
+            'Else
             If loCompany IsNot Nothing Then
                 lcCmd = lcCmd & " WHERE COMPANY_ID = '" & loCompany & "'"
             End If
@@ -209,15 +221,21 @@ Public Class SYS0500Cls
         Dim lcCmd As String
         Dim loReturn As List(Of LKM_Company_Office_MapDTO)
         Dim loRegional As String
-
+        Dim loCompanyOffice As String
 
         Try
             loRegional = poparam.Item(0)
+            loCompanyOffice = poparam.Item(1)
 
             lcCmd = "SELECT DISTINCT COMPANY_OFFICE_MAP_ID FROM M_COMPANY_OFFICE_MAP"
 
-            If loRegional IsNot Nothing Then
+            'If loRegional Is Nothing Or loCompanyOffice Is Nothing Then
+            '    lcCmd = lcCmd & " WHERE REGIONAL_ID = ''"
+            '    lcCmd = lcCmd & " AND COMPANY_OFFICE_ID = ''"
+            'Else
+            If loRegional IsNot Nothing Or loCompanyOffice IsNot Nothing Then
                 lcCmd = lcCmd & " WHERE REGIONAL_ID = '" & loRegional & "'"
+                lcCmd = lcCmd & " AND COMPANY_OFFICE_ID = '" & loCompanyOffice & "'"
             End If
 
             loReturn = loDb.SQLExecObjectQuery(Of LKM_Company_Office_MapDTO)(lcCmd, loDb.GetConnection, True)
@@ -236,7 +254,7 @@ Public Class SYS0500Cls
 
         Try
             lcCmd = "SELECT [USER_ID]"
-            lcCmd = lcCmd & ",[PASSWORD]"
+            'lcCmd = lcCmd & ",[PASSWORD]"
             lcCmd = lcCmd & ",[REGIONAL]"
             lcCmd = lcCmd & ",[COMPANY_ID]"
             lcCmd = lcCmd & ",[COMPANY_OFFICE_ID]"

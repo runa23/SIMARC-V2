@@ -62,4 +62,19 @@ Public Class SCM0200Svc
 
         loException.ConvertAndThrowToServiceExceptionIfErrors()
     End Function
+
+    Public Function getRegional() As List(Of LKM_RegionalDTO) Implements ISCM0200Svc.getRegional
+        Dim loException As New SC_Exception
+        Dim loCls As New SCM0200Cls
+        Dim loReturn As List(Of LKM_RegionalDTO)
+
+        Try
+            loReturn = loCls.getRegional()
+            Return loReturn
+        Catch ex As Exception
+            loException.Add(ex)
+        End Try
+
+        loException.ConvertAndThrowToServiceExceptionIfErrors()
+    End Function
 End Class

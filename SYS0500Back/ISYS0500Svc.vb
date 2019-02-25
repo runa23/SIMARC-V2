@@ -17,7 +17,7 @@ Public Interface ISYS0500Svc
 
     <OperationContract()>
         <FaultContract(GetType(SC_ServiceExceptions))>
-    Function getCompany() As List(Of LKM_CompanyDTO)
+    Function getCompany(ByVal poparam As List(Of Object)) As List(Of LKM_CompanyDTO)
 
     <OperationContract()>
         <FaultContract(GetType(SC_ServiceExceptions))>

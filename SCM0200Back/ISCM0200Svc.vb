@@ -10,4 +10,7 @@ Public Interface ISCM0200Svc
         <FaultContract(GetType(SC_ServiceExceptions))>
     Function getList(ByVal poparam As List(Of Object)) As List(Of SCM0200DTO02)
 
+    <OperationContract()>
+        <FaultContract(GetType(SC_ServiceExceptions))>
+    Function getRegional() As List(Of LKM_RegionalDTO)
 End Interface

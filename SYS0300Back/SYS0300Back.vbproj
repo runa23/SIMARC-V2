@@ -75,8 +75,11 @@
     <Compile Include="DTO\LKM_SysAppGroupDTO.vb" />
     <Compile Include="DTO\LKM_SysAppTypeDTO.vb" />
     <Compile Include="DTO\LKM_SysModuleDTO.vb" />
+    <Compile Include="DTO\LKM_SysRoleDTO.vb" />
     <Compile Include="DTO\SYS0300DTO01.vb" />
     <Compile Include="DTO\SYS0300DTO02.vb" />
+    <Compile Include="DTO\SYS0301DTO01.vb" />
+    <Compile Include="DTO\SYS0301DTO02.vb" />
     <Compile Include="ISYS0300Svc.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

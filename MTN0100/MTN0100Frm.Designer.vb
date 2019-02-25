@@ -57,6 +57,12 @@ Partial Class MTN0100Frm
         Me.SC_ErrorProvider1 = New SC_Win_FrontEnd.SC_ErrorProvider(Me.components)
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabList = New System.Windows.Forms.TabPage()
+        Me.TxtLimit = New SC_Win_FrontEnd.SC_TextBox()
+        Me.CheckLimit = New SC_Win_FrontEnd.SC_CheckBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.KeSC_DateTimePicker = New SC_Win_FrontEnd.SC_DateTimePicker()
+        Me.DariSC_DateTimePicker = New SC_Win_FrontEnd.SC_DateTimePicker()
+        Me.TanggalSC_CheckBox = New SC_Win_FrontEnd.SC_CheckBox()
         Me.SC_GridSearch1 = New SC_Win_FrontEnd.SC_GridSearch()
         Me.TabData = New System.Windows.Forms.TabPage()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
@@ -80,12 +86,6 @@ Partial Class MTN0100Frm
         Me.LKM_CompanyDTOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BARCODESC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
         Me.LKM_OutletDTOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TanggalSC_CheckBox = New SC_Win_FrontEnd.SC_CheckBox()
-        Me.DariSC_DateTimePicker = New SC_Win_FrontEnd.SC_DateTimePicker()
-        Me.KeSC_DateTimePicker = New SC_Win_FrontEnd.SC_DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.CheckLimit = New SC_Win_FrontEnd.SC_CheckBox()
-        Me.TxtLimit = New SC_Win_FrontEnd.SC_TextBox()
         BARCODELabel = New System.Windows.Forms.Label()
         COMPANY_IDLabel = New System.Windows.Forms.Label()
         COMPANY_OFFICE_IDLabel = New System.Windows.Forms.Label()
@@ -419,6 +419,66 @@ Partial Class MTN0100Frm
         Me.TabList.Text = "List"
         Me.TabList.UseVisualStyleBackColor = True
         '
+        'TxtLimit
+        '
+        Me.TxtLimit.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtLimit.Location = New System.Drawing.Point(81, 33)
+        Me.TxtLimit.Name = "TxtLimit"
+        Me.TxtLimit.SC_ConductorSource = Nothing
+        Me.TxtLimit.Size = New System.Drawing.Size(69, 21)
+        Me.TxtLimit.TabIndex = 7
+        '
+        'CheckLimit
+        '
+        Me.CheckLimit.AutoSize = True
+        Me.CheckLimit.Location = New System.Drawing.Point(21, 35)
+        Me.CheckLimit.Name = "CheckLimit"
+        Me.CheckLimit.SC_ConductorSource = Nothing
+        Me.CheckLimit.Size = New System.Drawing.Size(54, 17)
+        Me.CheckLimit.TabIndex = 6
+        Me.CheckLimit.Text = "Limit :"
+        Me.CheckLimit.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(249, 10)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(18, 13)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "ke"
+        '
+        'KeSC_DateTimePicker
+        '
+        Me.KeSC_DateTimePicker.CustomFormat = "dd/MM/yyyy"
+        Me.KeSC_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.KeSC_DateTimePicker.Location = New System.Drawing.Point(273, 6)
+        Me.KeSC_DateTimePicker.Name = "KeSC_DateTimePicker"
+        Me.KeSC_DateTimePicker.SC_ConductorSource = Nothing
+        Me.KeSC_DateTimePicker.Size = New System.Drawing.Size(200, 21)
+        Me.KeSC_DateTimePicker.TabIndex = 4
+        '
+        'DariSC_DateTimePicker
+        '
+        Me.DariSC_DateTimePicker.CustomFormat = "dd/MM/yyyy"
+        Me.DariSC_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DariSC_DateTimePicker.Location = New System.Drawing.Point(113, 6)
+        Me.DariSC_DateTimePicker.Name = "DariSC_DateTimePicker"
+        Me.DariSC_DateTimePicker.SC_ConductorSource = Nothing
+        Me.DariSC_DateTimePicker.Size = New System.Drawing.Size(130, 21)
+        Me.DariSC_DateTimePicker.TabIndex = 3
+        '
+        'TanggalSC_CheckBox
+        '
+        Me.TanggalSC_CheckBox.AutoSize = True
+        Me.TanggalSC_CheckBox.Location = New System.Drawing.Point(21, 8)
+        Me.TanggalSC_CheckBox.Name = "TanggalSC_CheckBox"
+        Me.TanggalSC_CheckBox.SC_ConductorSource = Nothing
+        Me.TanggalSC_CheckBox.Size = New System.Drawing.Size(86, 17)
+        Me.TanggalSC_CheckBox.TabIndex = 2
+        Me.TanggalSC_CheckBox.Text = "Dari Tanggal"
+        Me.TanggalSC_CheckBox.UseVisualStyleBackColor = True
+        '
         'SC_GridSearch1
         '
         Me.SC_GridSearch1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
@@ -674,66 +734,6 @@ Partial Class MTN0100Frm
         'LKM_OutletDTOBindingSource
         '
         Me.LKM_OutletDTOBindingSource.DataSource = GetType(MTN0100.MTN0100SvcRef.LKM_OutletDTO)
-        '
-        'TanggalSC_CheckBox
-        '
-        Me.TanggalSC_CheckBox.AutoSize = True
-        Me.TanggalSC_CheckBox.Location = New System.Drawing.Point(21, 8)
-        Me.TanggalSC_CheckBox.Name = "TanggalSC_CheckBox"
-        Me.TanggalSC_CheckBox.SC_ConductorSource = Nothing
-        Me.TanggalSC_CheckBox.Size = New System.Drawing.Size(86, 17)
-        Me.TanggalSC_CheckBox.TabIndex = 2
-        Me.TanggalSC_CheckBox.Text = "Dari Tanggal"
-        Me.TanggalSC_CheckBox.UseVisualStyleBackColor = True
-        '
-        'DariSC_DateTimePicker
-        '
-        Me.DariSC_DateTimePicker.CustomFormat = "dd/MM/yyyy"
-        Me.DariSC_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DariSC_DateTimePicker.Location = New System.Drawing.Point(113, 6)
-        Me.DariSC_DateTimePicker.Name = "DariSC_DateTimePicker"
-        Me.DariSC_DateTimePicker.SC_ConductorSource = Nothing
-        Me.DariSC_DateTimePicker.Size = New System.Drawing.Size(130, 21)
-        Me.DariSC_DateTimePicker.TabIndex = 3
-        '
-        'KeSC_DateTimePicker
-        '
-        Me.KeSC_DateTimePicker.CustomFormat = "dd/MM/yyyy"
-        Me.KeSC_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.KeSC_DateTimePicker.Location = New System.Drawing.Point(273, 6)
-        Me.KeSC_DateTimePicker.Name = "KeSC_DateTimePicker"
-        Me.KeSC_DateTimePicker.SC_ConductorSource = Nothing
-        Me.KeSC_DateTimePicker.Size = New System.Drawing.Size(200, 21)
-        Me.KeSC_DateTimePicker.TabIndex = 4
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(249, 10)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(18, 13)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "ke"
-        '
-        'CheckLimit
-        '
-        Me.CheckLimit.AutoSize = True
-        Me.CheckLimit.Location = New System.Drawing.Point(21, 35)
-        Me.CheckLimit.Name = "CheckLimit"
-        Me.CheckLimit.SC_ConductorSource = Nothing
-        Me.CheckLimit.Size = New System.Drawing.Size(54, 17)
-        Me.CheckLimit.TabIndex = 6
-        Me.CheckLimit.Text = "Limit :"
-        Me.CheckLimit.UseVisualStyleBackColor = True
-        '
-        'TxtLimit
-        '
-        Me.TxtLimit.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TxtLimit.Location = New System.Drawing.Point(81, 33)
-        Me.TxtLimit.Name = "TxtLimit"
-        Me.TxtLimit.SC_ConductorSource = Nothing
-        Me.TxtLimit.Size = New System.Drawing.Size(69, 21)
-        Me.TxtLimit.TabIndex = 7
         '
         'MTN0100Frm
         '

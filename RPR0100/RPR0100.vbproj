@@ -143,6 +143,9 @@
     <None Include="Service References\RPR0100SvcRef\RPR0100Svc4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\RPR0100SvcRef\RPR0100Svc5.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

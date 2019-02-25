@@ -8,6 +8,6 @@ Public Interface IRPR0100Svc
 
     <OperationContract()>
         <FaultContract(GetType(SC_ServiceExceptions))>
-    Function getList() As List(Of RPR0100DTO02)
+    Function getList(ByVal poParam As List(Of Object)) As List(Of RPR0100DTO02)
 
 End Interface

@@ -47,13 +47,13 @@ Public Class SYS0500Svc
         loException.ConvertAndThrowToServiceExceptionIfErrors()
     End Function
 
-    Public Function getCompany() As List(Of LKM_CompanyDTO) Implements ISYS0500Svc.getCompany
+    Public Function getCompany(poparm As List(Of Object)) As List(Of LKM_CompanyDTO) Implements ISYS0500Svc.getCompany
         Dim loException As New SC_Exception
         Dim loCls As New SYS0500Cls
         Dim loReturn As List(Of LKM_CompanyDTO)
 
         Try
-            loReturn = loCls.getCompany()
+            loReturn = loCls.getCompany(poparm)
             Return loReturn
         Catch ex As Exception
             loException.Add(ex)

@@ -815,11 +815,30 @@ Namespace SYS0500SvcRef
         Function getRegionalAsync() As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.LKM_RegionalDTO))
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISYS0500Svc/getCompany", ReplyAction:="http://tempuri.org/ISYS0500Svc/getCompanyResponse"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/ISYS0500Svc/getCompanySC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common")>  _
-        Function getCompany() As System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO)
+         System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/ISYS0500Svc/getCompanySC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.SC_DTOBase)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.eCRUDMode)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.SYS0500DTO01)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.SYS0500DTO02))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.SYS0500DTO02)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_RegionalDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_RegionalDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_CompanyDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_CompanyOfficeDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SYS0500SvcRef.LKM_Company_Office_MapDTO))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SYS0500SvcRef.LKM_Company_Office_MapDTO)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of Object))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ServiceExceptions)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_Error))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_Error)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(System.Collections.Generic.List(Of SC_Common.SC_ErrorDetail))),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(SC_Common.SC_ErrorDetail))>  _
+        Function getCompany(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISYS0500Svc/getCompany", ReplyAction:="http://tempuri.org/ISYS0500Svc/getCompanyResponse")>  _
-        Function getCompanyAsync() As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO))
+        Function getCompanyAsync(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO))
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ISYS0500Svc/getCompanyOffice", ReplyAction:="http://tempuri.org/ISYS0500Svc/getCompanyOfficeResponse"),  _
          System.ServiceModel.FaultContractAttribute(GetType(SC_Common.SC_ServiceExceptions), Action:="http://tempuri.org/ISYS0500Svc/getCompanyOfficeSC_ServiceExceptionsFault", Name:="SC_ServiceExceptions", [Namespace]:="http://schemas.datacontract.org/2004/07/SC_Common"),  _
@@ -945,12 +964,12 @@ Namespace SYS0500SvcRef
             Return MyBase.Channel.getRegionalAsync
         End Function
         
-        Public Function getCompany() As System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO) Implements SYS0500SvcRef.ISYS0500Svc.getCompany
-            Return MyBase.Channel.getCompany
+        Public Function getCompany(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO) Implements SYS0500SvcRef.ISYS0500Svc.getCompany
+            Return MyBase.Channel.getCompany(poparam)
         End Function
         
-        Public Function getCompanyAsync() As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO)) Implements SYS0500SvcRef.ISYS0500Svc.getCompanyAsync
-            Return MyBase.Channel.getCompanyAsync
+        Public Function getCompanyAsync(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyDTO)) Implements SYS0500SvcRef.ISYS0500Svc.getCompanyAsync
+            Return MyBase.Channel.getCompanyAsync(poparam)
         End Function
         
         Public Function getCompanyOffice(ByVal poparam As System.Collections.Generic.List(Of Object)) As System.Collections.Generic.List(Of SYS0500SvcRef.LKM_CompanyOfficeDTO) Implements SYS0500SvcRef.ISYS0500Svc.getCompanyOffice

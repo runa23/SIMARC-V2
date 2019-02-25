@@ -47,7 +47,6 @@ Partial Class SYS0501Frm
         Me.SC_Save1 = New SC_Win_FrontEnd.SC_Save()
         Me.SC_Conductor1 = New SC_Win_FrontEnd.SC_Conductor(Me.components)
         Me.SC_Delete1 = New SC_Win_FrontEnd.SC_Delete()
-        Me.SC_Refresh1 = New SC_Win_FrontEnd.SC_Refresh()
         Me.SC_Cancel1 = New SC_Win_FrontEnd.SC_Cancel()
         Me.SC_Add1 = New SC_Win_FrontEnd.SC_Add()
         USER_IDLabel = New System.Windows.Forms.Label()
@@ -107,7 +106,6 @@ Partial Class SYS0501Frm
         Me.SplitContainer1.Panel2.Controls.Add(Me.TabControl1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.SC_Save1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.SC_Delete1)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.SC_Refresh1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.SC_Cancel1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.SC_Add1)
         Me.SplitContainer1.Size = New System.Drawing.Size(843, 478)
@@ -138,7 +136,7 @@ Partial Class SYS0501Frm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabList)
         Me.TabControl1.Controls.Add(Me.TabData)
-        Me.TabControl1.Location = New System.Drawing.Point(3, 55)
+        Me.TabControl1.Location = New System.Drawing.Point(6, 55)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(567, 411)
@@ -253,7 +251,8 @@ Partial Class SYS0501Frm
         Me.ROLE_NAMESC_ComboBox.FormattingEnabled = True
         Me.ROLE_NAMESC_ComboBox.Location = New System.Drawing.Point(125, 50)
         Me.ROLE_NAMESC_ComboBox.Name = "ROLE_NAMESC_ComboBox"
-        Me.ROLE_NAMESC_ComboBox.SC_ConductorSource = Nothing
+        Me.ROLE_NAMESC_ComboBox.SC_ConductorSource = Me.SC_Conductor1
+        Me.ROLE_NAMESC_ComboBox.SC_EnableADD = True
         Me.ROLE_NAMESC_ComboBox.Size = New System.Drawing.Size(247, 21)
         Me.ROLE_NAMESC_ComboBox.TabIndex = 1
         Me.ROLE_NAMESC_ComboBox.ValueMember = "ROLE_ID"
@@ -270,7 +269,7 @@ Partial Class SYS0501Frm
         '
         Me.SC_Save1.Image = CType(resources.GetObject("SC_Save1.Image"), System.Drawing.Image)
         Me.SC_Save1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.SC_Save1.Location = New System.Drawing.Point(194, 10)
+        Me.SC_Save1.Location = New System.Drawing.Point(130, 10)
         Me.SC_Save1.Name = "SC_Save1"
         Me.SC_Save1.SC_ConductorSource = Me.SC_Conductor1
         Me.SC_Save1.Size = New System.Drawing.Size(61, 39)
@@ -289,7 +288,7 @@ Partial Class SYS0501Frm
         '
         Me.SC_Delete1.Image = CType(resources.GetObject("SC_Delete1.Image"), System.Drawing.Image)
         Me.SC_Delete1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.SC_Delete1.Location = New System.Drawing.Point(132, 10)
+        Me.SC_Delete1.Location = New System.Drawing.Point(68, 10)
         Me.SC_Delete1.Name = "SC_Delete1"
         Me.SC_Delete1.SC_ConductorSource = Me.SC_Conductor1
         Me.SC_Delete1.Size = New System.Drawing.Size(61, 39)
@@ -298,24 +297,11 @@ Partial Class SYS0501Frm
         Me.SC_Delete1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.SC_Delete1.UseVisualStyleBackColor = True
         '
-        'SC_Refresh1
-        '
-        Me.SC_Refresh1.Image = CType(resources.GetObject("SC_Refresh1.Image"), System.Drawing.Image)
-        Me.SC_Refresh1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.SC_Refresh1.Location = New System.Drawing.Point(8, 10)
-        Me.SC_Refresh1.Name = "SC_Refresh1"
-        Me.SC_Refresh1.SC_ConductorSource = Me.SC_Conductor1
-        Me.SC_Refresh1.Size = New System.Drawing.Size(61, 39)
-        Me.SC_Refresh1.TabIndex = 51
-        Me.SC_Refresh1.Text = "&Refresh"
-        Me.SC_Refresh1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.SC_Refresh1.UseVisualStyleBackColor = True
-        '
         'SC_Cancel1
         '
         Me.SC_Cancel1.Image = CType(resources.GetObject("SC_Cancel1.Image"), System.Drawing.Image)
         Me.SC_Cancel1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.SC_Cancel1.Location = New System.Drawing.Point(256, 10)
+        Me.SC_Cancel1.Location = New System.Drawing.Point(192, 10)
         Me.SC_Cancel1.Name = "SC_Cancel1"
         Me.SC_Cancel1.SC_ConductorSource = Me.SC_Conductor1
         Me.SC_Cancel1.Size = New System.Drawing.Size(61, 39)
@@ -328,7 +314,7 @@ Partial Class SYS0501Frm
         '
         Me.SC_Add1.Image = CType(resources.GetObject("SC_Add1.Image"), System.Drawing.Image)
         Me.SC_Add1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.SC_Add1.Location = New System.Drawing.Point(70, 10)
+        Me.SC_Add1.Location = New System.Drawing.Point(6, 10)
         Me.SC_Add1.Name = "SC_Add1"
         Me.SC_Add1.SC_ConductorSource = Me.SC_Conductor1
         Me.SC_Add1.Size = New System.Drawing.Size(61, 39)
@@ -366,7 +352,6 @@ Partial Class SYS0501Frm
     Friend WithEvents SC_Conductor1 As SC_Win_FrontEnd.SC_Conductor
     Friend WithEvents SC_Save1 As SC_Win_FrontEnd.SC_Save
     Friend WithEvents SC_Delete1 As SC_Win_FrontEnd.SC_Delete
-    Friend WithEvents SC_Refresh1 As SC_Win_FrontEnd.SC_Refresh
     Friend WithEvents SC_Cancel1 As SC_Win_FrontEnd.SC_Cancel
     Friend WithEvents SC_Add1 As SC_Win_FrontEnd.SC_Add
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
@@ -377,6 +362,8 @@ Partial Class SYS0501Frm
     Friend WithEvents USER_IDSC_TextBox As SC_Win_FrontEnd.SC_TextBox
     Friend WithEvents SYS0500DTO02BindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents SYS0501DTO02SC_DataGridView As SC_Win_FrontEnd.SC_DataGridView
+    Friend WithEvents ROLE_NAMESC_ComboBox As SC_Win_FrontEnd.SC_ComboBox
+    Friend WithEvents LKM_RoleDTOBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -384,7 +371,5 @@ Partial Class SYS0501Frm
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ROLE_NAMESC_ComboBox As SC_Win_FrontEnd.SC_ComboBox
-    Friend WithEvents LKM_RoleDTOBindingSource As System.Windows.Forms.BindingSource
 
 End Class

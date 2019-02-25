@@ -26,6 +26,7 @@
   <Metadata>
     <MetadataFile FileName="RPR0100Svc.xsd" MetadataType="Schema" ID="f34f1a1c-540a-4cd7-8dcb-a9a70e382110" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0100Svc.svc?xsd=xsd3" />
     <MetadataFile FileName="RPR0100Svc1.xsd" MetadataType="Schema" ID="25a73ddf-b8a7-496e-903f-704e35e3a2dd" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0100Svc.svc?xsd=xsd4" />
+    <MetadataFile FileName="RPR0100Svc5.xsd" MetadataType="Schema" ID="de3271e7-d2db-410e-904f-4e296ecbf7f2" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0100Svc.svc?xsd=xsd5" />
     <MetadataFile FileName="RPR0100Svc.wsdl" MetadataType="Wsdl" ID="76680bf6-1de5-421c-996f-94bd72dd6faa" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0100Svc.svc?wsdl" />
     <MetadataFile FileName="RPR0100Svc.disco" MetadataType="Disco" ID="1c2bd5f8-c692-4756-a3a7-8c7e69069ecd" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0100Svc.svc?disco" />
     <MetadataFile FileName="RPR0100Svc2.xsd" MetadataType="Schema" ID="ff231d81-ee78-4c16-827e-84cd719ac4bc" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0100Svc.svc?xsd=xsd0" />

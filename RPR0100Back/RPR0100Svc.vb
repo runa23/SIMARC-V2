@@ -5,13 +5,13 @@ Imports System.ServiceModel
 Public Class RPR0100Svc
     Implements IRPR0100Svc
 
-    Public Function getList() As List(Of RPR0100DTO02) Implements IRPR0100Svc.getList
+    Public Function getList(ByVal poParam As List(Of Object)) As List(Of RPR0100DTO02) Implements IRPR0100Svc.getList
         Dim loException As New SC_Exception
         Dim loCls As New RPR0100Cls
         Dim loReturn As List(Of RPR0100DTO02)
 
         Try
-            loReturn = loCls.getList()
+            loReturn = loCls.getList(poParam)
             Return loReturn
         Catch ex As Exception
             loException.Add(ex)

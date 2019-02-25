@@ -5,6 +5,7 @@
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SC_BackEnd" base="q1:SC_DTOBase">
         <xs:sequence>
+          <xs:element minOccurs="0" name="COMPANY_OFFICE_ID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
           <xs:element minOccurs="0" name="HARGA_PART" type="xs:decimal" />
@@ -27,6 +28,7 @@
   <xs:element name="ArrayOfRPR0100DTO02" nillable="true" type="tns:ArrayOfRPR0100DTO02" />
   <xs:complexType name="RPR0100DTO02">
     <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_OFFICE_ID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
       <xs:element minOccurs="0" name="HARGA_PART" type="xs:decimal" />
