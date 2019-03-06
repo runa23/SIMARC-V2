@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RPR0200Back" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RPR0200Back" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SC_BackEnd" />
+  <xs:complexType name="RPR0200DTO01">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SC_BackEnd" base="q1:SC_DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BARCODE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="COMPANY_ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="COMPANY_OFFICE_ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FROM_DATE" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="OUTLET_ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OUTLET_NAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REPAIR_DETAIL" nillable="true" type="tns:ArrayOfRepair_DetailDTO" />
+          <xs:element minOccurs="0" name="REPAIR_ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TO_DATE" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RPR0200DTO01" nillable="true" type="tns:RPR0200DTO01" />
+  <xs:complexType name="ArrayOfRepair_DetailDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Repair_DetailDTO" nillable="true" type="tns:Repair_DetailDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRepair_DetailDTO" nillable="true" type="tns:ArrayOfRepair_DetailDTO" />
+  <xs:complexType name="Repair_DetailDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HARGA_PART" type="xs:decimal" />
+      <xs:element minOccurs="0" name="KD_PART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAMA_PART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QTY_PART" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="REPAIR_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SATUAN_PART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Repair_DetailDTO" nillable="true" type="tns:Repair_DetailDTO" />
+  <xs:complexType name="ArrayOfRPR0200DTO02">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RPR0200DTO02" nillable="true" type="tns:RPR0200DTO02" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRPR0200DTO02" nillable="true" type="tns:ArrayOfRPR0200DTO02" />
+  <xs:complexType name="RPR0200DTO02">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BARCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_OFFICE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FROM_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OUTLET_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OUTLET_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPAIR_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TO_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UPD_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPD_DATE" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RPR0200DTO02" nillable="true" type="tns:RPR0200DTO02" />
+  <xs:complexType name="ArrayOfLKM_CompanyDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LKM_CompanyDTO" nillable="true" type="tns:LKM_CompanyDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLKM_CompanyDTO" nillable="true" type="tns:ArrayOfLKM_CompanyDTO" />
+  <xs:complexType name="LKM_CompanyDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LKM_CompanyDTO" nillable="true" type="tns:LKM_CompanyDTO" />
+  <xs:complexType name="ArrayOfLKM_CompanyOfficeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LKM_CompanyOfficeDTO" nillable="true" type="tns:LKM_CompanyOfficeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLKM_CompanyOfficeDTO" nillable="true" type="tns:ArrayOfLKM_CompanyOfficeDTO" />
+  <xs:complexType name="LKM_CompanyOfficeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_OFFICE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_OFFICE_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LKM_CompanyOfficeDTO" nillable="true" type="tns:LKM_CompanyOfficeDTO" />
+  <xs:complexType name="ArrayOfLKM_OutletDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LKM_OutletDTO" nillable="true" type="tns:LKM_OutletDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLKM_OutletDTO" nillable="true" type="tns:ArrayOfLKM_OutletDTO" />
+  <xs:complexType name="LKM_OutletDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OUTLET_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OUTLET_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LKM_OutletDTO" nillable="true" type="tns:LKM_OutletDTO" />
+  <xs:complexType name="ArrayOfLKM_SparepartDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LKM_SparepartDTO" nillable="true" type="tns:LKM_SparepartDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLKM_SparepartDTO" nillable="true" type="tns:ArrayOfLKM_SparepartDTO" />
+  <xs:complexType name="LKM_SparepartDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_OFFICE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HARGA_PART" type="xs:decimal" />
+      <xs:element minOccurs="0" name="KD_PART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAMA_PART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PILIH" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SATUAN_PART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STOCK_PART" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LKM_SparepartDTO" nillable="true" type="tns:LKM_SparepartDTO" />
+</xs:schema>

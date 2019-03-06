@@ -1,4 +1,5 @@
 ﻿Public Class LKM_SparepartDTO
+    Public PILIH As Boolean
     Public COMPANY_OFFICE_ID As String
     Public KD_PART As String
     Public NAMA_PART As String

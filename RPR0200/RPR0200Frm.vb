@@ -1,28 +1,30 @@
 ﻿Imports SC_Common
 Imports SC_Win_FrontEnd
-Imports MTN0100.MTN0100SvcRef
+Imports RPR0200.RPR0200SvcRef
 Imports System.ServiceModel
 
-Public Class MTN0100Frm
-    Public Const SysAppId As String = "MTN0100"
-    Public Const SysAppVersion As String = "0.00.003"
+Public Class RPR0200Frm
+    Public Const SysAppId As String = "RPR0200"
+    Public Const SysAppVersion As String = "0.00.001"
 
-    Private Sub MTN0100Frm_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub RPR0200Frm_Load(sender As Object, e As EventArgs) Handles Me.Load
         VersionLabel.Text = SysAppId & " V. " & SysAppVersion
 
         Dim loException As New SC_Exception
-        Dim loService As MTN0100SvcClient
+        Dim loService As New RPR0200SvcClient
         Dim poparam As New List(Of Object)
         Dim loCompany As New List(Of LKM_CompanyDTO)
         Dim loCompanyOffice As New List(Of LKM_CompanyOfficeDTO)
+
         Try
 
             poparam.Clear()
+
             With poparam
                 .Add(SC_GlobalVar.UserId)
             End With
 
-            loService = New MTN0100SvcClient
+            loService = New RPR0200SvcClient
 
             loCompany = loService.getCompany(poparam)
             LKM_CompanyDTOBindingSource.DataSource = New SC_BindingListView(Of LKM_CompanyDTO)(loCompany)
@@ -30,8 +32,8 @@ Public Class MTN0100Frm
             loCompanyOffice = loService.getOffice(poparam)
             LKM_CompanyOfficeDTOBindingSource.DataSource = New SC_BindingListView(Of LKM_CompanyOfficeDTO)(loCompanyOffice)
 
-            SC_Conductor1.CollectADD(Maintenance_DetailDTOSC_DataGridView)
-            SC_Conductor1.CollectEDIT(Maintenance_DetailDTOSC_DataGridView)
+            SC_Conductor1.CollectADD(Repair_DetailDTOSC_DataGridView)
+            SC_Conductor1.CollectEDIT(Repair_DetailDTOSC_DataGridView)
 
             loService.Close()
 
@@ -49,18 +51,18 @@ Public Class MTN0100Frm
 
     Private Sub SC_Conductor1_SC_AfterAdd(ByRef poEntity As Object) Handles SC_Conductor1.SC_AfterAdd
         Dim loException As New SC_Exception
-        Dim loService As MTN0100SvcClient
+        Dim loService As RPR0200SvcClient
         Dim poparam As New List(Of Object)
         Dim poDetail As New List(Of Object)
         Dim loListCompany As New List(Of LKM_CompanyDTO)
         Dim loListOutlet As New List(Of LKM_OutletDTO)
         Dim loListCompanyOffice As New List(Of LKM_CompanyOfficeDTO)
-        Dim loListDetail As New List(Of Maintenance_DetailDTO)
+        Dim loListDetail As New List(Of Repair_DetailDTO)
 
         Try
             TabControl1.SelectedTab = TabData
-            With CType(poEntity, MTN0100DTO01)
-                .MAINTENANCE_ID = ""
+            With CType(poEntity, RPR0200DTO01)
+                .REPAIR_ID = ""
                 .BARCODE = ""
                 .COMPANY_ID = ""
                 .COMPANY_OFFICE_ID = ""
@@ -73,7 +75,7 @@ Public Class MTN0100Frm
             poparam.Add(SC_GlobalVar.UserId)
             poDetail.Add(Nothing)
 
-            loService = New MTN0100SvcClient
+            loService = New RPR0200SvcClient
 
             loListCompany = loService.getCompany(poparam)
             LKM_CompanyDTOBindingSource.DataSource = loListCompany
@@ -82,10 +84,9 @@ Public Class MTN0100Frm
             LKM_CompanyOfficeDTOBindingSource.DataSource = loListCompanyOffice
 
             loListDetail = loService.getList_Detail(poEntity)
-            Maintenance_DetailDTOBindingSource.DataSource = New SC_BindingListView(Of Maintenance_DetailDTO)(loListDetail)
-            loService.Close()
+            Repair_DetailDTOBindingSource.DataSource = New SC_BindingListView(Of Repair_DetailDTO)(loListDetail)
 
-            GoodSC_CheckBox.Checked = False
+            loService.Close()
 
         Catch ex As FaultException(Of SC_ServiceExceptions)
             loException.ErrorList.AddRange(ex.Detail.Exceptions)
@@ -99,10 +100,10 @@ Public Class MTN0100Frm
 
     Private Sub SC_Conductor1_SC_AfterCancel(poEntity As Object) Handles SC_Conductor1.SC_AfterCancel
         Dim loException As New SC_Exception
-        Dim loService As MTN0100SvcClient
+        Dim loService As RPR0200SvcClient
 
         Try
-            loService = New MTN0100SvcClient
+            loService = New RPR0200SvcClient
             loService.Close()
 
 
@@ -121,11 +122,11 @@ Public Class MTN0100Frm
     End Sub
 
     Private Sub SC_Conductor1_SC_ConvertParentGridEntity(poEntity As Object, ByRef poParentEntity As Object) Handles SC_Conductor1.SC_ConvertParentGridEntity
-        Dim loEntity As MTN0100DTO01 = poEntity
-        poParentEntity = New MTN0100DTO02
+        Dim loEntity As RPR0200DTO01 = poEntity
+        poParentEntity = New RPR0200DTO02
 
-        With CType(poEntity, MTN0100DTO01)
-            poParentEntity.MAINTENANCE_ID = .MAINTENANCE_ID
+        With CType(poEntity, RPR0200DTO01)
+            poParentEntity.REPAIR_ID = .REPAIR_ID
             poParentEntity.COMPANY_ID = .COMPANY_ID
             poParentEntity.COMPANY_OFFICE_ID = .COMPANY_OFFICE_ID
             poParentEntity.FROM_DATE = .FROM_DATE
@@ -148,7 +149,7 @@ Public Class MTN0100Frm
     End Sub
 
     Private Sub SC_Conductor1_SC_Saving(ByRef poEntity As Object, peMode As SC_Conductor.e_Mode) Handles SC_Conductor1.SC_Saving
-        With CType(poEntity, MTN0100DTO01)
+        With CType(poEntity, RPR0200DTO01)
             .CREA_BY = SC_GlobalVar.UserId
             .UPD_BY = SC_GlobalVar.UserId
             .COMPANY_OFFICE_ID = SC_GlobalVar.CompanyOfficeId
@@ -157,10 +158,10 @@ Public Class MTN0100Frm
 
     Private Sub SC_Conductor1_SC_ServiceDelete(poEntity As Object) Handles SC_Conductor1.SC_ServiceDelete
         Dim loException As New SC_Exception
-        Dim loService As MTN0100SvcClient
+        Dim loService As RPR0200SvcClient
 
         Try
-            loService = New MTN0100SvcClient
+            loService = New RPR0200SvcClient
             loService.Svc_SC_Delete(poEntity)
             loService.Close()
 
@@ -176,22 +177,22 @@ Public Class MTN0100Frm
 
     Private Sub SC_Conductor1_SC_ServiceGetRecord(poEntity As Object, ByRef poEntityResult As Object) Handles SC_Conductor1.SC_ServiceGetRecord
         Dim loException As New SC_Exception
-        Dim loService As MTN0100SvcClient
-        Dim loKeyEntity As MTN0100DTO01
-        Dim loListDetail As List(Of Maintenance_DetailDTO)
+        Dim loService As RPR0200SvcClient
+        Dim loKeyEntity As RPR0200DTO01
+        Dim loListDetail As List(Of Repair_DetailDTO)
 
         Try
-            loKeyEntity = New MTN0100DTO01
-            With CType(poEntity, MTN0100DTO02)
-                loKeyEntity.MAINTENANCE_ID = .MAINTENANCE_ID
+            loKeyEntity = New RPR0200DTO01
+            With CType(poEntity, RPR0200DTO02)
+                loKeyEntity.REPAIR_ID = .REPAIR_ID
             End With
 
-            loService = New MTN0100SvcClient
+            loService = New RPR0200SvcClient
 
             poEntityResult = loService.Svc_SC_GetRecord(loKeyEntity, eCRUDMode.NormalMode)
 
             loListDetail = loService.getList_Detail(loKeyEntity)
-            Maintenance_DetailDTOBindingSource.DataSource = New SC_BindingListView(Of Maintenance_DetailDTO)(loListDetail)
+            Repair_DetailDTOBindingSource.DataSource = New SC_BindingListView(Of Repair_DetailDTO)(loListDetail)
 
             loService.Close()
 
@@ -207,8 +208,8 @@ Public Class MTN0100Frm
 
     Private Sub SC_Conductor1_SC_ServiceRefreshList() Handles SC_Conductor1.SC_ServiceRefreshList
         Dim loException As New SC_Exception
-        Dim loService As MTN0100SvcClient
-        Dim loList As List(Of MTN0100DTO02)
+        Dim loService As RPR0200SvcClient
+        Dim loList As List(Of RPR0200DTO02)
         Dim poparam As New List(Of Object)
 
         Try
@@ -228,9 +229,9 @@ Public Class MTN0100Frm
 
             poparam.Add(SC_GlobalVar.CompanyOfficeId)
 
-            loService = New MTN0100SvcClient
+            loService = New RPR0200SvcClient
             loList = loService.getList(poparam)
-            MTN0100DTO02BindingSource.DataSource = New SC_BindingListView(Of MTN0100DTO02)(loList)
+            RPR0200DTO02BindingSource.DataSource = New SC_BindingListView(Of RPR0200DTO02)(loList)
             loService.Close()
 
         Catch ex As FaultException(Of SC_ServiceExceptions)
@@ -245,18 +246,18 @@ Public Class MTN0100Frm
 
     Private Sub SC_Conductor1_SC_ServiceSave(poEntity As Object, peMode As SC_Conductor.e_Mode, ByRef poEntityResult As Object) Handles SC_Conductor1.SC_ServiceSave
         Dim loException As New SC_Exception
-        Dim loService As MTN0100SvcClient
-        Dim loDetail As New List(Of Maintenance_DetailDTO)
+        Dim loService As RPR0200SvcClient
+        Dim loDetail As New List(Of Repair_DetailDTO)
 
         Try
-            loDetail.AddRange(Maintenance_DetailDTOBindingSource.List)
+            loDetail.AddRange(Repair_DetailDTOBindingSource.List)
 
-            With CType(poEntity, MTN0100DTO01)
-                .MAINTENANCE_DETAIL = New List(Of Maintenance_DetailDTO)
-                .MAINTENANCE_DETAIL.AddRange(loDetail)
+            With CType(poEntity, RPR0200DTO01)
+                .REPAIR_DETAIL = New List(Of Repair_DetailDTO)
+                .REPAIR_DETAIL.AddRange(loDetail)
             End With
 
-            loService = New MTN0100SvcClient
+            loService = New RPR0200SvcClient
             poEntityResult = loService.Svc_SC_Save(poEntity, IIf(peMode = SC_Win_FrontEnd.SC_Conductor.e_Mode.AddMode, eCRUDMode.AddMode, eCRUDMode.EditMode))
             loService.Close()
 
@@ -288,58 +289,41 @@ Public Class MTN0100Frm
         loException.ThrowExceptionIfErrors()
     End Sub
 
-    Private Sub GoodSC_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles GoodSC_CheckBox.CheckedChanged
-        If GoodSC_CheckBox.Checked = True Then
-            For Each row As Maintenance_DetailDTO In Maintenance_DetailDTOBindingSource
-                row.GOOD = GoodSC_CheckBox.Checked
-            Next
-            Maintenance_DetailDTOSC_DataGridView.Refresh()
-        Else
-            For Each row As Maintenance_DetailDTO In Maintenance_DetailDTOBindingSource
-                row.GOOD = GoodSC_CheckBox.Checked
-            Next
-            Maintenance_DetailDTOSC_DataGridView.Refresh()
-        End If
-        
-    End Sub
-
     Private Sub OutletSC_LookUp_SC_Before_Open_Form(ByRef poTargetForm As SC_FormBase, ByRef poParameter As Object) Handles OutletSC_LookUp.SC_Before_Open_Form
         Dim poParam As New List(Of Object)
 
         poParam.Add(Nothing)
         poParam.Add(COMPANY_OFFICE_IDSC_ComboBox.SelectedValue)
-
         poParameter = poParam
-        poTargetForm = New MTN0100Frm_LKM_Outlet
+        poTargetForm = New RPR0200Frm_LKM_Outlet
     End Sub
 
     Private Sub OutletSC_LookUp_SC_Return_LookUp(poReturnObject As Object) Handles OutletSC_LookUp.SC_Return_LookUp
-        MTN0100DTO01BindingSource.Current.OUTLET_ID = poReturnObject.OUTLET_ID
-        MTN0100DTO01BindingSource.Current.OUTLET_NAME = poReturnObject.OUTLET_NAME
+        RPR0200DTO01BindingSource.Current.OUTLET_ID = poReturnObject.OUTLET_ID
+        RPR0200DTO01BindingSource.Current.OUTLET_NAME = poReturnObject.OUTLET_NAME
     End Sub
 
     Private Sub OUTLET_IDSC_TextBox_Validated(sender As Object, e As EventArgs) Handles OUTLET_IDSC_TextBox.Validated
         Dim loException As New SC_Exception
         Dim poparam As New List(Of Object)
-        Dim loService As MTN0100SvcClient
+        Dim loService As RPR0200SvcClient
         Dim loOutlet As LKM_OutletDTO
 
         Try
-           
             poparam.Add(OUTLET_IDSC_TextBox.Text)
             poparam.Add(COMPANY_OFFICE_IDSC_ComboBox.SelectedValue)
 
-            loService = New MTN0100SvcClient
+            loService = New RPR0200SvcClient
             loOutlet = loService.getOutlet(poparam).FirstOrDefault
 
             If loOutlet IsNot Nothing Then
-                MTN0100DTO01BindingSource.Current.OUTLET_ID = loOutlet.OUTLET_ID
-                MTN0100DTO01BindingSource.Current.OUTLET_NAME = loOutlet.OUTLET_NAME
+                RPR0200DTO01BindingSource.Current.OUTLET_ID = loOutlet.OUTLET_ID
+                RPR0200DTO01BindingSource.Current.OUTLET_NAME = loOutlet.OUTLET_NAME
             Else
-                MTN0100DTO01BindingSource.Current.OUTLET_ID = Nothing
-                MTN0100DTO01BindingSource.Current.OUTLET_NAME = Nothing
+                RPR0200DTO01BindingSource.Current.OUTLET_ID = Nothing
+                RPR0200DTO01BindingSource.Current.OUTLET_NAME = Nothing
             End If
-            
+
             loService.Close()
 
         Catch ex As FaultException(Of SC_ServiceExceptions)
@@ -353,6 +337,7 @@ Public Class MTN0100Frm
         If loException.Haserror Then
             SC_DisplayException(loException)
         End If
+
     End Sub
 
     Private Sub CheckLimit_CheckedChanged(sender As Object, e As EventArgs) Handles CheckLimit.CheckedChanged
@@ -385,5 +370,42 @@ Public Class MTN0100Frm
             DariSC_DateTimePicker.Enabled = False
             KeSC_DateTimePicker.Enabled = False
         End If
+    End Sub
+
+    Private Sub SparepartSC_Detail_SC_Before_Open_Form(ByRef poTargetForm As SC_FormBase, ByRef poParameter As Object) Handles SparepartSC_Detail.SC_Before_Open_Form
+        Dim poParam As New List(Of Object)
+
+        poParam.Add(Nothing)
+        poParam.Add(COMPANY_OFFICE_IDSC_ComboBox.SelectedValue)
+
+        poParameter = poParam
+        poTargetForm = New RPR0200Frm_LKM_Sparepart
+    End Sub
+
+    Private Sub RPR0200Frm_SC_Return_From_Detail(poOwnedForm As Windows.Forms.Form, pcButtonName As String) Handles Me.SC_Return_From_Detail
+        Dim loList As New List(Of LKM_SparepartDTO)
+        Dim loEntity As Repair_DetailDTO
+
+        If pcButtonName = "SparepartSC_Detail" Then
+            loList.AddRange(CType(poOwnedForm, RPR0200Frm_LKM_Sparepart).getList)
+
+            For Each row As LKM_SparepartDTO In loList
+                If row.PILIH = True Then
+                    Dim loPartID As String = row.KD_PART
+                    Dim loCek = (From A As Repair_DetailDTO In Repair_DetailDTOBindingSource.List Where A.KD_PART = loPartID).Count
+
+                    If loCek <= 0 Then
+                        loEntity = New Repair_DetailDTO
+                        loEntity.KD_PART = row.KD_PART
+                        loEntity.NAMA_PART = row.NAMA_PART
+                        loEntity.HARGA_PART = row.HARGA_PART
+                        loEntity.QTY_PART = 0
+                        loEntity.SATUAN_PART = row.SATUAN_PART
+                        Repair_DetailDTOBindingSource.Add(loEntity)
+                    End If
+                End If
+            Next
+        End If
+
     End Sub
 End Class

@@ -61,6 +61,17 @@ Public Class RPR0100Cls
             lcCmd = lcCmd & "','" & poEntity.UPD_BY.Trim & "'"
 
             loDb.SqlExecNonQuery(lcCmd, loConn, True)
+
+            lcCmd = "EXEC RPR0110 "
+            lcCmd = lcCmd & "','" & poEntity.COMPANY_OFFICE_ID
+            lcCmd = lcCmd & "'," & poEntity.KD_PART
+            lcCmd = lcCmd & "," & Val(poEntity.HARGA_PART)
+            lcCmd = lcCmd & ",'DELETE"
+            lcCmd = lcCmd & "','" & poEntity.CREA_BY.Trim
+            lcCmd = lcCmd & "','" & poEntity.UPD_BY.Trim & "'"
+
+            loDb.SqlExecNonQuery(lcCmd, loConn, True)
+
         Catch ex As Exception
             loException.Add(ex)
         End Try
@@ -137,6 +148,17 @@ Public Class RPR0100Cls
                 lcCmd = lcCmd & "','" & poNewEntity.CREA_BY.Trim
                 lcCmd = lcCmd & "','" & poNewEntity.UPD_BY.Trim & "'"
 
+                loDb.SqlExecNonQuery(lcCmd, loConn, False)
+
+                lcCmd = "EXEC RPR0110 "
+                lcCmd = lcCmd & "','" & poNewEntity.COMPANY_OFFICE_ID
+                lcCmd = lcCmd & "'," & poNewEntity.KD_PART
+                lcCmd = lcCmd & "," & Val(poNewEntity.HARGA_PART)
+                lcCmd = lcCmd & ",'INSERT"
+                lcCmd = lcCmd & "','" & poNewEntity.CREA_BY.Trim
+                lcCmd = lcCmd & "','" & poNewEntity.UPD_BY.Trim & "'"
+
+                loDb.SqlExecNonQuery(lcCmd, loConn, True)
             Else
 
                 lcCmd = "SELECT HARGA_PART, STOCK_PART FROM M_SPAREPART WHERE KD_PART = " & poNewEntity.KD_PART & " "
@@ -162,8 +184,20 @@ Public Class RPR0100Cls
                 lcCmd = lcCmd & "','" & poNewEntity.CREA_BY.Trim
                 lcCmd = lcCmd & "','" & poNewEntity.UPD_BY.Trim & "'"
 
+                loDb.SqlExecNonQuery(lcCmd, loConn, False)
+
+                lcCmd = "EXEC RPR0110 "
+                lcCmd = lcCmd & "','" & poNewEntity.COMPANY_OFFICE_ID
+                lcCmd = lcCmd & "'," & poNewEntity.KD_PART
+                lcCmd = lcCmd & "," & Val(poNewEntity.HARGA_PART)
+                lcCmd = lcCmd & ",'UPDATE"
+                lcCmd = lcCmd & "','" & poNewEntity.CREA_BY.Trim
+                lcCmd = lcCmd & "','" & poNewEntity.UPD_BY.Trim & "'"
+
+                loDb.SqlExecNonQuery(lcCmd, loConn, True)
+
             End If
-            loDb.SqlExecNonQuery(lcCmd, loConn, True)
+
 
             loConn.Close()
         Catch ex As Exception

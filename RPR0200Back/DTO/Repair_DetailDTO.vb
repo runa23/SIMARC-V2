@@ -1,4 +1,5 @@
 ﻿Public Class Repair_DetailDTO
+
     Public REPAIR_ID As String
     Public KD_PART As String
     Public NAMA_PART As String

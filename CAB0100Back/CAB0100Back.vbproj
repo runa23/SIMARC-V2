@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DD3A66F9-4D9A-48E1-8A61-95BC431802D4}</ProjectGuid>
+    <ProjectGuid>{F3970DAB-F19E-463C-AABF-5CBAA5375EC6}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>RPR0200Back</RootNamespace>
-    <AssemblyName>RPR0200Back</AssemblyName>
+    <RootNamespace>CAB0100Back</RootNamespace>
+    <AssemblyName>CAB0100Back</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -19,7 +19,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>RPR0200Back.xml</DocumentationFile>
+    <DocumentationFile>CAB0100Back.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -28,7 +28,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>RPR0200Back.xml</DocumentationFile>
+    <DocumentationFile>CAB0100Back.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -44,8 +44,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SC_BackEnd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="SC_BackEnd">
       <HintPath>..\Library\SC_BackEnd.dll</HintPath>
     </Reference>
     <Reference Include="SC_Common">
@@ -72,14 +71,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\LKM_CompanyDTO.vb" />
-    <Compile Include="DTO\LKM_CompanyOfficeDTO.vb" />
-    <Compile Include="DTO\LKM_OutletDTO.vb" />
-    <Compile Include="DTO\LKM_SparepartDTO.vb" />
-    <Compile Include="DTO\Repair_DetailDTO.vb" />
-    <Compile Include="DTO\RPR0200DTO01.vb" />
-    <Compile Include="DTO\RPR0200DTO02.vb" />
-    <Compile Include="IRPR0200Svc.vb" />
+    <Compile Include="CAB0100Cls.vb" />
+    <Compile Include="CAB0100Svc.vb" />
+    <Compile Include="ICAB0100Svc.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -95,8 +89,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RPR0200Cls.vb" />
-    <Compile Include="RPR0200Svc.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -117,6 +109,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

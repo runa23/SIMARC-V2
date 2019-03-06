@@ -26,16 +26,28 @@ Partial Class RPR0100Frm
         Dim STOCK_PARTLabel As System.Windows.Forms.Label
         Dim SATUAN_PARTLabel As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RPR0100Frm))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabList = New System.Windows.Forms.TabPage()
         Me.SC_GridSearch1 = New SC_Win_FrontEnd.SC_GridSearch()
+        Me.RPR0100DTO02BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RPR0100DTO02SC_DataGridView = New SC_Win_FrontEnd.SC_DataGridView()
+        Me.COMPANY_OFFICE_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabData = New System.Windows.Forms.TabPage()
         Me.SATUAN_PARTSC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
+        Me.RPR0100DTO01BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SC_Conductor1 = New SC_Win_FrontEnd.SC_Conductor(Me.components)
         Me.STOCK_PARTSC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
         Me.HARGA_PARTSC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
@@ -50,18 +62,6 @@ Partial Class RPR0100Frm
         Me.SC_Cancel1 = New SC_Win_FrontEnd.SC_Cancel()
         Me.SC_Add1 = New SC_Win_FrontEnd.SC_Add()
         Me.VersionLabel = New System.Windows.Forms.Label()
-        Me.RPR0100DTO01BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.RPR0100DTO02BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.COMPANY_OFFICE_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         KD_PARTLabel = New System.Windows.Forms.Label()
         NAMA_PARTLabel = New System.Windows.Forms.Label()
         HARGA_PARTLabel = New System.Windows.Forms.Label()
@@ -69,12 +69,12 @@ Partial Class RPR0100Frm
         SATUAN_PARTLabel = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabList.SuspendLayout()
+        CType(Me.RPR0100DTO02BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RPR0100DTO02SC_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabData.SuspendLayout()
+        CType(Me.RPR0100DTO01BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SC_Conductor1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SC_ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RPR0100DTO01BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RPR0100DTO02BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'KD_PARTLabel
@@ -159,6 +159,10 @@ Partial Class RPR0100Frm
         Me.SC_GridSearch1.Size = New System.Drawing.Size(915, 32)
         Me.SC_GridSearch1.TabIndex = 1
         '
+        'RPR0100DTO02BindingSource
+        '
+        Me.RPR0100DTO02BindingSource.DataSource = GetType(RPR0100.RPR0100SvcRef.RPR0100DTO02)
+        '
         'RPR0100DTO02SC_DataGridView
         '
         Me.RPR0100DTO02SC_DataGridView.AllowUserToAddRows = False
@@ -177,11 +181,88 @@ Partial Class RPR0100Frm
         Me.RPR0100DTO02SC_DataGridView.Location = New System.Drawing.Point(6, 6)
         Me.RPR0100DTO02SC_DataGridView.Name = "RPR0100DTO02SC_DataGridView"
         Me.RPR0100DTO02SC_DataGridView.ReadOnly = True
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RPR0100DTO02SC_DataGridView.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RPR0100DTO02SC_DataGridView.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.RPR0100DTO02SC_DataGridView.SC_ConductorSource = Nothing
         Me.RPR0100DTO02SC_DataGridView.Size = New System.Drawing.Size(915, 332)
         Me.RPR0100DTO02SC_DataGridView.TabIndex = 0
+        '
+        'COMPANY_OFFICE_ID
+        '
+        Me.COMPANY_OFFICE_ID.DataPropertyName = "COMPANY_OFFICE_ID"
+        Me.COMPANY_OFFICE_ID.HeaderText = "Company Office"
+        Me.COMPANY_OFFICE_ID.Name = "COMPANY_OFFICE_ID"
+        Me.COMPANY_OFFICE_ID.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "KD_PART"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Kode Sparepart"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "NAMA_PART"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Nama Sparepart"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 150
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "HARGA_PART"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Harga"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "STOCK_PART"
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle9
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Stock"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "SATUAN_PART"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Satuan"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "CREA_BY"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Create By"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "CREA_DATE"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Create Date"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "UPD_BY"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Update By"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "UPD_DATE"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Update Date"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
         '
         'TabData
         '
@@ -214,6 +295,10 @@ Partial Class RPR0100Frm
         Me.SATUAN_PARTSC_TextBox.SC_EnableEDIT = True
         Me.SATUAN_PARTSC_TextBox.Size = New System.Drawing.Size(141, 21)
         Me.SATUAN_PARTSC_TextBox.TabIndex = 9
+        '
+        'RPR0100DTO01BindingSource
+        '
+        Me.RPR0100DTO01BindingSource.DataSource = GetType(RPR0100.RPR0100SvcRef.RPR0100DTO01)
         '
         'SC_Conductor1
         '
@@ -264,6 +349,7 @@ Partial Class RPR0100Frm
         Me.KD_PARTSC_TextBox.BackColor = System.Drawing.SystemColors.Control
         Me.KD_PARTSC_TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.KD_PARTSC_TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RPR0100DTO01BindingSource, "KD_PART", True))
+        Me.KD_PARTSC_TextBox.Enabled = False
         Me.KD_PARTSC_TextBox.Location = New System.Drawing.Point(120, 6)
         Me.KD_PARTSC_TextBox.Name = "KD_PARTSC_TextBox"
         Me.KD_PARTSC_TextBox.ReadOnly = True
@@ -378,91 +464,6 @@ Partial Class RPR0100Frm
         Me.VersionLabel.Text = "Label1"
         Me.VersionLabel.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'RPR0100DTO01BindingSource
-        '
-        Me.RPR0100DTO01BindingSource.DataSource = GetType(RPR0100.RPR0100SvcRef.RPR0100DTO01)
-        '
-        'RPR0100DTO02BindingSource
-        '
-        Me.RPR0100DTO02BindingSource.DataSource = GetType(RPR0100.RPR0100SvcRef.RPR0100DTO02)
-        '
-        'COMPANY_OFFICE_ID
-        '
-        Me.COMPANY_OFFICE_ID.DataPropertyName = "COMPANY_OFFICE_ID"
-        Me.COMPANY_OFFICE_ID.HeaderText = "Company Office"
-        Me.COMPANY_OFFICE_ID.Name = "COMPANY_OFFICE_ID"
-        Me.COMPANY_OFFICE_ID.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "KD_PART"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Kode Sparepart"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "NAMA_PART"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Nama Sparepart"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Width = 150
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "HARGA_PART"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle2.Format = "N2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Harga"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "STOCK_PART"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Stock"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "SATUAN_PART"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Satuan"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "CREA_BY"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Create By"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "CREA_DATE"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Create Date"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "UPD_BY"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Update By"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "UPD_DATE"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Update Date"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        '
         'RPR0100Frm
         '
         Me.ClientSize = New System.Drawing.Size(959, 477)
@@ -478,13 +479,13 @@ Partial Class RPR0100Frm
         Me.Name = "RPR0100Frm"
         Me.TabControl1.ResumeLayout(False)
         Me.TabList.ResumeLayout(False)
+        CType(Me.RPR0100DTO02BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RPR0100DTO02SC_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabData.ResumeLayout(False)
         Me.TabData.PerformLayout()
+        CType(Me.RPR0100DTO01BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SC_Conductor1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SC_ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RPR0100DTO01BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RPR0100DTO02BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

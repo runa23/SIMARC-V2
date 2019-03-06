@@ -1,7 +1,7 @@
 ﻿Imports System.ServiceModel
 Imports SC_BackEnd
 Imports SC_Common
-' NOTE: You can use the "Rename" command on the context menu to change the interface name "IRPR0200Svc" in both code and config file together.
+
 <ServiceContract()>
 Public Interface IRPR0200Svc
     Inherits SC_IServicebase(Of RPR0200DTO01)

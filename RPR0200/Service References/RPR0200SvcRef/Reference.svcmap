@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2d6f6b1f-da3b-4d00-a032-20329d313b2d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:42007/SIMARCBack/RPR0200Svc.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RPR0200Svc.xsd" MetadataType="Schema" ID="eb0d0ea2-5667-4985-ac51-9ee3e407f6f4" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd3" />
+    <MetadataFile FileName="RPR0200Svc1.xsd" MetadataType="Schema" ID="68b64f34-44e0-436b-8077-12b32b2ea77a" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd4" />
+    <MetadataFile FileName="RPR0200Svc2.xsd" MetadataType="Schema" ID="cf152e29-2caa-4b9b-b4d4-4fedce984719" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd5" />
+    <MetadataFile FileName="RPR0200Svc.wsdl" MetadataType="Wsdl" ID="53b6291f-d924-4917-ae24-b40d5e760387" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?wsdl" />
+    <MetadataFile FileName="RPR0200Svc.disco" MetadataType="Disco" ID="66b6bfa7-e157-40ce-b80f-a9f59663ea94" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?disco" />
+    <MetadataFile FileName="RPR0200Svc3.xsd" MetadataType="Schema" ID="66bdada8-de40-4ada-b5d0-5c94b180c8fa" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd0" />
+    <MetadataFile FileName="RPR0200Svc4.xsd" MetadataType="Schema" ID="ecbe5eb2-8a26-46d5-ba8f-cdf7aea7f4c6" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd1" />
+    <MetadataFile FileName="RPR0200Svc5.xsd" MetadataType="Schema" ID="fbf68e8f-7f30-4c7e-91b9-3dedfb014b29" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

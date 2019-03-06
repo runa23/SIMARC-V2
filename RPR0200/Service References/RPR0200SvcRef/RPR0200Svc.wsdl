@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RPR0200Svc" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SC_Common" />
+      <xsd:import schemaLocation="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RPR0200Back" />
+      <xsd:import schemaLocation="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SC_BackEnd" />
+      <xsd:import schemaLocation="http://localhost:42007/SIMARCBack/RPR0200Svc.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRPR0200Svc_Svc_SC_GetRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Svc_SC_GetRecord" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_Svc_SC_GetRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Svc_SC_GetRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_Svc_SC_GetRecord_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q1:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_Svc_SC_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Svc_SC_Save" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_Svc_SC_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Svc_SC_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_Svc_SC_Save_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q2:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_Svc_SC_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Svc_SC_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_Svc_SC_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Svc_SC_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_Svc_SC_Delete_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q3:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getList" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getList_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q4:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getList_Detail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getList_Detail" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getList_Detail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getList_DetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getList_Detail_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q5:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCompany" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getCompany_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q6:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getOffice_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOffice" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getOffice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOfficeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getOffice_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q7:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getOutlet_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOutlet" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getOutlet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOutletResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getOutlet_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q8:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getSparepart_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSparepart" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getSparepart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSparepartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRPR0200Svc_getSparepart_SC_ServiceExceptionsFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/SC_Common" name="detail" element="q9:SC_ServiceExceptions" />
+  </wsdl:message>
+  <wsdl:portType name="IRPR0200Svc">
+    <wsdl:operation name="Svc_SC_GetRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/SC_IServicebaseOf_RPR0200DTO01/Svc_SC_GetRecord" message="tns:IRPR0200Svc_Svc_SC_GetRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SC_IServicebaseOf_RPR0200DTO01/Svc_SC_GetRecordResponse" message="tns:IRPR0200Svc_Svc_SC_GetRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/SC_IServicebaseOf_RPR0200DTO01/Svc_SC_GetRecordSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:IRPR0200Svc_Svc_SC_GetRecord_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Svc_SC_Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/SC_IServicebaseOf_RPR0200DTO01/Svc_SC_Save" message="tns:IRPR0200Svc_Svc_SC_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SC_IServicebaseOf_RPR0200DTO01/Svc_SC_SaveResponse" message="tns:IRPR0200Svc_Svc_SC_Save_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/SC_IServicebaseOf_RPR0200DTO01/Svc_SC_SaveSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:IRPR0200Svc_Svc_SC_Save_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Svc_SC_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/SC_IServicebaseOf_RPR0200DTO01/Svc_SC_Delete" message="tns:IRPR0200Svc_Svc_SC_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SC_IServicebaseOf_RPR0200DTO01/Svc_SC_DeleteResponse" message="tns:IRPR0200Svc_Svc_SC_Delete_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/SC_IServicebaseOf_RPR0200DTO01/Svc_SC_DeleteSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:IRPR0200Svc_Svc_SC_Delete_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRPR0200Svc/getList" message="tns:IRPR0200Svc_getList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRPR0200Svc/getListResponse" message="tns:IRPR0200Svc_getList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IRPR0200Svc/getListSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:IRPR0200Svc_getList_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getList_Detail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRPR0200Svc/getList_Detail" message="tns:IRPR0200Svc_getList_Detail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRPR0200Svc/getList_DetailResponse" message="tns:IRPR0200Svc_getList_Detail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IRPR0200Svc/getList_DetailSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:IRPR0200Svc_getList_Detail_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRPR0200Svc/getCompany" message="tns:IRPR0200Svc_getCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRPR0200Svc/getCompanyResponse" message="tns:IRPR0200Svc_getCompany_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IRPR0200Svc/getCompanySC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:IRPR0200Svc_getCompany_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOffice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRPR0200Svc/getOffice" message="tns:IRPR0200Svc_getOffice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRPR0200Svc/getOfficeResponse" message="tns:IRPR0200Svc_getOffice_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IRPR0200Svc/getOfficeSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:IRPR0200Svc_getOffice_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOutlet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRPR0200Svc/getOutlet" message="tns:IRPR0200Svc_getOutlet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRPR0200Svc/getOutletResponse" message="tns:IRPR0200Svc_getOutlet_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IRPR0200Svc/getOutletSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:IRPR0200Svc_getOutlet_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSparepart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRPR0200Svc/getSparepart" message="tns:IRPR0200Svc_getSparepart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRPR0200Svc/getSparepartResponse" message="tns:IRPR0200Svc_getSparepart_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IRPR0200Svc/getSparepartSC_ServiceExceptionsFault" name="SC_ServiceExceptionsFault" message="tns:IRPR0200Svc_getSparepart_SC_ServiceExceptionsFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IRPR0200Svc" type="tns:IRPR0200Svc">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Svc_SC_GetRecord">
+      <soap:operation soapAction="http://tempuri.org/SC_IServicebaseOf_RPR0200DTO01/Svc_SC_GetRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Svc_SC_Save">
+      <soap:operation soapAction="http://tempuri.org/SC_IServicebaseOf_RPR0200DTO01/Svc_SC_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Svc_SC_Delete">
+      <soap:operation soapAction="http://tempuri.org/SC_IServicebaseOf_RPR0200DTO01/Svc_SC_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getList">
+      <soap:operation soapAction="http://tempuri.org/IRPR0200Svc/getList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getList_Detail">
+      <soap:operation soapAction="http://tempuri.org/IRPR0200Svc/getList_Detail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCompany">
+      <soap:operation soapAction="http://tempuri.org/IRPR0200Svc/getCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOffice">
+      <soap:operation soapAction="http://tempuri.org/IRPR0200Svc/getOffice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOutlet">
+      <soap:operation soapAction="http://tempuri.org/IRPR0200Svc/getOutlet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSparepart">
+      <soap:operation soapAction="http://tempuri.org/IRPR0200Svc/getSparepart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SC_ServiceExceptionsFault">
+        <soap:fault use="literal" name="SC_ServiceExceptionsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RPR0200Svc">
+    <wsdl:port name="BasicHttpBinding_IRPR0200Svc" binding="tns:BasicHttpBinding_IRPR0200Svc">
+      <soap:address location="http://localhost:42007/SIMARCBack/RPR0200Svc.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

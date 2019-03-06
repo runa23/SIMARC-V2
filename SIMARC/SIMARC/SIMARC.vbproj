@@ -69,6 +69,10 @@
     <Reference Include="RPR0100">
       <HintPath>..\..\RPR0100\bin\Debug\RPR0100.dll</HintPath>
     </Reference>
+    <Reference Include="RPR0200, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\RPR0200\bin\Debug\RPR0200.dll</HintPath>
+    </Reference>
     <Reference Include="SCM0100">
       <HintPath>..\..\SCM0100\bin\Debug\SCM0100.dll</HintPath>
     </Reference>

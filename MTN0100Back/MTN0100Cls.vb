@@ -401,14 +401,20 @@ Public Class MTN0100Cls
         Dim lcCmd As String
         Dim loReturn As List(Of LKM_OutletDTO)
         Dim loOutlet As String
+        Dim loCompanyOffice As String
 
         Try
             loOutlet = poParam.Item(0)
+            loCompanyOffice = poParam.Item(1)
 
             lcCmd = "SELECT OUTLET_ID, OUTLET_NAME FROM M_OUTLET (NOLOCK)"
 
+            If loCompanyOffice IsNot Nothing Then
+                lcCmd = lcCmd & " WHERE COMPANY_OFFICE_ID = '" & loCompanyOffice & "'"
+            End If
+
             If loOutlet IsNot Nothing Then
-                lcCmd = lcCmd & " WHERE OUTLET_ID = '" & loOutlet & "'"
+                lcCmd = lcCmd & " AND OUTLET_ID = '" & loOutlet & "'"
             End If
 
             loReturn = loDb.SQLExecObjectQuery(Of LKM_OutletDTO)(lcCmd, loDb.GetConnection, True)
