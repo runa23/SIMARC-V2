@@ -5,7 +5,6 @@
     Public GOOD As Boolean
     Public MINOR As Boolean
     Public MAJOR As Boolean
-    Public DAMAGE As Boolean
     Public CREA_BY As String
     Public CREA_DATE As Date
     Public UPD_BY As String

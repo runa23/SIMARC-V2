@@ -189,7 +189,8 @@ Public Class RPR0200Cls
                         lcCmd = lcCmd & ",[UPD_BY]"
                         lcCmd = lcCmd & ",[UPD_DATE] "
                         lcCmd = lcCmd & "INTO #TEMP_DETAIL "
-                        lcCmd = lcCmd & "FROM [SIMARC].[dbo].[T_REPAIR_DETAIL] (NOLOCK)"
+                        lcCmd = lcCmd & "FROM [SIMARC].[dbo].[T_REPAIR_DETAIL] (NOLOCK) "
+                        lcCmd = lcCmd & "WHERE 1 = 0 "
 
                         loDb.SqlExecQuery(lcCmd, loConn, False)
 

@@ -35,7 +35,6 @@
       <xs:element minOccurs="0" name="CASE_NAME" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="DAMAGE" type="xs:boolean" />
       <xs:element minOccurs="0" name="GOOD" type="xs:boolean" />
       <xs:element minOccurs="0" name="MAINTENANCE_ID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MAJOR" type="xs:boolean" />

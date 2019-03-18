@@ -63,7 +63,7 @@ Public Class RPR0100Cls
             loDb.SqlExecNonQuery(lcCmd, loConn, True)
 
             lcCmd = "EXEC RPR0110 "
-            lcCmd = lcCmd & "','" & poEntity.COMPANY_OFFICE_ID
+            lcCmd = lcCmd & "'" & poEntity.COMPANY_OFFICE_ID
             lcCmd = lcCmd & "'," & poEntity.KD_PART
             lcCmd = lcCmd & "," & Val(poEntity.HARGA_PART)
             lcCmd = lcCmd & ",'DELETE"
@@ -151,7 +151,7 @@ Public Class RPR0100Cls
                 loDb.SqlExecNonQuery(lcCmd, loConn, False)
 
                 lcCmd = "EXEC RPR0110 "
-                lcCmd = lcCmd & "','" & poNewEntity.COMPANY_OFFICE_ID
+                lcCmd = lcCmd & "'" & poNewEntity.COMPANY_OFFICE_ID
                 lcCmd = lcCmd & "'," & poNewEntity.KD_PART
                 lcCmd = lcCmd & "," & Val(poNewEntity.HARGA_PART)
                 lcCmd = lcCmd & ",'INSERT"
@@ -187,7 +187,7 @@ Public Class RPR0100Cls
                 loDb.SqlExecNonQuery(lcCmd, loConn, False)
 
                 lcCmd = "EXEC RPR0110 "
-                lcCmd = lcCmd & "','" & poNewEntity.COMPANY_OFFICE_ID
+                lcCmd = lcCmd & "'" & poNewEntity.COMPANY_OFFICE_ID
                 lcCmd = lcCmd & "'," & poNewEntity.KD_PART
                 lcCmd = lcCmd & "," & Val(poNewEntity.HARGA_PART)
                 lcCmd = lcCmd & ",'UPDATE"

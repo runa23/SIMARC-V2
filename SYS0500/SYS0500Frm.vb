@@ -5,7 +5,7 @@ Imports System.ServiceModel
 
 Public Class SYS0500Frm
     Public Const SysAppId As String = "SYS0500"
-    Public Const SysAppVersion As String = "0.00.002"
+    Public Const SysAppVersion As String = "0.00.003"
 
     Private Sub SC_Conductor1_SC_AfterAdd(ByRef poEntity As Object) Handles SC_Conductor1.SC_AfterAdd
         Dim loException As New SC_Exception
@@ -90,6 +90,7 @@ Public Class SYS0500Frm
             poParentEntity.CREA_DATE = .CREA_DATE
             poParentEntity.UPD_BY = .UPD_BY
             poParentEntity.UPD_DATE = .UPD_DATE
+            Confirm_SC_TextBox.Clear()
         End With
     End Sub
 

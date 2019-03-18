@@ -5,7 +5,7 @@ Imports System.ServiceModel
 
 Public Class MTN0100Frm
     Public Const SysAppId As String = "MTN0100"
-    Public Const SysAppVersion As String = "0.00.003"
+    Public Const SysAppVersion As String = "0.00.006"
 
     Private Sub MTN0100Frm_Load(sender As Object, e As EventArgs) Handles Me.Load
         VersionLabel.Text = SysAppId & " V. " & SysAppVersion

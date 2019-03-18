@@ -67,14 +67,9 @@ Partial Class MTN0100Frm
         Me.TabData = New System.Windows.Forms.TabPage()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabDetail = New System.Windows.Forms.TabPage()
-        Me.GoodSC_CheckBox = New SC_Win_FrontEnd.SC_CheckBox()
         Me.Maintenance_DetailDTOSC_DataGridView = New SC_Win_FrontEnd.SC_DataGridView()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewCheckBoxColumn2 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.DataGridViewCheckBoxColumn4 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.DataGridViewCheckBoxColumn3 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Maintenance_DetailDTOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GoodSC_CheckBox = New SC_Win_FrontEnd.SC_CheckBox()
         Me.OutletSC_LookUp = New SC_Win_FrontEnd.SC_LookUp()
         Me.OUTLET_NAMESC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
         Me.OUTLET_IDSC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
@@ -86,6 +81,10 @@ Partial Class MTN0100Frm
         Me.LKM_CompanyDTOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BARCODESC_TextBox = New SC_Win_FrontEnd.SC_TextBox()
         Me.LKM_OutletDTOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewCheckBoxColumn2 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.DataGridViewCheckBoxColumn4 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.DataGridViewCheckBoxColumn3 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         BARCODELabel = New System.Windows.Forms.Label()
         COMPANY_IDLabel = New System.Windows.Forms.Label()
         COMPANY_OFFICE_IDLabel = New System.Windows.Forms.Label()
@@ -531,8 +530,8 @@ Partial Class MTN0100Frm
         'TabDetail
         '
         Me.TabDetail.AutoScroll = True
-        Me.TabDetail.Controls.Add(Me.GoodSC_CheckBox)
         Me.TabDetail.Controls.Add(Me.Maintenance_DetailDTOSC_DataGridView)
+        Me.TabDetail.Controls.Add(Me.GoodSC_CheckBox)
         Me.TabDetail.Location = New System.Drawing.Point(4, 22)
         Me.TabDetail.Name = "TabDetail"
         Me.TabDetail.Padding = New System.Windows.Forms.Padding(3)
@@ -540,17 +539,6 @@ Partial Class MTN0100Frm
         Me.TabDetail.TabIndex = 1
         Me.TabDetail.Text = "Detail"
         Me.TabDetail.UseVisualStyleBackColor = True
-        '
-        'GoodSC_CheckBox
-        '
-        Me.GoodSC_CheckBox.AutoSize = True
-        Me.GoodSC_CheckBox.Location = New System.Drawing.Point(23, 14)
-        Me.GoodSC_CheckBox.Name = "GoodSC_CheckBox"
-        Me.GoodSC_CheckBox.SC_ConductorSource = Nothing
-        Me.GoodSC_CheckBox.Size = New System.Drawing.Size(97, 17)
-        Me.GoodSC_CheckBox.TabIndex = 16
-        Me.GoodSC_CheckBox.Text = "Check All Good"
-        Me.GoodSC_CheckBox.UseVisualStyleBackColor = True
         '
         'Maintenance_DetailDTOSC_DataGridView
         '
@@ -565,54 +553,30 @@ Partial Class MTN0100Frm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Maintenance_DetailDTOSC_DataGridView.AutoGenerateColumns = False
         Me.Maintenance_DetailDTOSC_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Maintenance_DetailDTOSC_DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13, Me.DataGridViewCheckBoxColumn2, Me.DataGridViewCheckBoxColumn4, Me.DataGridViewCheckBoxColumn3, Me.DataGridViewCheckBoxColumn1})
+        Me.Maintenance_DetailDTOSC_DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn12, Me.DataGridViewCheckBoxColumn2, Me.DataGridViewCheckBoxColumn4, Me.DataGridViewCheckBoxColumn3})
         Me.Maintenance_DetailDTOSC_DataGridView.DataSource = Me.Maintenance_DetailDTOBindingSource
-        Me.Maintenance_DetailDTOSC_DataGridView.Location = New System.Drawing.Point(6, 41)
+        Me.Maintenance_DetailDTOSC_DataGridView.Location = New System.Drawing.Point(6, 37)
         Me.Maintenance_DetailDTOSC_DataGridView.Name = "Maintenance_DetailDTOSC_DataGridView"
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Maintenance_DetailDTOSC_DataGridView.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.Maintenance_DetailDTOSC_DataGridView.SC_ConductorSource = Nothing
-        Me.Maintenance_DetailDTOSC_DataGridView.Size = New System.Drawing.Size(1092, 217)
-        Me.Maintenance_DetailDTOSC_DataGridView.TabIndex = 0
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.DataPropertyName = "CASE_NAME"
-        Me.DataGridViewTextBoxColumn13.HeaderText = "Kasus"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.Width = 300
-        '
-        'DataGridViewCheckBoxColumn2
-        '
-        Me.DataGridViewCheckBoxColumn2.DataPropertyName = "GOOD"
-        Me.DataGridViewCheckBoxColumn2.HeaderText = "GOOD"
-        Me.DataGridViewCheckBoxColumn2.Name = "DataGridViewCheckBoxColumn2"
-        Me.DataGridViewCheckBoxColumn2.Width = 50
-        '
-        'DataGridViewCheckBoxColumn4
-        '
-        Me.DataGridViewCheckBoxColumn4.DataPropertyName = "MINOR"
-        Me.DataGridViewCheckBoxColumn4.HeaderText = "MINOR"
-        Me.DataGridViewCheckBoxColumn4.Name = "DataGridViewCheckBoxColumn4"
-        Me.DataGridViewCheckBoxColumn4.Width = 50
-        '
-        'DataGridViewCheckBoxColumn3
-        '
-        Me.DataGridViewCheckBoxColumn3.DataPropertyName = "MAJOR"
-        Me.DataGridViewCheckBoxColumn3.HeaderText = "MAJOR"
-        Me.DataGridViewCheckBoxColumn3.Name = "DataGridViewCheckBoxColumn3"
-        Me.DataGridViewCheckBoxColumn3.Width = 50
-        '
-        'DataGridViewCheckBoxColumn1
-        '
-        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "DAMAGE"
-        Me.DataGridViewCheckBoxColumn1.HeaderText = "DAMAGE"
-        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
-        Me.DataGridViewCheckBoxColumn1.Width = 50
+        Me.Maintenance_DetailDTOSC_DataGridView.Size = New System.Drawing.Size(1092, 220)
+        Me.Maintenance_DetailDTOSC_DataGridView.TabIndex = 16
         '
         'Maintenance_DetailDTOBindingSource
         '
         Me.Maintenance_DetailDTOBindingSource.DataSource = GetType(MTN0100.MTN0100SvcRef.Maintenance_DetailDTO)
+        '
+        'GoodSC_CheckBox
+        '
+        Me.GoodSC_CheckBox.AutoSize = True
+        Me.GoodSC_CheckBox.Location = New System.Drawing.Point(23, 14)
+        Me.GoodSC_CheckBox.Name = "GoodSC_CheckBox"
+        Me.GoodSC_CheckBox.SC_ConductorSource = Nothing
+        Me.GoodSC_CheckBox.Size = New System.Drawing.Size(97, 17)
+        Me.GoodSC_CheckBox.TabIndex = 16
+        Me.GoodSC_CheckBox.Text = "Check All Good"
+        Me.GoodSC_CheckBox.UseVisualStyleBackColor = True
         '
         'OutletSC_LookUp
         '
@@ -735,6 +699,34 @@ Partial Class MTN0100Frm
         '
         Me.LKM_OutletDTOBindingSource.DataSource = GetType(MTN0100.MTN0100SvcRef.LKM_OutletDTO)
         '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.DataPropertyName = "CASE_NAME"
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Kasus"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.Width = 200
+        '
+        'DataGridViewCheckBoxColumn2
+        '
+        Me.DataGridViewCheckBoxColumn2.DataPropertyName = "GOOD"
+        Me.DataGridViewCheckBoxColumn2.HeaderText = "GOOD"
+        Me.DataGridViewCheckBoxColumn2.Name = "DataGridViewCheckBoxColumn2"
+        Me.DataGridViewCheckBoxColumn2.Width = 50
+        '
+        'DataGridViewCheckBoxColumn4
+        '
+        Me.DataGridViewCheckBoxColumn4.DataPropertyName = "MINOR"
+        Me.DataGridViewCheckBoxColumn4.HeaderText = "MINOR"
+        Me.DataGridViewCheckBoxColumn4.Name = "DataGridViewCheckBoxColumn4"
+        Me.DataGridViewCheckBoxColumn4.Width = 50
+        '
+        'DataGridViewCheckBoxColumn3
+        '
+        Me.DataGridViewCheckBoxColumn3.DataPropertyName = "MAJOR"
+        Me.DataGridViewCheckBoxColumn3.HeaderText = "MAJOR"
+        Me.DataGridViewCheckBoxColumn3.Name = "DataGridViewCheckBoxColumn3"
+        Me.DataGridViewCheckBoxColumn3.Width = 50
+        '
         'MTN0100Frm
         '
         Me.ClientSize = New System.Drawing.Size(1156, 478)
@@ -800,11 +792,6 @@ Partial Class MTN0100Frm
     Friend WithEvents TabControl2 As System.Windows.Forms.TabControl
     Friend WithEvents TabDetail As System.Windows.Forms.TabPage
     Friend WithEvents Maintenance_DetailDTOBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Maintenance_DetailDTOSC_DataGridView As SC_Win_FrontEnd.SC_DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn13 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn2 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn4 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn3 As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents GoodSC_CheckBox As SC_Win_FrontEnd.SC_CheckBox
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -824,5 +811,10 @@ Partial Class MTN0100Frm
     Friend WithEvents TanggalSC_CheckBox As SC_Win_FrontEnd.SC_CheckBox
     Friend WithEvents TxtLimit As SC_Win_FrontEnd.SC_TextBox
     Friend WithEvents CheckLimit As SC_Win_FrontEnd.SC_CheckBox
+    Friend WithEvents Maintenance_DetailDTOSC_DataGridView As SC_Win_FrontEnd.SC_DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn12 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewCheckBoxColumn2 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents DataGridViewCheckBoxColumn4 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents DataGridViewCheckBoxColumn3 As System.Windows.Forms.DataGridViewCheckBoxColumn
 
 End Class

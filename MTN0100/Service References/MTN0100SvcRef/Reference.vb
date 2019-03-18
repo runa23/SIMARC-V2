@@ -288,9 +288,6 @@ Namespace MTN0100SvcRef
         Private CREA_DATEField As Date
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private DAMAGEField As Boolean
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private GOODField As Boolean
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -366,19 +363,6 @@ Namespace MTN0100SvcRef
                 If (Me.CREA_DATEField.Equals(value) <> true) Then
                     Me.CREA_DATEField = value
                     Me.RaisePropertyChanged("CREA_DATE")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property DAMAGE() As Boolean
-            Get
-                Return Me.DAMAGEField
-            End Get
-            Set
-                If (Me.DAMAGEField.Equals(value) <> true) Then
-                    Me.DAMAGEField = value
-                    Me.RaisePropertyChanged("DAMAGE")
                 End If
             End Set
         End Property

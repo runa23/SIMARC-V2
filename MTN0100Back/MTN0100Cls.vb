@@ -135,7 +135,6 @@ Public Class MTN0100Cls
                     lcCmd = lcCmd & "," & row.GOOD
                     lcCmd = lcCmd & "," & row.MINOR
                     lcCmd = lcCmd & "," & row.MAJOR
-                    lcCmd = lcCmd & "," & row.DAMAGE
                     lcCmd = lcCmd & ",'" & poNewEntity.CREA_BY.Trim
                     lcCmd = lcCmd & "','" & poNewEntity.UPD_BY.Trim & "'"
 
@@ -165,7 +164,6 @@ Public Class MTN0100Cls
                         lcCmd = lcCmd & "GOOD,"
                         lcCmd = lcCmd & "MINOR,"
                         lcCmd = lcCmd & "MAJOR,"
-                        lcCmd = lcCmd & "DAMAGE,"
                         lcCmd = lcCmd & "CREA_BY,"
                         lcCmd = lcCmd & "CREA_DATE,"
                         lcCmd = lcCmd & "UPD_BY,"
@@ -181,7 +179,6 @@ Public Class MTN0100Cls
                             lcCmd = lcCmd & "GOOD,"
                             lcCmd = lcCmd & "MINOR,"
                             lcCmd = lcCmd & "MAJOR,"
-                            lcCmd = lcCmd & "DAMAGE,"
                             lcCmd = lcCmd & "CREA_BY,"
                             lcCmd = lcCmd & "CREA_DATE,"
                             lcCmd = lcCmd & "UPD_BY,"
@@ -192,7 +189,6 @@ Public Class MTN0100Cls
                             lcCmd = lcCmd & ",'" & row.GOOD & "'"
                             lcCmd = lcCmd & ",'" & row.MINOR & "'"
                             lcCmd = lcCmd & ",'" & row.MAJOR & "'"
-                            lcCmd = lcCmd & ",'" & row.DAMAGE & "'"
                             lcCmd = lcCmd & ",'" & poNewEntity.CREA_BY.Trim & "'"
                             lcCmd = lcCmd & ", getdate() "
                             lcCmd = lcCmd & ",'" & poNewEntity.UPD_BY.Trim & "'"
@@ -209,7 +205,6 @@ Public Class MTN0100Cls
                         lcCmd = lcCmd & "TARGET.GOOD = SOURCE.GOOD, "
                         lcCmd = lcCmd & "TARGET.MINOR = SOURCE.MINOR, "
                         lcCmd = lcCmd & "TARGET.MAJOR = SOURCE.MAJOR, "
-                        lcCmd = lcCmd & "TARGET.DAMAGE = SOURCE.DAMAGE, "
                         lcCmd = lcCmd & "TARGET.UPD_BY = SOURCE.UPD_BY, "
                         lcCmd = lcCmd & "TARGET.UPD_DATE = SOURCE.UPD_DATE "
                         lcCmd = lcCmd & "WHEN NOT MATCHED BY TARGET THEN "
@@ -219,7 +214,6 @@ Public Class MTN0100Cls
                         lcCmd = lcCmd & "GOOD,"
                         lcCmd = lcCmd & "MINOR,"
                         lcCmd = lcCmd & "MAJOR,"
-                        lcCmd = lcCmd & "DAMAGE,"
                         lcCmd = lcCmd & "CREA_BY,"
                         lcCmd = lcCmd & "CREA_DATE,"
                         lcCmd = lcCmd & "UPD_BY,"
@@ -230,7 +224,6 @@ Public Class MTN0100Cls
                         lcCmd = lcCmd & "SOURCE.GOOD,"
                         lcCmd = lcCmd & "SOURCE.MINOR,"
                         lcCmd = lcCmd & "SOURCE.MAJOR,"
-                        lcCmd = lcCmd & "SOURCE.DAMAGE,"
                         lcCmd = lcCmd & "SOURCE.CREA_BY,"
                         lcCmd = lcCmd & "GETDATE(),"
                         lcCmd = lcCmd & "SOURCE.UPD_BY,"
@@ -345,7 +338,6 @@ Public Class MTN0100Cls
             lcCmd = lcCmd & ",GOOD = ISNULL(A.[GOOD],'')"
             lcCmd = lcCmd & ",MINOR = ISNULL(A.[MINOR],'')"
             lcCmd = lcCmd & ",MAJOR = ISNULL(A.[MAJOR],'')"
-            lcCmd = lcCmd & ",DAMAGE = ISNULL(A.[DAMAGE],'')"
             lcCmd = lcCmd & ",CREA_BY = ISNULL(A.[CREA_BY],'')"
             lcCmd = lcCmd & ",CREA_DATE = ISNULL(A.[CREA_DATE],'')"
             lcCmd = lcCmd & ",UPD_BY = ISNULL(A.[UPD_BY],'')"
