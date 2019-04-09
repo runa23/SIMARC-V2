@@ -47,8 +47,17 @@ Public Class RPR0100Cls
         Dim lcCmd As String
         Dim loConn As DbConnection
 
+
         Try
             loConn = loDb.GetConnection
+
+            lcCmd = "SELECT * FROM M_SPAREPART_LOG WHERE KD_PART = " & poEntity.KD_PART & " "
+            lcCmd = lcCmd & " AND COMPANY_OFFICE_ID ='" & poEntity.COMPANY_OFFICE_ID & "'"
+            lcCmd = lcCmd & " AND LOG_PART NOT IN ('INSERT','UPDATE','DELETE')"
+            If loDb.SqlExecQuery(lcCmd, loConn, False).Rows.Count > 0 Then
+                loException.Add("Validasi", "Data tidak dapat dihapus, karena sudah digunakan saat repair")
+                Exit Try
+            End If
 
             lcCmd = "EXEC RPR0100 'DELETE"
             lcCmd = lcCmd & "','" & poEntity.COMPANY_OFFICE_ID
@@ -75,7 +84,8 @@ Public Class RPR0100Cls
         Catch ex As Exception
             loException.Add(ex)
         End Try
-        loException.ConvertAndThrowToServiceExceptionIfErrors()
+        'loException.ConvertAndThrowToServiceExceptionIfErrors()
+        loException.ThrowExceptionIfErrors()
     End Sub
 
     Protected Overrides Function SC_Display(poEntity As RPR0100DTO01, poCRUDMode As eCRUDMode, plWithLock As Boolean) As RPR0100DTO01

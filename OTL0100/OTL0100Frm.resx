@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="COMPANY_OFFICELabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="Label1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="SC_BtnImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAplJREFUOE+N
+        kl1IU2EYx0dZZhGkXuW86ULopqIuOhfdTLCt9KauFhQV5oWRlfQhpOSFpEzBoSlaGhX4QUkokZhpNNpU
+        TEUWgz4UWejmztnOtuN2dpwfZ//e9/SmmQb94YFzDs/v/3/O8746plSj0XjEZDL9V+Xm5h5KSkrawVhN
+        x+fmPLHZOY/i8XqVeZ9P8fG8wguCIvj9ip9WIKAEWAWDwVhGRkYqYzVxpFElhYAogjQgFA4jLEmQFhaw
+        EInANe3Fa8cU5oUgZFlO6PX6NMZq4kRRVEUCBkOhNTBCwEg0il7HVzS+caK5z4kptxeKomw2IKAaIrBE
+        YJoYJeC8EELDqwnU9UygdcCFiueDaOl8i+6BcZwttBSYix9uZ7yOC4fDKk3WYFnGJ9csShrfofzpB1R1
+        jKCmaxzVL8fwoM2B+08GkV/+TEo7emkv43UcGVn9DTu/eZBlKsWJ8zU4V/oC16yDuPtoCPdaR3Cn6SMK
+        KntguFgp7Tl4Zt2A/K9Kx47FYlhcXESf3YWcgnqcvtGGCxX9KKx1oKh+BFeqbcgr7kDWyVvSrgM56wYE
+        VmUGLy0tYXl5GR5exO3ablyuGkBJyySK6t6j5nEXmjr7E4fzrpadyi9buwscORqVbBfxeFyDV1ZWsLq6
+        ijgxa+8dwvUGG4qb7Zia+UEDNp8CGV39M50aqKqqFX0f+/wFNxu68H16BnThmZmZ+xiriYspivp3OoXp
+        M5kObrcbw8PDcDqdCZvNVpuSkrKNsZo4Mv6WBvQbvR8UJpeNwu0GgyGZcWvSDLYan+5FEPwYHR1N2O32
+        TrPZvJsxG3SMjBklzTLZg0xSZWKmFTkdmed5mSRXZ2dn72T9m5RssVj0/yqr1bo/PT19wz//kk73E7sv
+        aC73qVkxAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="LKM_CompanyOfficeDTOBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

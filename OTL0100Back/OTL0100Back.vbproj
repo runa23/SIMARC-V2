@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3970DAB-F19E-463C-AABF-5CBAA5375EC6}</ProjectGuid>
+    <ProjectGuid>{A182FEC3-DF1D-4634-BF0B-9CBD99FD68A9}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>CAB0100Back</RootNamespace>
-    <AssemblyName>CAB0100Back</AssemblyName>
+    <RootNamespace>OTL0100Back</RootNamespace>
+    <AssemblyName>OTL0100Back</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -19,7 +19,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>CAB0100Back.xml</DocumentationFile>
+    <DocumentationFile>OTL0100Back.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -28,7 +28,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>CAB0100Back.xml</DocumentationFile>
+    <DocumentationFile>OTL0100Back.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -71,11 +71,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CAB0100Cls.vb" />
-    <Compile Include="CAB0100Svc.vb" />
     <Compile Include="DTO\LKM_CompanyOfficeDTO.vb" />
     <Compile Include="DTO\LKM_ParamDTO.vb" />
-    <Compile Include="ICAB0100Svc.vb" />
+    <Compile Include="IOTL0100Svc.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -91,6 +89,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="OTL0100Cls.vb" />
+    <Compile Include="OTL0100Svc.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -112,7 +112,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

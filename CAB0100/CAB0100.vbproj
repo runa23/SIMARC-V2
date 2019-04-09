@@ -43,8 +43,18 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SC_Common">
+      <HintPath>..\Library\SC_Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SC_Win_FrontEnd">
+      <HintPath>..\Library\SC_Win_FrontEnd.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,6 +72,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAB0100Frm.Designer.vb">
+      <DependentUpon>CAB0100Frm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CAB0100Frm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -77,8 +93,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Service References\CAB0100SvcRef\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CAB0100Frm.resx">
+      <DependentUpon>CAB0100Frm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -87,6 +111,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -96,6 +121,55 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Service References\CAB0100SvcRef\CAB0100.CAB0100SvcRef.LKM_CompanyOfficeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CAB0100SvcRef\CAB0100.CAB0100SvcRef.LKM_ParamDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CAB0100SvcRef\CAB0100Svc.wsdl" />
+    <None Include="Service References\CAB0100SvcRef\CAB0100Svc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CAB0100SvcRef\CAB0100Svc1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CAB0100SvcRef\CAB0100Svc2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CAB0100SvcRef\CAB0100Svc3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CAB0100SvcRef\CAB0100Svc4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CAB0100SvcRef\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CAB0100SvcRef\CAB0100Svc.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CAB0100SvcRef\CAB0100Svc5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CAB0100SvcRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CAB0100SvcRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CAB0100SvcRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

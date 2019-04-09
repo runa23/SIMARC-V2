@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="58027699-2da6-4562-84f2-19d10bb94f05" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:42007/SIMARCBack/CAB0100Svc.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CAB0100Svc.wsdl" MetadataType="Wsdl" ID="bafad043-9621-4c10-90f5-ef224f577004" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/CAB0100Svc.svc?wsdl" />
+    <MetadataFile FileName="CAB0100Svc5.xsd" MetadataType="Schema" ID="97b8da7d-05af-4858-92ff-7f1f371973fa" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/CAB0100Svc.svc?xsd=xsd5" />
+    <MetadataFile FileName="CAB0100Svc.xsd" MetadataType="Schema" ID="5753ff44-41e9-49de-8fa4-381dc91c0010" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/CAB0100Svc.svc?xsd=xsd4" />
+    <MetadataFile FileName="CAB0100Svc1.xsd" MetadataType="Schema" ID="4a07e38d-d966-4c14-967f-296a8a2f7195" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/CAB0100Svc.svc?xsd=xsd3" />
+    <MetadataFile FileName="CAB0100Svc2.xsd" MetadataType="Schema" ID="44bf2320-d34e-47a7-9b80-e6143f82d6e4" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/CAB0100Svc.svc?xsd=xsd2" />
+    <MetadataFile FileName="CAB0100Svc3.xsd" MetadataType="Schema" ID="b9b96c4d-a977-419f-825b-3f17a184b106" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/CAB0100Svc.svc?xsd=xsd1" />
+    <MetadataFile FileName="CAB0100Svc4.xsd" MetadataType="Schema" ID="fd3b6c9e-0343-4bab-8001-8ad84d85982e" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/CAB0100Svc.svc?xsd=xsd0" />
+    <MetadataFile FileName="CAB0100Svc.disco" MetadataType="Disco" ID="15287995-3fc1-4d9d-9280-d24facfd1f3c" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/CAB0100Svc.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

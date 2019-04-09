@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="02cc1329-d5b6-45a8-8c40-746f257d2356" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:42007/SIMARCBack/OTL0100Svc.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OTL0100Svc.xsd" MetadataType="Schema" ID="3f2594aa-0af8-4135-adb5-685561e734db" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/OTL0100Svc.svc?xsd=xsd3" />
+    <MetadataFile FileName="OTL0100Svc1.xsd" MetadataType="Schema" ID="4079611f-41d7-4c2d-a6fa-c26c130b9299" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/OTL0100Svc.svc?xsd=xsd2" />
+    <MetadataFile FileName="OTL0100Svc2.xsd" MetadataType="Schema" ID="a3cb4e8b-2372-4cef-9ced-0580168b23c4" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/OTL0100Svc.svc?xsd=xsd5" />
+    <MetadataFile FileName="OTL0100Svc.wsdl" MetadataType="Wsdl" ID="4906e9f5-2cf2-48ee-b170-f171ec447a90" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/OTL0100Svc.svc?wsdl" />
+    <MetadataFile FileName="OTL0100Svc.disco" MetadataType="Disco" ID="d7434aae-a130-448d-8708-f5f24e1b159f" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/OTL0100Svc.svc?disco" />
+    <MetadataFile FileName="OTL0100Svc3.xsd" MetadataType="Schema" ID="14c3c4cb-e87c-4b64-bf7e-2ebe22aec49c" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/OTL0100Svc.svc?xsd=xsd4" />
+    <MetadataFile FileName="OTL0100Svc4.xsd" MetadataType="Schema" ID="8946ecce-0dbd-4cbb-adeb-266b0ea09604" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/OTL0100Svc.svc?xsd=xsd1" />
+    <MetadataFile FileName="OTL0100Svc5.xsd" MetadataType="Schema" ID="318592d4-e37a-48c9-9c92-5d21f010b472" SourceId="1" SourceUrl="http://localhost:42007/SIMARCBack/OTL0100Svc.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

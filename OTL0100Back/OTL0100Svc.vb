@@ -1,13 +1,13 @@
 ﻿Imports SC_Common
 Imports SC_BackEnd
-Imports CAB0100Back
+Imports OTL0100Back
 Imports System.ServiceModel
-Public Class CAB0100Svc
-    Implements ICAB0100Svc
+Public Class OTL0100Svc
+    Implements IOTL0100Svc
 
-    Public Function getCompany(poparam As List(Of Object)) As List(Of LKM_CompanyOfficeDTO) Implements ICAB0100Svc.getCompany
+    Public Function getCompany(poparam As List(Of Object)) As List(Of LKM_CompanyOfficeDTO) Implements IOTL0100Svc.getCompany
         Dim loException As New SC_Exception
-        Dim loCls As New CAB0100Cls
+        Dim loCls As New OTL0100Cls
         Dim loReturn As List(Of LKM_CompanyOfficeDTO)
 
         Try
@@ -20,9 +20,9 @@ Public Class CAB0100Svc
         loException.ConvertAndThrowToServiceExceptionIfErrors()
     End Function
 
-    Public Sub Import(DataTable As DataSet, company_office As String, user As String) Implements ICAB0100Svc.Import
+    Public Sub Import(DataTable As DataSet, company_office As String, user As String) Implements IOTL0100Svc.Import
         Dim loException As New SC_Exception
-        Dim loCls As New CAB0100Cls
+        Dim loCls As New OTL0100Cls
 
         Try
             loCls.Import(DataTable, company_office, user)
@@ -33,9 +33,9 @@ Public Class CAB0100Svc
         loException.ConvertAndThrowToServiceExceptionIfErrors()
     End Sub
 
-    Public Function getParamDoc(param As String) As List(Of LKM_ParamDTO) Implements ICAB0100Svc.getParamDoc
+    Public Function getParamDoc(param As String) As List(Of LKM_ParamDTO) Implements IOTL0100Svc.getParamDoc
         Dim loException As New SC_Exception
-        Dim loCls As New CAB0100Cls
+        Dim loCls As New OTL0100Cls
         Dim loReturn As List(Of LKM_ParamDTO)
 
         Try

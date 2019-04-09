@@ -3,7 +3,7 @@ Imports SC_BackEnd
 Imports SC_Common
 
 <ServiceContract()>
-Public Interface ICAB0100Svc
+Public Interface IOTL0100Svc
 
     <OperationContract()>
         <FaultContract(GetType(SC_ServiceExceptions))>
