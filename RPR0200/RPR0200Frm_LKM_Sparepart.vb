@@ -22,7 +22,7 @@ Public Class RPR0200Frm_LKM_Sparepart
     Private Sub RPR0200Frm_LKM_Sparepart_SC_Init_From_Master(poParameter As Object) Handles Me.SC_Init_From_Master
         Dim loException As New SC_Exception
         Dim loService As RPR0200SvcClient
-        Dim loParam As RPR0200DTO01
+        'Dim loParam As RPR0200DTO01
         Dim loSparepart As New List(Of LKM_SparepartDTO)
         Dim poparam As New List(Of Object)
         Dim loKode As String
@@ -35,6 +35,10 @@ Public Class RPR0200Frm_LKM_Sparepart
                 loKode = .Item(0)
                 loCompanyOffice = .Item(1)
             End With
+
+            If loCompanyOffice = Nothing Then
+                loCompanyOffice = " "
+            End If
 
             loService = New RPR0200SvcClient
 

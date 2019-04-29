@@ -9,7 +9,7 @@
           <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
           <xs:element minOccurs="0" name="HARGA_PART" type="xs:decimal" />
-          <xs:element minOccurs="0" name="KD_PART" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="KD_PART" type="xs:int" />
           <xs:element minOccurs="0" name="NAMA_PART" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SATUAN_PART" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="STOCK_PART" nillable="true" type="xs:anyType" />
@@ -32,7 +32,7 @@
       <xs:element minOccurs="0" name="CREA_BY" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CREA_DATE" type="xs:dateTime" />
       <xs:element minOccurs="0" name="HARGA_PART" type="xs:decimal" />
-      <xs:element minOccurs="0" name="KD_PART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KD_PART" type="xs:int" />
       <xs:element minOccurs="0" name="NAMA_PART" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SATUAN_PART" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="STOCK_PART" nillable="true" type="xs:anyType" />

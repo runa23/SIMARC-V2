@@ -5,7 +5,7 @@ Imports System.ServiceModel
 
 Public Class RPR0200Frm
     Public Const SysAppId As String = "RPR0200"
-    Public Const SysAppVersion As String = "0.00.001"
+    Public Const SysAppVersion As String = "0.00.004"
 
     Private Sub RPR0200Frm_Load(sender As Object, e As EventArgs) Handles Me.Load
         VersionLabel.Text = SysAppId & " V. " & SysAppVersion
@@ -185,6 +185,7 @@ Public Class RPR0200Frm
             loKeyEntity = New RPR0200DTO01
             With CType(poEntity, RPR0200DTO02)
                 loKeyEntity.REPAIR_ID = .REPAIR_ID
+                loKeyEntity.COMPANY_OFFICE_ID = .COMPANY_OFFICE_ID
             End With
 
             loService = New RPR0200SvcClient

@@ -4,7 +4,7 @@ Imports RPR0100.RPR0100SvcRef
 Imports System.ServiceModel
 Public Class RPR0100Frm
     Public Const SysAppId As String = "RPR0100"
-    Public Const SysAppVersion As String = "0.00.002"
+    Public Const SysAppVersion As String = "0.00.004"
 
     Private Sub RPR0100Frm_Load(sender As Object, e As EventArgs) Handles Me.Load
         VersionLabel.Text = SysAppId & " V. " & SysAppVersion
@@ -35,7 +35,7 @@ Public Class RPR0100Frm
         TabControl1.SelectedTab = TabData
 
         With CType(poEntity, RPR0100DTO01)
-            .KD_PART = ""
+            .KD_PART = Nothing
             .NAMA_PART = ""
             .HARGA_PART = 0
             .STOCK_PART = 0

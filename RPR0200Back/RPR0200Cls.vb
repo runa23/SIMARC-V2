@@ -29,7 +29,7 @@ Public Class RPR0200Cls
 
             loDb.SqlExecNonQuery(lcCmd, loConn, True)
 
-            lcCmd = "DELETE FROM T_REPAIL_DETAIL WHERE REPAIR_ID = '" & poEntity.REPAIR_ID & "'"
+            lcCmd = "DELETE FROM T_REPAIR_DETAIL WHERE REPAIR_ID = '" & poEntity.REPAIR_ID & "'"
 
             loDb.SqlExecNonQuery(lcCmd, loConn, True)
 
@@ -361,6 +361,7 @@ Public Class RPR0200Cls
 
             If poparam.REPAIR_ID IsNot Nothing And poparam.REPAIR_ID <> "" Then
                 lcCmd = lcCmd & "WHERE A.REPAIR_ID = '" & poparam.REPAIR_ID & "'"
+                lcCmd = lcCmd & "AND B.COMPANY_OFFICE_ID = '" & poparam.COMPANY_OFFICE_ID & "'"
             Else
                 lcCmd = lcCmd & "WHERE A.REPAIR_ID = '" & poparam.REPAIR_ID & "'"
             End If
@@ -449,10 +450,11 @@ Public Class RPR0200Cls
             lcCmd = lcCmd & ",[HARGA_PART]"
             lcCmd = lcCmd & ",[STOCK_PART]"
             lcCmd = lcCmd & ",[SATUAN_PART] "
-            lcCmd = lcCmd & "FROM [SIMARC].[dbo].[M_SPAREPART] (NOLOCK)"
+            lcCmd = lcCmd & "FROM [SIMARC].[dbo].[M_SPAREPART] (NOLOCK) "
+            lcCmd = lcCmd & "WHERE STOCK_PART > 0 "
 
             If loCompanyOffice IsNot Nothing Then
-                lcCmd = lcCmd & " WHERE COMPANY_OFFICE_ID = '" & loCompanyOffice & "'"
+                lcCmd = lcCmd & " AND COMPANY_OFFICE_ID = '" & loCompanyOffice & "'"
             End If
 
             If loPart IsNot Nothing Then

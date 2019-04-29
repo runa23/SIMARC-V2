@@ -524,7 +524,7 @@ Partial Class RPR0200Frm
         Me.COMPANY_IDSC_ComboBox.SC_EnableADD = True
         Me.COMPANY_IDSC_ComboBox.SC_EnableEDIT = True
         Me.COMPANY_IDSC_ComboBox.Size = New System.Drawing.Size(247, 21)
-        Me.COMPANY_IDSC_ComboBox.TabIndex = 16
+        Me.COMPANY_IDSC_ComboBox.TabIndex = 2
         Me.COMPANY_IDSC_ComboBox.ValueMember = "COMPANY_ID"
         '
         'LKM_CompanyDTOBindingSource
@@ -646,7 +646,7 @@ Partial Class RPR0200Frm
         Me.OutletSC_LookUp.SC_TextBox_Description = Nothing
         Me.OutletSC_LookUp.SC_TextBox_Value = Nothing
         Me.OutletSC_LookUp.Size = New System.Drawing.Size(26, 23)
-        Me.OutletSC_LookUp.TabIndex = 14
+        Me.OutletSC_LookUp.TabIndex = 8
         Me.OutletSC_LookUp.UseVisualStyleBackColor = True
         '
         'OUTLET_NAMESC_TextBox
@@ -659,7 +659,7 @@ Partial Class RPR0200Frm
         Me.OUTLET_NAMESC_TextBox.ReadOnly = True
         Me.OUTLET_NAMESC_TextBox.SC_ConductorSource = Me.SC_Conductor1
         Me.OUTLET_NAMESC_TextBox.Size = New System.Drawing.Size(187, 21)
-        Me.OUTLET_NAMESC_TextBox.TabIndex = 13
+        Me.OUTLET_NAMESC_TextBox.TabIndex = 7
         '
         'OUTLET_IDSC_TextBox
         '
@@ -669,7 +669,7 @@ Partial Class RPR0200Frm
         Me.OUTLET_IDSC_TextBox.Name = "OUTLET_IDSC_TextBox"
         Me.OUTLET_IDSC_TextBox.SC_ConductorSource = Nothing
         Me.OUTLET_IDSC_TextBox.Size = New System.Drawing.Size(100, 21)
-        Me.OUTLET_IDSC_TextBox.TabIndex = 11
+        Me.OUTLET_IDSC_TextBox.TabIndex = 6
         '
         'TO_DATESC_DateTimePicker
         '
@@ -680,7 +680,7 @@ Partial Class RPR0200Frm
         Me.TO_DATESC_DateTimePicker.Name = "TO_DATESC_DateTimePicker"
         Me.TO_DATESC_DateTimePicker.SC_ConductorSource = Nothing
         Me.TO_DATESC_DateTimePicker.Size = New System.Drawing.Size(100, 21)
-        Me.TO_DATESC_DateTimePicker.TabIndex = 9
+        Me.TO_DATESC_DateTimePicker.TabIndex = 5
         '
         'FROM_DATESC_DateTimePicker
         '
@@ -691,7 +691,7 @@ Partial Class RPR0200Frm
         Me.FROM_DATESC_DateTimePicker.Name = "FROM_DATESC_DateTimePicker"
         Me.FROM_DATESC_DateTimePicker.SC_ConductorSource = Nothing
         Me.FROM_DATESC_DateTimePicker.Size = New System.Drawing.Size(100, 21)
-        Me.FROM_DATESC_DateTimePicker.TabIndex = 7
+        Me.FROM_DATESC_DateTimePicker.TabIndex = 4
         '
         'COMPANY_OFFICE_IDSC_ComboBox
         '
@@ -706,7 +706,7 @@ Partial Class RPR0200Frm
         Me.COMPANY_OFFICE_IDSC_ComboBox.SC_EnableADD = True
         Me.COMPANY_OFFICE_IDSC_ComboBox.SC_EnableEDIT = True
         Me.COMPANY_OFFICE_IDSC_ComboBox.Size = New System.Drawing.Size(185, 21)
-        Me.COMPANY_OFFICE_IDSC_ComboBox.TabIndex = 5
+        Me.COMPANY_OFFICE_IDSC_ComboBox.TabIndex = 3
         Me.COMPANY_OFFICE_IDSC_ComboBox.ValueMember = "COMPANY_OFFICE_ID"
         '
         'LKM_CompanyOfficeDTOBindingSource

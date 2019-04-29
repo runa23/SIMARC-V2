@@ -78,7 +78,7 @@ Namespace RPR0100SvcRef
         Private HARGA_PARTField As Decimal
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private KD_PARTField As String
+        Private KD_PARTField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private NAMA_PARTField As String
@@ -148,12 +148,12 @@ Namespace RPR0100SvcRef
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property KD_PART() As String
+        Public Property KD_PART() As Integer
             Get
                 Return Me.KD_PARTField
             End Get
             Set
-                If (Object.ReferenceEquals(Me.KD_PARTField, value) <> true) Then
+                If (Me.KD_PARTField.Equals(value) <> true) Then
                     Me.KD_PARTField = value
                     Me.RaisePropertyChanged("KD_PART")
                 End If
@@ -277,7 +277,7 @@ Namespace RPR0100SvcRef
         Private HARGA_PARTField As Decimal
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private KD_PARTField As String
+        Private KD_PARTField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private NAMA_PARTField As String
@@ -357,12 +357,12 @@ Namespace RPR0100SvcRef
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property KD_PART() As String
+        Public Property KD_PART() As Integer
             Get
                 Return Me.KD_PARTField
             End Get
             Set
-                If (Object.ReferenceEquals(Me.KD_PARTField, value) <> true) Then
+                If (Me.KD_PARTField.Equals(value) <> true) Then
                     Me.KD_PARTField = value
                     Me.RaisePropertyChanged("KD_PART")
                 End If
